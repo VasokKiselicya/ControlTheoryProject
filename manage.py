@@ -1,17 +1,14 @@
 #!/usr/bin/env python
 import os
 import sys
+from project_util import Util
 
 if __name__ == "__main__":
-    log_dir = "logs"
-    log_file = log_dir + '/logfile.txt'
-
-    if not os.path.exists(log_dir):
-        os.makedirs(log_dir)
-    if not os.path.exists(log_file):
-        os.mknod(log_file)
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Project.settings")
+
+    Util().run()
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError:

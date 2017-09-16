@@ -20,6 +20,9 @@ SECRET_KEY = '4_y*@hf!ja2*wonf-66ivh05vo=b(76(^#ktqb_6=qb9x_rjr8'
 
 DEBUG = True
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
 
 RAVEN_CONFIG = {
     'dsn': 'https://0f1ad400c39c44b7bdce0c7ceb25e608:aac13a9ba9a543aeb1a39074f57ce59f@sentry.io/217895',
@@ -145,22 +148,17 @@ USE_TZ = False
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_URL = '/staticfiles/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-# if DEBUG:
-# STATICFILES_DIRS = (
-#     os.path.join(PROJECT_ROOT, 'staticfiles'),
-# )
-# else:
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_ROOT, 'static'),
+]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media'),
-
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-ALLOWED_HOSTS = ['*']
-
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
