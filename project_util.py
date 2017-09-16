@@ -4,7 +4,7 @@ import os
 class Util(object):
 
     def __init__(self):
-        self.dir_list = ["logs", "Project/media", "Project/staticfiles"]
+        self.dir_list = ["logs", "Project/media", "Project/staticfiles", "locale"]
         self.file_list = ["logs/logfile.txt"]
 
     def run(self):
