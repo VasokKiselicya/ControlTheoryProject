@@ -81,12 +81,16 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'davo3thk0t6eg8',
+        'USER': 'zlgpeqpeipmydl',
+        'PASSWORD': 'bc3f5e3a5d20e6ce21218fb60f6bb5bc609bae6df8e85f4d5d78a1494349fbd9',
+        'HOST': 'ec2-46-137-97-169.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
+        "SSL": "OFF"
     }
 }
 
-DEFAULT_INDEX_TABLESPACE = "public"
 
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
