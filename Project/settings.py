@@ -119,44 +119,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
-    'formatters': {
-        'standard': {
-            'format': "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
-            'datefmt': "%d/%b/%Y %H:%M:%S",
-            'fmt': "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s"
-        },
-    },
+    'disable_existing_loggers': False,
     'handlers': {
-        'null': {
-            'level': 'DEBUG',
-            'class': 'django.utils.log.AdminEmailHandler',
-        },
-        'logfile': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': BASE_DIR + "/logs/logfile.txt",
-            'maxBytes': 50000,
-            'backupCount': 2,
-            'formatter': 'standard',
-        },
         'console': {
-            'level': 'INFO',
             'class': 'logging.StreamHandler',
-            'formatter': 'standard'
-        }
+        },
     },
     'loggers': {
         'django': {
             'handlers': ['console'],
-            'propagate': True,
-            'level': 'WARN',
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'ERROR'),
         },
-        'django.db.backends': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': False,
-        }
     },
 }
 
