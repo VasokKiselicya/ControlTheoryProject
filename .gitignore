@@ -105,3 +105,4 @@ logs/*
 # mypy
 .mypy_cache/
 /db.sqlite3
+Project/staticfiles/*
