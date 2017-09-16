@@ -1,1 +1,1 @@
-web: gunicorn Project.wsgi --log-level info --log-file /logs/gunicorn.log
+web: gunicorn Project.wsgi
