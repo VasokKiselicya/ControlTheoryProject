@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
+    'raven.contrib.django.raven_compat',
     "db"
 ]
 
