@@ -9,8 +9,8 @@
   "main": "frontend/app.js",
   "scripts": {
     "dev": "webpack --config ./webpack.config.js --progress",
-    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress --colors --watch",
-    "postinstall": "webpack -p --config ./webpack.config.js --progress  --colors --watch"
+    "heroku-postbuild": "webpack --config ./webpack.config.js --progress --colors --watch",
+    "postinstall": "webpack --config ./webpack.config.js --progress  --colors --watch"
   },
   "repository": {
     "type": "git",
