@@ -3,5 +3,5 @@ from core.landing.views import LandingView
 
 
 urlpatterns = [
-    url(r"^$", LandingView.as_view())
+    url(r"^$", LandingView.as_view(), name="landing")
 ]

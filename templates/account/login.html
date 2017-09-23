@@ -1,0 +1,96 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% load account_tags %}
+{% load staticfiles %}
+
+{% block title %}
+    <title>{% trans "Log in" %}</title>
+{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/account/login.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="container body-green" style="margin-top: 5%;">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h3>{% trans "Log in to an existing account" %}</h3>
+            <p class="text-muted">
+                {% trans "Please fill out the form below to login to your account." %}
+            </p>
+            <div class="form-white">
+                <form
+                        role="form"
+                        method="POST"
+                        action="{% url "core:auth:account_login" %}"
+                        autocapitalize="off"
+                        {% if form.is_multipart %}
+                        enctype="multipart/form-data"
+                        {% endif %}
+                >
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    <div class="form-group">
+                        {{ form.username.errors }}
+                        <label for="id_username">{% trans "Username" %}</label>
+                        <input type="text" name="username" maxlength="30" class="form-control"
+                               required id="id_username" placeholder="{% trans "Username" %}"
+                        >
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.errors }}
+                        <label for="id_password">{% trans "Password" %}</label>
+                        <input type="password" name="password" class="form-control"
+                               required id="id_password" placeholder="{% trans "Password" %}"
+                        >
+                    </div>
+                    {% if redirect_field_value %}
+                        <div class="form-group">
+                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                        </div>
+                    {% endif %}
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="remember" id="id_remember"> {% trans "Remember Me" %}
+                        </label>
+                    </div>
+                    <div class="btn-toolbar" role="toolbar">
+                        <div class="btn-group" role="group">
+                            <button type="submit" class="btn btn-color btn-group-lg">
+                                 <i class="fa fa-sign-in" aria-hidden="true"></i> {% trans "Log in" %}
+                            </button>
+                        </div>
+                        <div class="full_right" role="group">
+                            <button type="button" class="btn btn-blue btn-group-lg"
+                                    style="margin-right: 10px;">
+                                <i class="fa fa-facebook" aria-hidden="true"></i> {% trans "Facebook" %}
+                            </button>
+                            <button type="button" class="btn btn-red btn-group-lg">
+                                <i class="fa fa-google" aria-hidden="true"></i> {% trans "Google" %}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <hr>
+                <p>
+                    <b>
+                        <a href="{% urlnext "core:auth:account_password_reset" %}">
+                        {% trans "Forgot your password?" %}
+                        </a>
+                    </b>
+                    <small>
+                        {% trans "Don't have an account?" %}
+                        <b>
+                            <a href="{% url 'core:auth:account_signup' %}">{% trans "Sign up" %}</a>
+                        </b>
+                    </small>
+                </p>
+                <hr>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_scripts %}
+    <script src="{% static 'js/account/login.js' %}"></script>
+{% endblock %}

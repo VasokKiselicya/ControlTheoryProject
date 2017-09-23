@@ -4,7 +4,7 @@ from core.service import urls as service
 from core.auth import urls as auth
 
 urlpatterns = [
-    url(r'^', include(landing), name="landing"),
-    url(r'^service/', include(service), name="service"),
-    url(r'^auth/', include(auth), name="auth"),
+    url(r'^', include(landing, namespace="landing")),
+    url(r'^service/', include(service, namespace="service")),
+    url(r'^auth/', include(auth)),
 ]

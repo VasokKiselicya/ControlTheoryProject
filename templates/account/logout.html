@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% block title %}
+    <title>{% trans "Log out" %}</title>
+    <style>
+        .container {
+            margin-top: 15%;
+        }
+        #info {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        #cancel {
+            float: left;
+        }
+        #logout {
+            float: right;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="col-sm-6 col-sm-offset-3">
+            <form method="POST" action="{% url "core:auth:account_logout" %}">
+                {% csrf_token %}
+                <h2 id="info">{% trans "Are you sure you want to log out?" %}</h2>
+                <button type="submit"
+                        class="btn btn-warning"
+                        id="logout"
+                >{% trans "Log out" %}</button>
+                <a href="{% url "core:landing:landing" %}"
+                   class="btn btn-info"
+                   id="cancel"
+                >{% trans 'Cancel' %}</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
