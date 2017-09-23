@@ -15,7 +15,7 @@ module.exports = {
         "angular": "angular",
         "jquery": "jQuery",
         "uibootstrap": "'ui.bootstrap'",
-        "moment": "moment"
+        "moment": "moment",
     },
     resolve: {
         alias: {}
@@ -34,14 +34,13 @@ module.exports = {
             }
         ]
     },
-    watch: false,
+    watch: true,
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(true),
 
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: true,
-                drop_console: true,
                 unsafe: true
             },
             output: {
@@ -70,5 +69,5 @@ module.exports = {
             });
         }
     ],
-    devtool: false
+    devtool: "eval"
 };

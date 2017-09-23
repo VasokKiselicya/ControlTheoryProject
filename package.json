@@ -8,7 +8,7 @@
   "description": "Control Theory Project",
   "main": "frontend/app.js",
   "scripts": {
-    "dev": "webpack --config ./webpack.config.js --progress",
+    "dev": "webpack --config ./webpack.config.dev.js --progress --colors",
     "heroku-postbuild": "webpack --config ./webpack.config.js --progress --colors",
     "postinstall": "webpack --config ./webpack.config.js --progress  --colors"
   },
