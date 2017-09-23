@@ -1,1 +1,1 @@
-web: ./manage.py collectstatic --noinput; ./manage.py compilemessages; npm install; npm run heroku-postbuild; gunicorn Project.wsgi  --preload --workers 1
+web: npm install; npm run heroku-postbuild; ./manage.py collectstatic --noinput; ./manage.py compilemessages; gunicorn Project.wsgi  --preload --workers 1
