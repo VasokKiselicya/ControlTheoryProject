@@ -109,7 +109,6 @@ Project/static/js/main*
 .idea/
 Project/media/
 Project/staticfiles/
-locale/
 logs/
 node_modules/
 package-lock.json
