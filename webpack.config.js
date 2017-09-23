@@ -1,7 +1,7 @@
 const fs = require("fs"),
-      NODE_ENV = "prod",
-      path = require("path"),
-      webpack = require("webpack");
+    NODE_ENV = "prod",
+    path = require("path"),
+    webpack = require("webpack");
 
 module.exports = {
     entry: {
@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.resolve("Project/static/js/"),
         publicPath: "/static/js/",
-        filename: NODE_ENV === "prod"? "[name].[hash].js" : "[name].js"
+        filename: "[name].js"
     },
     externals: {
         "angular": "angular",
@@ -63,21 +63,13 @@ module.exports = {
                     fs.writeFileSync(filePath, out);
                 };
 
-                const {hash} = stats;
+                replaceInJsFile(path.resolve("./templates/", "index.html"),
+                    "main.js",
+                    "main.js"
+                );
 
-                if (NODE_ENV === "dev") {
-                    replaceInJsFile(path.resolve("./templates/", "index.html"),
-                      "main.js",
-                      "main.js"
-                    );
-                } else {
-                    replaceInJsFile(path.resolve("./templates/", "index.html"),
-                      "main.js",
-                      "main." + hash + ".js"
-                    );
-                }
             });
         }
     ],
-    devtool: NODE_ENV === "prod"? false : "eval"
+    devtool: NODE_ENV === "prod" ? false : "eval"
 };
