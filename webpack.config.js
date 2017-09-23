@@ -1,5 +1,5 @@
 const fs = require("fs"),
-      NODE_ENV = process.env.NODE_ENV || "dev",
+      NODE_ENV = "prod",
       path = require("path"),
       webpack = require("webpack");
 
