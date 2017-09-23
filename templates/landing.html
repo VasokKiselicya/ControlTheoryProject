@@ -1,11 +1,6 @@
-{% load i18n %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% trans "Tranlste" %}
-</body>
-</html>
+{% extends "index.html" %}
+{% block body %}
+    <div ng-controller="LandingController as landing">
+        <button ng-click="button_click($event)">TEXT</button>
+    </div>
+{% endblock %}

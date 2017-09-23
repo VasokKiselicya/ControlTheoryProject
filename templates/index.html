@@ -1,0 +1,42 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html>
+<html
+        lang="en"
+        ng-app="app"
+>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{% static "images/icon.png" %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% block title %}
+        <title>{% trans 'PageTitle' %}</title>
+    {% endblock %}
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/ui-bootstrap-csp.css' %}">
+    {% endblock %}
+    {% block extra_styles %}
+
+    {% endblock %}
+</head>
+<body>
+<div class="content">
+    {% block body %}
+
+    {% endblock %}
+</div>
+{% block scripts %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/angular.min.js' %}"></script>
+    <script src="{% static 'js/ui-bootstrap.js' %}"></script>
+    <script src="{% static 'js/ui-bootstrap-tpls.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
+{% block extra_scripts %}
+
+{% endblock %}
+</body>
+</html>

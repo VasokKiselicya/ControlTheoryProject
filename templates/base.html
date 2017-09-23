@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title ng-bind="page_title | translate"></title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body class="clearfix">
-<div>
-    MAIN
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-</body>
-</html>
+{% extends "index.html" %}
+{% block body %}
+    <div ng-controller="LandingController as landing">
+        <button ng-click="button_click($event)">TEXT</button>
+    </div>
+{% endblock %}
