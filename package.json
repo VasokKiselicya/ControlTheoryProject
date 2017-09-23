@@ -1,6 +1,10 @@
 {
   "name": "control_project",
   "version": "1.0.0",
+   "engines": {
+    "node": "6.11.3",
+    "npm": "5.4.2"
+  },
   "description": "Control Theory Project",
   "main": "frontend/app.js",
   "scripts": {
