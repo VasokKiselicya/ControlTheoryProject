@@ -1,0 +1,19 @@
+{% load staticfiles %}
+{% load i18n %}
+{% get_current_language as LANG_CODE %}
+{% get_language_info_list for LANGUAGES as langs %}
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<script src="{% static 'js/header.js' %}"></script>
+
+<header>
+    <div class="container clearfix">
+        <h1 id="logo">
+            LOGO
+        </h1>
+        <nav>
+            <a href="">MENU</a>
+            <a href="">ABOUT</a>
+            <a href="">ORDER</a>
+        </nav>
+    </div>
+</header>
