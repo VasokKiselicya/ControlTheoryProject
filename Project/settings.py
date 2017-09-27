@@ -22,7 +22,7 @@ DEBUG = True
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-ALLOWED_HOSTS = ['controltheory.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['controltheory.herokuapp.com', 'vincent-project.herokuapp.com', '127.0.0.1']
 
 RAVEN_CONFIG = {
     'dsn': 'https://0f1ad400c39c44b7bdce0c7ceb25e608:aac13a9ba9a543aeb1a39074f57ce59f@sentry.io/217895',
