@@ -87,6 +87,8 @@ LANGUAGES = (
     ('uk', _('Ukrainian'))
 )
 
+ugettext = lambda x: x
+
 
 WSGI_APPLICATION = 'Project.wsgi.application'
 
@@ -193,5 +195,28 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media'),
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+
+# AUTH SETTINGS
+
+ACCOUNT_LOGIN_URL = 'core:auth:account_login'
+ACCOUNT_EMAIL_CONFIRMATION_URL = 'core:auth:account_confirm_email'
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = ACCOUNT_LOGIN_URL
+ACCOUNT_PASSWORD_RESET_REDIRECT_URL = ACCOUNT_LOGIN_URL
+ACCOUNT_PASSWORD_CHANGE_REDIRECT_URL = "core:auth:account_password"
+ACCOUNT_SETTINGS_REDIRECT_URL = "core:auth:account_settings"
+
+# SOCIAL AUTH SETTINGS
+
+
+# MAIL SETTINGS
+
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_PASSWORD = 'VincentTheory'
+EMAIL_HOST_USER = 'vincent.study.company@gmail.com'
+EMAIL_PORT = 587
+FROM_EMAIL = 'Vincent Company <vincent.study.company@gmail.com>'
+DEFAULT_FROM_EMAIL = FROM_EMAIL
 

@@ -1,0 +1,4 @@
+{% load i18n account_tags %}
+{% trans 'A user on' %} {{ current_site.name }} {% trans 'has created an account using this email address.' %}
+{% trans 'To confirm this email address, go to' %} {{ activate_url }}
+{% trans 'If you did not sign up for this site, you can ignore this message.' %}
