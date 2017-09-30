@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-30 13:41+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2017-09-30 13:55+0000\n"
+"Last-Translator: b'  <v.kiselicya021036@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Translated-Using: django-rosetta 0.7.13\n"
 
 #: .\Project\settings.py:85
 msgid "English"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: .\templates\account\email_confirm.html:15
 msgid "Confirm"
-msgstr ""
+msgstr "Підтвердити"
 
 #: .\templates\account\email_confirmation_sent.html:4
 #: .\templates\account\email_confirmation_sent.html:8
@@ -78,22 +78,22 @@ msgstr ""
 msgid ""
 "We have sent you an email to <b>%(email)s</b> for verification. Follow the "
 "link provided to finalize the signup process. If you do not receive it "
-"within a few minutes, contact us at <a href=\"mailto:%(THEME_CONTACT_EMAIL)s"
-"\">%(THEME_CONTACT_EMAIL)s</a>."
+"within a few minutes, contact us at <a "
+"href=\"mailto:%(THEME_CONTACT_EMAIL)s\">%(THEME_CONTACT_EMAIL)s</a>."
 msgstr ""
 
 #: .\templates\account\email_confirmation_sent.html:11
 msgid "Go back"
-msgstr ""
+msgstr "Повернутись назад"
 
 #: .\templates\account\login.html:7 .\templates\account\login.html:60
 #: .\templates\account\signup.html:98
 msgid "Log in"
-msgstr ""
+msgstr "Ввійти"
 
 #: .\templates\account\login.html:17
 msgid "Log in to an existing account"
-msgstr ""
+msgstr "Ввійти в існуючий акаунт"
 
 #: .\templates\account\login.html:19
 msgid "Please fill out the form below to login to your account."
@@ -102,16 +102,16 @@ msgstr ""
 #: .\templates\account\login.html:35 .\templates\account\login.html:37
 #: .\templates\account\signup.html:40 .\templates\account\signup.html:42
 msgid "Username"
-msgstr ""
+msgstr "Логін"
 
 #: .\templates\account\login.html:42 .\templates\account\login.html:44
 #: .\templates\account\signup.html:56 .\templates\account\signup.html:58
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: .\templates\account\login.html:54
 msgid "Remember Me"
-msgstr ""
+msgstr "Запам'ятати мене"
 
 #: .\templates\account\login.html:66 .\templates\account\signup.html:87
 msgid "Facebook"
@@ -123,7 +123,7 @@ msgstr ""
 
 #: .\templates\account\login.html:78
 msgid "Forgot your password?"
-msgstr ""
+msgstr "Забули пароль?"
 
 #: .\templates\account\login.html:82
 msgid "Don't have an account?"

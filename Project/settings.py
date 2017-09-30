@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     # 'raven.contrib.django.raven_compat',
-    "db",
     "account",
+    'rosetta',
+    "db",
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,7 @@ TEMPLATES = [
     },
 ]
 
+# Locale Settings
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
@@ -86,6 +88,9 @@ LANGUAGES = (
     ('ru', _('Russian')),
     ('uk', _('Ukrainian'))
 )
+
+ROSETTA_MESSAGES_PER_PAGE = 25
+ROSETTA_SHOW_AT_ADMIN_PANEL = True
 
 ugettext = lambda x: x
 
