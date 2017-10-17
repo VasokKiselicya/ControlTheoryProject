@@ -3,6 +3,8 @@ import os
 
 class Util(object):
 
+    FILE_FLAGS = os.O_CREAT | os.O_EXCL | os.O_WRONLY
+
     def __init__(self):
         self.dir_list = ["logs", "Project/media", "Project/staticfiles", "locale"]
         self.file_list = ["logs/logfile.txt"]
@@ -13,4 +15,4 @@ class Util(object):
                 os.makedirs(_dir)
         for file in self.file_list:
             if not os.path.exists(file):
-                os.mknod(file)
+                os.open(file, self.FILE_FLAGS)
