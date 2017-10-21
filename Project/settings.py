@@ -201,9 +201,9 @@ STATICFILES_DIRS = [
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-MEDIA_URL = '/media/'
-
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+# MEDIA_URL = '/media/'
+#
+# MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 # AUTH SETTINGS
 

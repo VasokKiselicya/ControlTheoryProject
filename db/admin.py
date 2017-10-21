@@ -26,13 +26,20 @@ class IngredientsStackedInline(admin.StackedInline):
 @admin.register(models.Category)
 class CategoryAdmin(admin.ModelAdmin):
     icon = '<i class="material-icons">free_breakfast</i>'
-    list_display = ("name", "description", "photo",)
+    list_display = ("name", "description", "small_preview",)
     search_fields = ("name",)
     readonly_fields = ("preview",)
 
+    def small_preview(self, category):
+        if category.photo:
+            return format_html('<div class="col s12 center-align"><img src="/static/{}" width="100" /></div>',
+                               category.photo)
+        return ""
+    small_preview.short_description = _('Small Preview')
+
     def preview(self, category):
         if category.photo:
-            return format_html('<div class="col s12 center-align"><img src="/media/{}" width="100%" /></div>',
+            return format_html('<div class="col s12 center-align"><img src="/static/{}" width="100%" /></div>',
                                category.photo)
         return ""
     preview.short_description = _('Preview')
