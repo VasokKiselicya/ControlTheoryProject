@@ -87,6 +87,7 @@ class ProductIngredients(models.Model):
         db_table = "product_ingredients"
         verbose_name = _('Product Ingredients')
         verbose_name_plural = _('Product Ingredients')
+        unique_together = ("ingredient", "product")
 
     def __repr__(self):
         return '{} {}'.format(str(self.product), str(self.ingredient))

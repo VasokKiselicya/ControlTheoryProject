@@ -23,4 +23,8 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(default=False, on_delete=django.db.models.deletion.PROTECT, to='db.Unit'),
             preserve_default=False,
         ),
+        migrations.AlterUniqueTogether(
+            name='productingredients',
+            unique_together=set([('ingredient', 'product')]),
+        ),
     ]
