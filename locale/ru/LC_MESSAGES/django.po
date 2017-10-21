@@ -185,3 +185,9 @@ msgstr ""
 #: .\templates\index.html:14
 msgid "PageTitle"
 msgstr ""
+
+msgid "Categories"
+msgstr "Категории"
+
+msgid "Db"
+msgstr "Сервис"
