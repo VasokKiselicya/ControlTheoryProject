@@ -1,9 +1,8 @@
 {% load staticfiles %}
 {% load i18n %}
 {% get_current_language as LANG_CODE %}
-{% get_language_info_list for LANGUAGES as langs %}
 <link rel="stylesheet" href="{% static 'css/header.css' %}">
-<script src="{% static 'js/header.js' %}"></script>
+{#<script src="{% static 'js/header.js' %}"></script>#}
 
 <header>
     <div class="container clearfix">
@@ -13,7 +12,44 @@
         <nav>
             <a href="">MENU</a>
             <a href="">ABOUT</a>
-            <a href="">ORDER</a>
+
+            <ul class="nav navbar-nav navbar-right main_language">
+                <li class="dropdown" title="{% trans 'CHANGE LANGUAGE TITLE' %}">
+                    <a
+                            href="#"
+                            class="dropdown-toggle"
+                            data-toggle="dropdown"
+                            role="button"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                    >
+                        <span class="fa fa-globe" style="font-size: 20px"></span>
+                        <span style="position: relative;">{{ LANG_CODE | upper }}</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu language_dropdown">
+                        {% with 'uk ru en' as LANGUAGES %}
+                            {% for lang in LANGUAGES.split %}
+                                {% get_language_info for lang as lang %}
+                                <li>
+                                    <form action="{% url 'set_language' %}" method="post"
+                                          name="trans_{{ lang.code }}"
+                                          id="trans{{ lang.code | capfirst }}Form"
+                                          style="margin: 0;">{% csrf_token %}
+                                        <button
+                                                name="language"
+                                                type="submit"
+                                                value="{{ lang.code }}"
+                                                class="language"
+                                                ng-class="{'active': '{{ LANG_CODE }}' == '{{ lang.code }}'}"
+                                        >{{ lang.code | upper }}</button>
+                                    </form>
+                                </li>
+                            {% endfor %}
+                        {% endwith %}
+                    </ul>
+                </li>
+            </ul>
         </nav>
     </div>
 </header>

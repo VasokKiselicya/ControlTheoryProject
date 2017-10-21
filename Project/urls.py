@@ -1,6 +1,8 @@
 import django
-from django.conf.urls import url, include, i18n
+from django.conf.urls import url, include, i18n, static
+from django.conf import settings
 from django.contrib import admin
+from material.frontend import urls as frontend_urls
 from core import handlers
 
 setattr(django.conf.urls, "handler404", handlers.handle_not_found_404)
@@ -8,5 +10,7 @@ setattr(django.conf.urls, "handler404", handlers.handle_not_found_404)
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^i18n/', include(i18n)),  # Translate Provider
+    url(r'^rosetta/', include('rosetta.urls')),
+    url(r'', include(frontend_urls)),
     url(r"^", include("core.urls", namespace="core"))
-]
+] + static.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

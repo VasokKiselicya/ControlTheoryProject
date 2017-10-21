@@ -47,7 +47,7 @@ coverage.xml
 .hypothesis/
 
 # Translations
-*.mo
+#*.mo
 *.pot
 
 # Django stuff:
@@ -107,7 +107,7 @@ logs/*
 /db.sqlite3
 Project/static/js/main*
 .idea/
-Project/media/
+#Project/media/
 Project/staticfiles/
 logs/
 node_modules/

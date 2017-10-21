@@ -15,10 +15,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 :root {
-  --main-bg-color: #121619;
-  --main-text-color: #a6a7a7;
+    --main-bg-color: #121619;
+    --main-text-color: #a6a7a7;
 }
-
 
 body {
     line-height: 1;
@@ -79,11 +78,6 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     text-decoration: none;
-    color: #3cb5f9;
-}
-
-a:hover {
-    color: #0793e2;
 }
 
 #wrapper {
@@ -194,7 +188,7 @@ header nav {
     float: right;
 }
 
-header nav a {
+header > .container > nav > a {
     line-height: 150px;
     margin-left: 20px;
     color: var(--main-text-color);
@@ -207,24 +201,46 @@ header nav a {
     transition: all 0.3s;
 }
 
+.main_language, .language {
+    border: 1px solid transparent;
+    color: var(--main-text-color) !important;
+    text-align: left;
+    background-color: var(--main-bg-color) !important;;
+}
+
+.main_language a.dropdown-toggle,
+.main_language a.dropdown-toggle:hover {
+    background-color: var(--main-bg-color) !important;
+    color: var(--main-text-color) !important;
+}
+
+.main_language .dropdown a:hover {
+    color: white !important;
+}
+
+.language_dropdown {
+    padding: 0 !important;
+}
+
+.language_dropdown {
+    max-width: 50px;
+    width: 35px !important;
+    min-width: 35px;
+}
+
 header nav a:hover {
     color: white;
 }
 
-header.smaller {
-    height: 75px;
+button[class="language"]:hover {
+    background-color: var(--main-bg-color) !important;
+    color: white !important;
 }
 
-header.smaller h1#logo {
-    width: 150px;
-    height: 75px;
-    line-height: 75px;
-    font-size: 30px;
+button.active {
+    color: white !important;
 }
 
-header.smaller nav a {
-    line-height: 75px;
-}
 
 .clearfix:after {
     visibility: hidden;
@@ -235,44 +251,31 @@ header.smaller nav a {
 }
 
 @media all and (max-width: 660px) {
+    header {
+        height: 75px;
+    }
+
     header h1#logo {
         display: block;
         float: none;
         margin: 0 auto;
-        height: 100px;
-        line-height: 100px;
         text-align: center;
-    }
-
-    header nav {
-        display: block;
-        float: none;
-        height: 50px;
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    header nav a {
-        line-height: 50px;
-        margin: 0 10px;
-    }
-
-    header.smaller {
-        height: 75px;
-    }
-
-    header.smaller h1#logo {
         height: 40px;
         line-height: 40px;
         font-size: 30px;
     }
 
-    header.smaller nav {
+    header nav {
+        display: block;
+        float: none;
+        text-align: center;
+        margin: 0 auto;
         height: 35px;
     }
 
-    header.smaller nav a {
-        line-height: 35px;
+    header nav a, header nav > ul {
+        margin: 0 10px;
+        line-height: 35px !important;
     }
 }
 

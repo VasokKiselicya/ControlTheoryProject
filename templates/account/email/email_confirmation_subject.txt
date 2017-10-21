@@ -1,0 +1,2 @@
+{% load i18n %}
+{% trans 'Confirm email address for' %} {{ current_site.name }}
