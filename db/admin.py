@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django import forms
-from django.utils.html import format_html
 from django.utils.translation import ugettext as _
+from django.template.loader import render_to_string
 
 from db import models
 from material.frontend.models import Module
@@ -32,15 +32,15 @@ class CategoryAdmin(admin.ModelAdmin):
 
     def small_preview(self, category):
         if category.photo:
-            return format_html('<div class="col s12 center-align"><img src="/static/{}" width="100" /></div>',
-                               category.photo)
+            context = {"width": "100px", "source": category.photo, "extra_class": ""}
+            return render_to_string("admin/preview.html", context=context)
         return ""
     small_preview.short_description = _('Small Preview')
 
     def preview(self, category):
         if category.photo:
-            return format_html('<div class="col s12 center-align"><img src="/static/{}" width="100%" /></div>',
-                               category.photo)
+            context = {"width": "100%", "source": category.photo, "extra_class": ""}
+            return render_to_string("admin/preview.html", context=context)
         return ""
     preview.short_description = _('Preview')
 

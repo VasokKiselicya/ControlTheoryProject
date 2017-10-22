@@ -4,7 +4,7 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 
 
-fs = FileSystemStorage(location=settings.STATIC_ROOT)
+fs = FileSystemStorage(location=settings.UPLOAD_PATH)
 
 
 class Category(models.Model):

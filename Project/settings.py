@@ -198,6 +198,8 @@ STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
 
+UPLOAD_PATH = os.path.join(PROJECT_ROOT, 'static') if DEBUG else STATIC_ROOT
+
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
