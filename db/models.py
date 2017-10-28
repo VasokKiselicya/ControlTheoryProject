@@ -69,6 +69,7 @@ class Product(models.Model):
     description = models.TextField(null=True)
     ingredients = models.ManyToManyField(Ingredient, through="ProductIngredients")
     unit = models.ForeignKey(Unit, on_delete=models.PROTECT, null=False)
+    weight = models.DecimalField(null=False, decimal_places=3, max_digits=10, default=0)
 
     class Meta:
         db_table = "product"
@@ -86,7 +87,7 @@ class Product(models.Model):
 class ProductIngredients(models.Model):
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    weight = models.DecimalField(null=False, decimal_places=2, max_digits=10, default=0)
+    weight = models.DecimalField(null=False, decimal_places=3, max_digits=10, default=0)
 
     class Meta:
         db_table = "product_ingredients"
