@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load app_tags %}
+
+{% block title %}
+    <title>{% trans 'Menu Title' %}</title>
+{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/service/menu.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="row justify-content" style="background-color: var(--main-bg-color);">
+        <div class="col-8 offset-2">
+            <div class="text-center">
+                <ul class="nav nav-tabs" role="tablist">
+                    {% for category in categories %}
+                        <li class="nav-item">
+                            <a data-toggle="tab"
+                               href="#{{ category.name | uni_slugify }}"
+                               class="nav-link {% if forloop.first %} active {% endif %}"
+                            >{{ category.name | lower }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="tab-content">
+                {% for category in categories %}
+                    <div class="tab-pane {% if forloop.first %} active {% endif %} menu-page"
+                         id="{{ category.name | uni_slugify }}"
+                         role="tabpanel"
+                    >
+                        {% with category.products|partition:"3" as products %}
+                            {% for row in products %}
+                                <div class="row menu-row">
+                                    {% for product in row %}
+                                        <div class="col-4 menu-item">
+                                            <div class="product-preview">
+                                                <div class="image-container">
+                                                    <img src="{% static product.photo %}" alt="{{ product.name }}">
+                                                </div>
+                                            </div>
+                                            <h3 class="product-title">
+                                                <span class="product-name">{{ product.name }}</span>
+                                                <span class="product-price">{{ product.weight | floatformat }} {{ product.unit_name }}</span>
+                                            </h3>
+                                            <p class="ingredients"><br>{{ product.description }}</p>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        {% endwith %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+{% endblock %}

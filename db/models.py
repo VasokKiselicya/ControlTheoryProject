@@ -28,6 +28,7 @@ class Category(models.Model):
 class Unit(models.Model):
     name = models.CharField(null=False, blank=False, unique=True, max_length=100)
     description = models.CharField(null=True, blank=True, max_length=300)
+    short_name = models.CharField(null=False, blank=False, max_length=10, unique=True)
 
     class Meta:
         db_table = "unit"
@@ -44,7 +45,8 @@ class Unit(models.Model):
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=200)
-    photo = models.ImageField(upload_to='product_photos', null=True, storage=fs)
+    photo = models.ImageField(upload_to='ingredient_photos', null=True, storage=fs,
+                              default='ingredient_photos/not_found_404.png')
     description = models.TextField(null=True)
     unit = models.ForeignKey(Unit, on_delete=models.PROTECT, null=False)
 
@@ -86,7 +88,7 @@ class Product(models.Model):
 
 class ProductIngredients(models.Model):
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_ingredients')
     weight = models.DecimalField(null=False, decimal_places=3, max_digits=10, default=0)
 
     class Meta:

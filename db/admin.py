@@ -63,7 +63,7 @@ class IngredientAdmin(admin.ModelAdmin):
 @admin.register(models.Unit)
 class UnitAdmin(admin.ModelAdmin):
     icon = '<i class="material-icons">cake</i>'
-    list_display = ("name", "description")
+    list_display = ("name", "short_name", "description")
     search_fields = ("name",)
 
 

@@ -9,3 +9,4 @@ raven==6.1.0
 django-user-accounts==2.0.3
 django-rosetta==0.7.13
 django-material==1.0.0
+unidecode==0.4.21
