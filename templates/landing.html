@@ -1,43 +1,91 @@
 {% extends "index.html" %}
 {% block body %}
-    <section>
-        <div class="container">
-            <h1>Header Resize On Scroll with Animations</h1>
-            <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry
-                icing dessert. Cupcake pastry tart sesame snaps lollipop donut pie. Cookie apple pie toffee lemon drops
-                jelly beans cheesecake sweet roll. Jelly-o soufflé donut candy canes wafer dragée sweet cheesecake.
-                Macaroon caramels pie cookie gummi bears. Ice cream jelly-o toffee cookie gingerbread cookie. Soufflé
-                fruitcake jelly-o jelly chupa chups jelly beans. Dragée marzipan pastry macaroon oat cake muffin soufflé
-                topping liquorice. Jelly-o chocolate cake lollipop.</p>
-            <p>Sugar plum muffin cookie pastry oat cake icing candy canes chocolate. Gummi bears chupa chups fruitcake
-                dessert jelly. Muffin cookie ice cream soufflé pastry lollipop gingerbread sweet. Unerdwear.com bonbon
-                candy marzipan bonbon gummies chocolate cake gummi bears powder. Unerdwear.com tart halvah chocolate
-                cake dragée liquorice. Sugar plum chocolate bar pastry liquorice dragée jelly powder. Jelly tootsie roll
-                applicake caramels. Marzipan candy tootsie roll donut. Gummies ice cream macaroon applicake.</p>
-            <p>
-                <a href="https://www.facebook.com/pratik.chauhan.cp">« Connect With Me | Chauhan PRatik</a><br>
-                <a href="http://bootsnipp.com/cppratikcp">« Go back to all tutorials?</a>
-            </p>
-        </div>
-    </section>
-    <section class="color">
-        <div class="container">
-            <h1>Cupcakes for the people!</h1>
-            <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry
-                icing dessert. Cupcake pastry tart sesame snaps lollipop donut pie. Cookie apple pie toffee lemon drops
-                jelly beans cheesecake sweet roll. Jelly-o soufflé donut candy canes wafer dragée sweet cheesecake.
-                Macaroon caramels pie cookie gummi bears. Ice cream jelly-o toffee cookie gingerbread cookie. Soufflé
-                fruitcake jelly-o jelly chupa chups jelly beans. Dragée marzipan pastry macaroon oat cake muffin soufflé
-                topping liquorice. Jelly-o chocolate cake lollipop.</p>
-            <p>Sugar plum muffin cookie pastry oat cake icing candy canes chocolate. Gummi bears chupa chups fruitcake
-                dessert jelly. Muffin cookie ice cream soufflé pastry lollipop gingerbread sweet. Unerdwear.com bonbon
-                candy marzipan bonbon gummies chocolate cake gummi bears powder. Unerdwear.com tart halvah chocolate
-                cake dragée liquorice. Sugar plum chocolate bar pastry liquorice dragée jelly powder. Jelly tootsie roll
-                applicake caramels. Marzipan candy tootsie roll donut. Gummies ice cream macaroon applicake.</p>
-        </div>
-    </section>
+{% load staticfiles %}
+{% load i18n %}
+{% get_current_language as LANG_CODE %}
 
-{#    <div ng-controller="LandingController as landing">#}
-{#        <button ng-click="button_click($event)">TEXT</button>#}
-{#    </div>#}
+<div class="container">
+    <div class="slider col-xs-12 col-sm-12 col-md-12">
+        <p>Cекрет не в тому з чого, а в<br>
+            тому як приготовлена наша<br>
+            їжа: з любов’ю, тому і смачно.<br>
+        </p>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </div>
+
+    <div class="menu_title col-sm-12">
+        <h3>Menю</h3>
+        <div class="col-sm-12 relative">
+            <a href="#" class="col-sm-5 no-padding big">
+                <img src="{% static 'images/pizza.png' %}">
+                <div class="haver" style="height: 100%;"></div>
+
+
+            </a>
+            <div class=" col-sm-7 no-padding">
+                <div class="col-sm-12 no-padding relative">
+                    <a class="col-sm-4 no-padding ">
+                        <img src="{% static 'images/salt.png' %}">
+                        <div class="haver"></div>
+                    </a>
+                    <a class="col-sm-4 no-padding ">
+                        <img src="{% static 'images/salt.png' %}">
+                        <div class="haver"></div>
+
+                    </a>
+                    <a class="col-sm-4 no-padding ">
+                        <img src="{% static 'images/salt.png' %}">
+                        <div class="haver"></div>
+
+                    </a>
+                </div>
+                <div class="col-sm-12 no-padding relative" style="margin-top:-9px;">
+                    <a class="col-sm-4 no-padding "><img src="{% static 'images/salt.png' %}">
+                        <div class="haver"></div>
+                    </a>
+                    <a class="col-sm-4 no-padding "><img src="{% static 'images/salt.png' %}">
+                        <div class="haver"></div>
+                    </a>
+                    <a class="col-sm-4 no-padding "><img src="{% static 'images/salt.png' %}">
+                        <div class="haver"></div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <i class="fa fa-3x fa-angle-down" aria-hidden="true"></i>
+    </div>
+    <div class="est col-sm-12 no-padding">
+        <div class="yellow">
+            <h3>Pесторан
+            </h3>
+            <div class=" col-sm-8 col-sm-offset-2">
+                <div class="col-sm-12">
+                    <div class=" icon col-sm-4"><img src="{% static 'images/fruit.png' %}">тількі свіжі <br>продукти
+
+                    </div>
+                    <a class="order col-sm-4">замовити столику
+                        <div class="black">замовити столику</div>
+                    </a>
+                    <div class="icon col-sm-4"><img src="{% static 'images/menu_icon.png' %}"> власні рецепти</div>
+                </div>
+                <div class="col-sm-12">
+                    <a class="blog col-sm-4">
+                        <div class="white">блог</div>
+                    </a>
+                    <div class="icon col-sm-4"><img src="{% static 'images/car_icon.png' %}"> швидка доставка</div>
+                    <a class="photo col-sm-4">
+                        <div class="white">галарея</div>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
 {% endblock %}

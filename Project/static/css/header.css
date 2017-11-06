@@ -14,11 +14,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     vertical-align: baseline;
 }
 
-:root {
-    --main-bg-color: #121619;
-    --main-text-color: #a6a7a7;
-}
-
 body {
     line-height: 1;
 }
@@ -91,9 +86,8 @@ a {
 }
 
 .container {
-    width: 80%;
+    padding: 0;
     margin: 0 auto;
-    padding: 0 30px;
 }
 
 section {
@@ -116,10 +110,6 @@ section p:last-child {
 section.color {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
-}
-
-#info-bar {
-    background-color: var(--main-bg-color);
 }
 
 #info-bar a {
@@ -151,44 +141,12 @@ section.color {
     text-align: right;
 }
 
-header {
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    background-color: var(--main-bg-color);
-    -webkit-transition: height 0.3s;
-    -moz-transition: height 0.3s;
-    -ms-transition: height 0.3s;
-    -o-transition: height 0.3s;
-    transition: height 0.3s;
-}
-
-header h1#logo {
-    display: inline-block;
-    height: 150px;
-    line-height: 150px;
-    float: left;
-    font-family: "Oswald", sans-serif;
-    font-size: 60px;
-    color: var(--main-text-color);
-    font-weight: 400;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-header nav {
+.header nav {
     display: inline-block;
     float: right;
 }
 
-header > .container > nav > a {
+.header > .container > nav > a {
     line-height: 150px;
     margin-left: 20px;
     color: var(--main-text-color);
@@ -205,13 +163,17 @@ header > .container > nav > a {
     border: 1px solid transparent;
     color: var(--main-text-color) !important;
     text-align: left;
-    background-color: var(--main-bg-color) !important;;
+    background-color: transparent !important;
 }
 
 .main_language a.dropdown-toggle,
 .main_language a.dropdown-toggle:hover {
-    background-color: var(--main-bg-color) !important;
-    color: var(--main-text-color) !important;
+    background-color: transparent !important;
+    color: #68b3eb !important;
+}
+
+a.dropdown-toggle {
+    position: relative;
 }
 
 .main_language .dropdown a:hover {
@@ -228,20 +190,6 @@ header > .container > nav > a {
     min-width: 35px;
 }
 
-header nav a:hover {
-    color: white;
-}
-
-button[class="language"]:hover {
-    background-color: var(--main-bg-color) !important;
-    color: white !important;
-}
-
-button.active {
-    color: white !important;
-}
-
-
 .clearfix:after {
     visibility: hidden;
     display: block;
@@ -249,6 +197,301 @@ button.active {
     clear: both;
     height: 0;
 }
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 666;
+}
+
+.header {
+
+    background: #121619;
+    padding-top: 20px;
+}
+
+.social_network {
+
+    color: white;
+    font-size: 2.4em;
+}
+
+.social_network a {
+    margin: 5px;
+    float: right;
+    color: white;
+}
+
+.mani_inf, .exit {
+    padding-top: 30px;
+    display: flex;
+    align-content: center;
+
+}
+
+.mani_inf span {
+
+    line-height: 1.2;
+    margin: 0 5px;
+
+}
+
+.mani_inf span a {
+    padding-top: 5px;
+    color: white;
+
+}
+
+.mani_inf span p {
+    color: #68b3eb;
+
+}
+
+.mani_inf .fa-mobile {
+    left: 0;
+    color: white;
+    font-size: 3em;
+}
+
+.logo {
+    display: flex;
+    align-content: center
+}
+
+.logo img {
+    margin: 0 auto;
+    width: 150px;
+    height: 105px;
+}
+
+.exit {
+    justify-content: flex-end;
+
+}
+
+.exit a {
+    margin: 0 10px 0 0;
+    color: white;
+    font-size: 1.5em;
+}
+
+.exit .fa-shopping-basket {
+    color: white;
+    font-size: 2em;
+    position: relative;
+
+}
+
+.exit .quantity_of_goods {
+    text-align: center;
+    font-size: 0.5em;
+    color: #121619;
+    top: -10px;
+    right: -7px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #ffff00;
+    border-radius: 50%;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu a {
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.main_language .lang_name::after {
+    margin-left: 10px;
+    content: "";
+    border: solid currentColor;
+    border-width: 0 .2em .2em 0;
+    display: inline-block;
+    padding: .20em;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.language {
+    float: right;
+}
+
+.footer {
+    color: white;
+    background: url("../images/fon_footer.png");
+}
+
+.footer .black {
+    margin: 0;
+    z-index: 9;
+    height: 300px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.newsletters {
+    padding: 30px;
+    text-align: center;
+}
+
+.newsletters .email_newsletters, .newsletters .button_newsletters {
+    margin: 20px 5px;
+    border: 2px solid white;
+    background-color: inherit;
+}
+
+.slider {
+    margin-top: 179px;
+    padding-left: 20px;
+    background: url('../images/fon.png');
+    background-size: cover;
+    height: 400px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.slider i {
+    position: absolute;
+    font-size: 3em;
+    bottom: 20px;
+    left: 50%;
+}
+
+.menu_title {
+    padding: 20px 0;
+    background: #121619;
+    color: white;
+    text-align: center;
+}
+
+.salt {
+    background: url('../images/salt.png');
+}
+
+.big {
+    overflow: hidden;
+    height: 426px;
+}
+
+.menu_title h3 {
+    padding: 20px;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-padding img {
+    width: 100%;
+}
+
+.no-margin {
+    margin: 0;
+}
+.relative > div{
+    position: relative;
+}
+.haver {
+    position: absolute;
+    top:0;
+    z-index: 0;
+    width: 100%;
+    height: 96%;
+    color: black;
+    font-size: 3em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.haver:hover {
+    z-index: 333;
+    background: rgba(243, 202, 109, 0.85);
+}
+
+.haver:hover::before {
+    font-family: FontAwesome;
+    content: "\f055";
+    color: black;
+
+}
+.est {
+    text-align: center;
+    background: url("../images/fon_est.png");
+}
+.est h3 {
+   padding: 20px;
+}
+.est .yellow {
+
+    padding: 20px;
+    margin: 0;
+    z-index: 9;
+    height: 540px;
+    width: 100%;
+    background: rgba(243, 202, 109, 0.85);
+}
+.est .icon img{
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 40%;
+}
+.est a{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 200px;
+
+}
+.est .order{
+
+    background: url("../images/order_fon.png");
+    background-size: cover;
+}
+.est .blog{
+
+    background: url("../images/fon_blog.png");
+    background-size: cover;
+}
+.est .photo{
+
+    background: url("../images/photo_fon.png");
+    background-size: cover;
+}
+.est .black,.est .white {
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 33;
+    width: 100%;
+    height: 100%;
+}
+
+
+.est .black{
+color: white;
+    background: rgba(0, 0, 0, 0.666);
+}
+.est .white {
+color: black;
+    background: rgba(255, 255, 255, 0.666);
+}
+
 
 @media all and (max-width: 660px) {
     header {

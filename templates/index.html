@@ -25,21 +25,20 @@
 </head>
 <body>
 
-<div class="body_content" id="wrapper">
     {% block header %}
         {% include "header.html" %}
     {% endblock %}
-    <div id="main">
-        <div id="content">
-            {% block body %}
 
+
+            {% block body %}
+{% include "landing.html" %}
             {% endblock %}
-        </div>
+
         {% block footer %}
             {% include "footer.html" %}
         {% endblock %}
-    </div>
-</div>
+
+
 {% block scripts %}
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
