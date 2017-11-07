@@ -13,5 +13,6 @@ Control Theory Project
 4) npm i
 5) npm run dev
 6) Відкрити ще одне додаткове вікно в терміналі =)
-7) python manage.py collectstatic --noinput
-8) python manage.py runserver
+7) python -m pip install -r -U requirements.txt
+8) python manage.py collectstatic --noinput
+9) python manage.py runserver
