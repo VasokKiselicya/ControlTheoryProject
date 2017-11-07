@@ -1,73 +1,21 @@
-( function( window ) {
+$(document).ready(function() {
 
-'use strict';
-function classReg( className ) {
-  return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
-}
+  $('.selected').click(function() {
+    $('.custom-sel').addClass('show-sel');
+    $('.custom-sel a').removeClass('hidden');
+  });
 
-var hasClass, addClass, removeClass;
+  $('.custom-sel').focusout(function() {
+    $('.custom-sel').removeClass('show-sel');
+    $('.custom-sel a:not(:first)').addClass('hidden');
+  }).blur(function() {
+    $('.custom-sel').removeClass('show-sel');
+    $('.custom-sel a:not(:first)').addClass('hidden');
+  });
 
-if ( 'classList' in document.documentElement ) {
-  hasClass = function( elem, c ) {
-    return elem.classList.contains( c );
-  };
-  addClass = function( elem, c ) {
-    elem.classList.add( c );
-  };
-  removeClass = function( elem, c ) {
-    elem.classList.remove( c );
-  };
-}
-else {
-  hasClass = function( elem, c ) {
-    return classReg( c ).test( elem.className );
-  };
-  addClass = function( elem, c ) {
-    if ( !hasClass( elem, c ) ) {
-      elem.className = elem.className + ' ' + c;
-    }
-  };
-  removeClass = function( elem, c ) {
-    elem.className = elem.className.replace( classReg( c ), ' ' );
-  };
-}
+});
 
-function toggleClass( elem, c ) {
-  var fn = hasClass( elem, c ) ? removeClass : addClass;
-  fn( elem, c );
-}
-
-var classie = {
-  hasClass: hasClass,
-  addClass: addClass,
-  removeClass: removeClass,
-  toggleClass: toggleClass,
-  has: hasClass,
-  add: addClass,
-  remove: removeClass,
-  toggle: toggleClass
-};
-
-if ( typeof define === 'function' && define.amd ) {
-  define( classie );
-} else {
-  window.classie = classie;
-}
-
-})( window );
-
-function init() {
-    window.addEventListener('scroll', function (e) {
-        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-            shrinkOn = 300,
-            header = document.querySelector("header");
-        if (distanceY > shrinkOn) {
-            classie.add(header, "smaller");
-        } else {
-            if (classie.has(header, "smaller")) {
-                classie.remove(header, "smaller");
-            }
-        }
-    });
-}
-window.onload = init();
+// function changeLang(formId) {
+//   console.log("HERE");
+//     $(`#${formId}`);
+// }
