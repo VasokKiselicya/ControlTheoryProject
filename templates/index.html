@@ -24,21 +24,6 @@
     {% endblock %}
 </head>
 <body>
-
-    {% block header %}
-        {% include "header.html" %}
-    {% endblock %}
-
-
-            {% block body %}
-{% include "landing.html" %}
-            {% endblock %}
-
-        {% block footer %}
-            {% include "footer.html" %}
-        {% endblock %}
-
-
 {% block scripts %}
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -49,6 +34,18 @@
 {% endblock %}
 {% block extra_scripts %}
 
+{% endblock %}
+
+{% block header %}
+    {% include "header.html" %}
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
 {% endblock %}
 </body>
 </html>

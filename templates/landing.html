@@ -6,86 +6,73 @@
 
 <div class="container">
     <div class="slider col-xs-12 col-sm-12 col-md-12">
-        <p>Cекрет не в тому з чого, а в<br>
-            тому як приготовлена наша<br>
-            їжа: з любов’ю, тому і смачно.<br>
-        </p>
+            <p>{% trans 'Cекрет не в тому з чого, а в<br> тому як приготовлена наша<br> їжа: з любов’ю, тому і смачно.<br>' %}</p>
         <i class="fa fa-angle-down" aria-hidden="true"></i>
     </div>
-
     <div class="menu_title col-sm-12">
-        <h3>Menю</h3>
-        <div class="col-sm-12 relative">
+        <h3>{% trans 'Меню' %}</h3>
+        <div class="col-sm-12 relative landing-menu">
             <a href="#" class="col-sm-5 no-padding big">
                 <img src="{% static 'images/pizza.png' %}">
-                <div class="haver" style="height: 100%;"></div>
-
-
+                <div class="hovered" style="height: 100%;"></div>
             </a>
-            <div class=" col-sm-7 no-padding">
+            <div class=" col-sm-7 no-padding landing-menu-row">
                 <div class="col-sm-12 no-padding relative">
                     <a class="col-sm-4 no-padding ">
                         <img src="{% static 'images/salt.png' %}">
-                        <div class="haver"></div>
+                        <div class="hovered"></div>
                     </a>
                     <a class="col-sm-4 no-padding ">
                         <img src="{% static 'images/salt.png' %}">
-                        <div class="haver"></div>
-
+                        <div class="hovered"></div>
                     </a>
                     <a class="col-sm-4 no-padding ">
                         <img src="{% static 'images/salt.png' %}">
-                        <div class="haver"></div>
-
+                        <div class="hovered"></div>
                     </a>
                 </div>
-                <div class="col-sm-12 no-padding relative" style="margin-top:-9px;">
+                <div class="col-sm-12 no-padding relative">
                     <a class="col-sm-4 no-padding "><img src="{% static 'images/salt.png' %}">
-                        <div class="haver"></div>
+                        <div class="hovered"></div>
                     </a>
                     <a class="col-sm-4 no-padding "><img src="{% static 'images/salt.png' %}">
-                        <div class="haver"></div>
+                        <div class="hovered"></div>
                     </a>
                     <a class="col-sm-4 no-padding "><img src="{% static 'images/salt.png' %}">
-                        <div class="haver"></div>
+                        <div class="hovered"></div>
                     </a>
                 </div>
             </div>
-
         </div>
         <i class="fa fa-3x fa-angle-down" aria-hidden="true"></i>
     </div>
     <div class="est col-sm-12 no-padding">
         <div class="yellow">
-            <h3>Pесторан
+            <h3>{% trans 'Pесторан' %}
             </h3>
             <div class=" col-sm-8 col-sm-offset-2">
                 <div class="col-sm-12">
-                    <div class=" icon col-sm-4"><img src="{% static 'images/fruit.png' %}">тількі свіжі <br>продукти
-
+                    <div class=" icon col-sm-4"><img src="{% static 'images/fruit.png' %}">
+                        {% blocktrans %}Тількі свіжі <br>продукти{% endblocktrans %}
                     </div>
-                    <a class="order col-sm-4">замовити столику
-                        <div class="black">замовити столику</div>
+                    {% trans 'Замовити столик' as  order_table%}
+                    <a class="order col-sm-4">{{ order_table }}
+                        <div class="black">{{ order_table }}</div>
                     </a>
-                    <div class="icon col-sm-4"><img src="{% static 'images/menu_icon.png' %}"> власні рецепти</div>
+                    <div class="icon col-sm-4"><img src="{% static 'images/menu_icon.png' %}">{% trans 'Власні рецепти' %}</div>
                 </div>
                 <div class="col-sm-12">
                     <a class="blog col-sm-4">
-                        <div class="white">блог</div>
+                        <div class="white">{% trans 'Блог' %}</div>
                     </a>
-                    <div class="icon col-sm-4"><img src="{% static 'images/car_icon.png' %}"> швидка доставка</div>
+                    <div class="icon col-sm-4"><img src="{% static 'images/car_icon.png' %}">{% trans 'Швидка доставка' %}</div>
                     <a class="photo col-sm-4">
-                        <div class="white">галарея</div>
+                        <div class="white">{% trans 'Галарея' %}</div>
                     </a>
                 </div>
-
-
             </div>
         </div>
     </div>
-
-
 </div>
-
 
 {% endblock %}

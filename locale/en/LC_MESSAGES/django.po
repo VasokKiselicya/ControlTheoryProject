@@ -8,29 +8,61 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-30 13:41+0300\n"
+"POT-Creation-Date: 2017-11-06 20:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
-#: .\Project\settings.py:85
+#: .\Project\settings.py:90
 msgid "English"
 msgstr ""
 
-#: .\Project\settings.py:86
+#: .\Project\settings.py:91
 msgid "Russian"
 msgstr ""
 
-#: .\Project\settings.py:87
+#: .\Project\settings.py:92
 msgid "Ukrainian"
 msgstr ""
 
 #: .\core\landing\views.py:9
 msgid "abc"
+msgstr ""
+
+#: .\db\admin.py:38
+msgid "Small Preview"
+msgstr ""
+
+#: .\db\admin.py:45
+msgid "Preview"
+msgstr ""
+
+#: .\db\apps.py:9
+msgid "App Config"
+msgstr ""
+
+#: .\db\models.py:17 .\db\models.py:18
+msgid "Categories"
+msgstr ""
+
+#: .\db\models.py:34 .\db\models.py:35
+msgid "Units"
+msgstr ""
+
+#: .\db\models.py:53 .\db\models.py:54
+msgid "Ingredients"
+msgstr ""
+
+#: .\db\models.py:76 .\db\models.py:77
+msgid "Products"
+msgstr ""
+
+#: .\db\models.py:94 .\db\models.py:95
+msgid "Product Ingredients"
 msgstr ""
 
 #: .\templates\account\email\email_confirmation_message.txt:2
@@ -179,6 +211,48 @@ msgstr ""
 msgid "Page Not Found"
 msgstr ""
 
+#: .\templates\header.html:34
+msgid "CHANGE LANGUAGE TITLE"
+msgstr ""
+
 #: .\templates\index.html:14
 msgid "PageTitle"
+msgstr ""
+
+#: .\templates\landing.html:9
+msgid ""
+"Cекрет не в тому з чого, а в<br> тому як приготовлена наша<br> їжа: з "
+"любов’ю, тому і смачно.<br>"
+msgstr ""
+
+#: .\templates\landing.html:13
+msgid "Меню"
+msgstr ""
+
+#: .\templates\landing.html:51
+msgid "Pесторан"
+msgstr ""
+
+#: .\templates\landing.html:56
+msgid "Тількі свіжі <br>продукти"
+msgstr ""
+
+#: .\templates\landing.html:58
+msgid "Замовити столик"
+msgstr ""
+
+#: .\templates\landing.html:62
+msgid "Власні рецепти"
+msgstr ""
+
+#: .\templates\landing.html:66
+msgid "Блог"
+msgstr ""
+
+#: .\templates\landing.html:68
+msgid "Швидка доставка"
+msgstr ""
+
+#: .\templates\landing.html:70
+msgid "Галарея"
 msgstr ""
