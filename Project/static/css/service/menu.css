@@ -30,7 +30,7 @@ h3.product-title {
     padding: 0 25px;
     font-size: 23px;
     line-height: 1.1;
-    color: inherit;
+    color: #ffffff;
 }
 
 h3.product-title > .product-name {
@@ -52,10 +52,16 @@ h3.product-title > .product-price {
 p.ingredients {
     text-align: justify !important;
     padding: 0 25px;
+    color: #ffffff;
 }
 
 div.text-center {
     text-align: center;
+}
+
+div.menu-content {
+    margin-top: 175px;
+    background-color: #121619;
 }
 
 div.text-center > ul[role='tablist'] {
@@ -71,7 +77,9 @@ div.text-center .nav-item {
     position: relative;
 }
 
-div.text-center .nav-item a {
+div.text-center .nav-item a,
+div.text-center .nav-item a:hover,
+div.text-center .nav-item a:focus {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
     position: relative;
@@ -80,9 +88,10 @@ div.text-center .nav-item a {
     color: #f7fbfe;
     border: none;
     border-radius: 0;
+    background-color: transparent;
 }
 
-div.text-center .nav-item a.active {
+div.text-center li.active a {
     color: #ffc84b !important;
     background-color: inherit !important;
     border: none !important;
@@ -91,8 +100,12 @@ div.text-center .nav-item a.active {
 div.text-center .nav-item a:hover {
     color: #ffc84b;
     border: none;
+    background-color: transparent !important;
 }
 
+div.tab-content {
+    min-height: 350px;
+}
 
 @media only screen and (max-width: 700px) {
     .menu-page .menu-row {
