@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
     clear: both;
     line-height: 1;
     font-weight: 300;
+
 }
 
 ol, ul {
@@ -37,10 +38,12 @@ a img {
 }
 
 body {
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Poiret One", sans-serif;
     font-weight: 300;
-    font-size: 16px;
+
     line-height: 1.8;
+
+
 }
 
 a {
@@ -100,7 +103,8 @@ a.dropdown-toggle {
 
 .header {
     background: #121619;
-    padding-top: 20px;
+    padding-top: 10px;
+    height: 130px;
 }
 
 .social_network {
@@ -132,6 +136,7 @@ a.dropdown-toggle {
 .mani_inf span a {
     padding-top: 5px;
     color: white;
+    font-size: 11px;
 
 }
 
@@ -152,8 +157,8 @@ a.dropdown-toggle {
 
 .logo img {
     margin: 0 auto;
-    width: 150px;
-    height: 105px;
+    width: 25%;
+    height: 25%;
 }
 
 .exit {
@@ -189,12 +194,15 @@ a.dropdown-toggle {
 
 .menu {
     text-align: center;
+
+
 }
 
 .menu a {
-    padding: 20px;
-    color: white;
+    padding: 0 3%;
+    color: #f7fbfe;
     text-decoration: none;
+    font-size: 30px;
 }
 
 .custom-sel a {
@@ -302,7 +310,7 @@ a.dropdown-toggle {
 }
 
 .slider {
-    margin-top: 175px;
+    margin-top: 130px;
     padding-left: 20px;
     background: url('../images/fon.png');
     background-size: cover;
