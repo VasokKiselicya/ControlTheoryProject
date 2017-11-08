@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "account",
     'rosetta',
     "db",
+    "core"
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,117 @@
+.menu-page .menu-row {
+    /*height: 300px;*/
+    /*min-height: 150px;*/
+    /*max-height: 350px;*/
+}
+
+.menu-page .menu-row div.image-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.menu-item {
+    text-align: center;
+    padding: 45px 0 15px 0;
+}
+
+.menu-item .product-preview {
+    position: relative;
+    display: inline-block;
+    padding: 0 30px;
+    text-align: center;
+}
+
+h3.product-title {
+    font-family: 'Playfair Display', serif;
+    margin-top: 0;
+    padding: 0 25px;
+    font-size: 23px;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+h3.product-title > .product-name {
+    float: left;
+}
+
+h3.product-title > .product-price {
+    float: right;
+}
+
+.menu-item:hover .image-container img {
+/*  -webkit-transform: scale(1.05) rotate(5deg);
+  -moz-transform: scale(1.05) rotate(5deg);
+  -o-transform: scale(1.05) rotate(5deg);
+  -ms-transform: scale(1.05) rotate(5deg);
+  transform: scale(1.05) rotate(5deg);*/
+}
+
+p.ingredients {
+    text-align: justify !important;
+    padding: 0 25px;
+    color: #ffffff;
+}
+
+div.text-center {
+    text-align: center;
+}
+
+div.menu-content {
+    margin-top: 175px;
+    background-color: #121619;
+}
+
+div.text-center > ul[role='tablist'] {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    border-bottom: none;
+}
+
+div.text-center .nav-item {
+    display: inline-block;
+    position: relative;
+}
+
+div.text-center .nav-item a,
+div.text-center .nav-item a:hover,
+div.text-center .nav-item a:focus {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    position: relative;
+    display: inline-block;
+    padding: 11px 15px;
+    color: #f7fbfe;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+div.text-center li.active a {
+    color: #ffc84b !important;
+    background-color: inherit !important;
+    border: none !important;
+}
+
+div.text-center .nav-item a:hover {
+    color: #ffc84b;
+    border: none;
+    background-color: transparent !important;
+}
+
+div.tab-content {
+    min-height: 350px;
+}
+
+@media only screen and (max-width: 700px) {
+    .menu-page .menu-row {
+        height: 150px !important;
+    }
+    p.ingredients {
+        display: none;
+    }
+}
