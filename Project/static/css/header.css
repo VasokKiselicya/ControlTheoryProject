@@ -40,7 +40,6 @@ a img {
 body {
     font-family: "Poiret One", sans-serif;
     font-weight: 300;
-
     line-height: 1.8;
 
 
@@ -104,7 +103,7 @@ a.dropdown-toggle {
 .header {
     background: #121619;
     padding-top: 10px;
-    height: 130px;
+    height: 150px;
 }
 
 .social_network {
@@ -126,28 +125,32 @@ a.dropdown-toggle {
 
 }
 
+.mani_inf{
+    left: 50px;
+}
+
 .mani_inf span {
-
     line-height: 1.2;
-    margin: 0 5px;
-
+    margin: 0 10px 0 0;
 }
 
 .mani_inf span a {
     padding-top: 5px;
     color: white;
-    font-size: 11px;
+    font-size: 15px;
 
 }
 
 .mani_inf span .work-time {
     color: #68b3eb;
+    margin: 0 9px;
+    font-size: 17px;
 }
 
 .mani_inf .fa-mobile {
     left: 0;
-    color: white;
-    font-size: 3em;
+    color: #f7fbfe;
+    font-size: 4em;
 }
 
 .logo {
@@ -157,12 +160,13 @@ a.dropdown-toggle {
 
 .logo img {
     margin: 0 auto;
-    width: 25%;
-    height: 25%;
+    width: 22%;
+    height: 22%;
 }
 
 .exit {
     justify-content: flex-end;
+    right: 60px;
 
 }
 
@@ -181,12 +185,12 @@ a.dropdown-toggle {
 
 .exit .quantity_of_goods {
     text-align: center;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     color: #121619;
-    top: -10px;
+    top: -11px;
     right: -7px;
-    width: 20px;
-    height: 20px;
+    width: 19px;
+    height: 19px;
     position: absolute;
     background-color: #ffff00;
     border-radius: 50%;
@@ -194,15 +198,17 @@ a.dropdown-toggle {
 
 .menu {
     text-align: center;
+    padding: 0.3%;
+
 
 
 }
 
 .menu a {
-    padding: 0 3%;
+    padding: 0 2%;
     color: #f7fbfe;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 22px;
 }
 
 .custom-sel a {
@@ -212,7 +218,7 @@ a.dropdown-toggle {
     margin: 0;
     text-align: left;
     color: #68b3eb;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     line-height: 24px;
     display: block;
@@ -244,7 +250,8 @@ a.dropdown-toggle {
     display: inline-block;
     float: right;
     position: relative;
-    right: 0;
+    right: 45px;
+    bottom: 10px;
     width: 60px;
     height: 40px;
 }
@@ -310,11 +317,11 @@ a.dropdown-toggle {
 }
 
 .slider {
-    margin-top: 130px;
+    margin-top: 150px;
     padding-left: 20px;
-    background: url('../images/fon.png');
+    background: url('../images/fon1.jpg') 100% 100% no-repeat;
     background-size: cover;
-    height: 400px;
+    height: 44em;
     color: white;
     display: flex;
     align-items: center;
@@ -325,6 +332,13 @@ a.dropdown-toggle {
     font-size: 3em;
     bottom: 20px;
     left: 50%;
+}
+
+.slider p{
+    line-height: 1.2;
+    font-size: 34px;
+    text-align: center;
+    margin-left: 2%;
 }
 
 .menu_title {
