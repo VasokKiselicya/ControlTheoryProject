@@ -13,6 +13,10 @@ function HeaderController($scope, $timeout) {
         $timeout(() =>  $(document.forms.langForm).submit());
     };
 
+    vm.logout = () => {
+        $(document.forms.logoutForm).submit();
+    };
+
     vm.showChoose = () => {
         vm.hide_choose = !vm.hide_choose;
     };
