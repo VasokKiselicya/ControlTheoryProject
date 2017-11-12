@@ -2,13 +2,13 @@
 {% load i18n %}
 {% get_current_language as LANG_CODE %}
 <link rel="stylesheet" href="{% static 'css/header.css' %}">
-<div class="fixed">
+<div class="fixed" ng-controller="HeaderController as header">
     <div class="container header">
         <div class="mani_inf col-xs-3 col-sm-3 col-md-3">
             <span><i class="fa fa-mobile" aria-hidden="true"></i> </span>
             <span>
                 <a href="tel:+ 380959999999">+ 38 (095) 999-99-99</a>
-               <br><span class="work-time">9:00 - 23:00</span>
+                <span class="work-time">9:00 - 23:00</span>
             </span>
         </div>
         <div class="logo col-xs-3 col-sm-6 col-md-6">
@@ -24,23 +24,30 @@
             <a href="#">{% trans 'головна' %}</a>
             <a href="#">{% trans 'доставка' %}</a>
             <a href="#">{% trans 'ресторан' %}</a>
-            <a href="#">{% trans 'контакти' %}</a>
-            <div class="custom-sel">
-                <form id="change_lang_form" action="{% url 'set_language' %}" method="post" style="display: none;">
+            <a href="#{{ request.path }}">{% trans 'контакти' %}</a>
+            <div class="custom-sel" ng-class="{'show-sel': !header.hide_choose}">
+                <form id="change_lang_form"
+                      action="{% url 'set_language' %}"
+                      method="post"
+                      ng-show="false"
+                      name="langForm"
+                >
                     {% csrf_token %}
-                    <input type="hidden" name="language"/>
+                    <label><input type="text" name="language" ng-model="header.language"/></label>
+                    <input name="next" type="hidden" value="{{ request.path }}" />
                 </form>
-                <a class="selected" href="#">{{ LANG_CODE | upper }}
+                <div class="selected" ng-click="header.showChoose()">
+                    {{ LANG_CODE | upper }}
                     <i class="fa fa-caret-down lightblue" aria-hidden="true"></i>
-                </a>
+                </div>
                 {% with 'uk ru en' as LANGUAGES %}
-                    {% for lang in LANGUAGES.split %}
-                        {% get_language_info for lang as lang %}
+                    {% for language in LANGUAGES.split %}
+                        {% get_language_info for language as lang %}
                         {% ifnotequal LANG_CODE lang.code %}
-                            <a class="hidden language_change"
-                               onclick="console.log(document.getElementById('change_lang_form'));"
-                               href="#"
-                            >{{ lang.code | upper }}</a>
+                            <div class="language_change"
+                                 ng-class="{'hidden': header.hide_choose}"
+                               ng-click="header.changeLang('{{ lang.code }}')"
+                            ><span>{{ lang.code | upper }}</span></div>
                         {% endifnotequal %}
                     {% endfor %}
                 {% endwith %}
@@ -48,4 +55,3 @@
         </div>
     </div>
 </div>
-<script src="{% static 'js/header.js' %}"></script>

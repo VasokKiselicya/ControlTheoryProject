@@ -7,6 +7,6 @@ const name = "app.landing";
 angular
     .module(name, [])
 
-    .controller("LandingController", LandingController)
+    .controller("LandingController", LandingController);
 
 export default name;
