@@ -189,7 +189,7 @@ a.dropdown-toggle {
     width: 19px;
     height: 19px;
     position: absolute;
-    background-color: #ffff00;
+    background-color: #ffc84b;
     border-radius: 50%;
 }
 
@@ -337,10 +337,13 @@ a.dropdown-toggle {
 
 .menu_title {
     padding: 20px 0;
-    background: #121619;
+    background: #1a1b1f;
     color: white;
     text-align: center;
+
 }
+
+
 
 .salt {
     background: url('../images/salt.png');
@@ -392,7 +395,7 @@ a.dropdown-toggle {
 
 .hovered:hover {
     z-index: 333;
-    background: rgba(243, 202, 109, 0.85);
+    background: rgba(255, 200, 75, 0.87);
 }
 
 .hovered:hover::before {
@@ -418,6 +421,7 @@ a.dropdown-toggle {
     height: 540px;
     width: 100%;
     background: rgba(243, 202, 109, 0.85);
+
 }
 
 .est .icon img {

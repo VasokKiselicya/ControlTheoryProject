@@ -30,10 +30,10 @@
         {% endif %}
         </div>
         <div class="menu col-xs-12 col-sm-12 col-md-12">
-            <a href="#">{% trans 'головна' %}</a>
-            <a href="#">{% trans 'доставка' %}</a>
-            <a href="#">{% trans 'ресторан' %}</a>
-            <a href="#{{ request.path }}">{% trans 'контакти' %}</a>
+            <a href="#">{% trans 'головна'|lower %}</a>
+            <a href="#">{% trans 'доставка'|lower %}</a>
+            <a href="#">{% trans 'ресторан'|lower %}</a>
+            <a href="#{{ request.path }}">{% trans 'контакти'|lower %}</a>
             <div class="custom-sel" ng-class="{'show-sel': !header.hide_choose}">
                 <form id="change_lang_form"
                       action="{% url 'set_language' %}"
