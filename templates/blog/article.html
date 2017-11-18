@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load app_tags %}
+
+{% block title %}
+    <title> {{  article.title  }} </title>
+{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/service/menu.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12 menu-content">
+            <div class="col-xs-8 col-xs-offset-2">
+                {% if error %}
+                 <h1>{% trans error %}</h1>
+                {% else %}
+                <h1>{{ article.title }}</h1>
+                {% endif %}
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

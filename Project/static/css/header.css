@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
     clear: both;
     line-height: 1;
     font-weight: 300;
+
 }
 
 ol, ul {
@@ -37,9 +38,8 @@ a img {
 }
 
 body {
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Poiret One", sans-serif;
     font-weight: 300;
-    font-size: 16px;
     line-height: 1.8;
 }
 
@@ -100,11 +100,12 @@ a.dropdown-toggle {
 
 .header {
     background: #121619;
-    padding-top: 20px;
+    padding-top: 10px;
+    height: 150px;
 }
 
 .social_network {
-
+    margin-top: 10px;
     color: white;
     font-size: 2.4em;
 }
@@ -119,30 +120,34 @@ a.dropdown-toggle {
     padding-top: 30px;
     display: flex;
     align-content: center;
+}
 
+.mani_inf {
+    left: 50px;
 }
 
 .mani_inf span {
-
     line-height: 1.2;
-    margin: 0 5px;
-
+    margin: 0 10px 0 0;
 }
 
 .mani_inf span a {
-    padding-top: 5px;
     color: white;
-
+    font-size: 15px;
+    display: block;
+    margin-top: 10px;
 }
 
 .mani_inf span .work-time {
     color: #68b3eb;
+    margin: 0 9px;
+    font-size: 17px;
 }
 
 .mani_inf .fa-mobile {
     left: 0;
-    color: white;
-    font-size: 3em;
+    color: #f7fbfe;
+    font-size: 4em;
 }
 
 .logo {
@@ -152,17 +157,18 @@ a.dropdown-toggle {
 
 .logo img {
     margin: 0 auto;
-    width: 150px;
-    height: 105px;
+    width: 22%;
+    height: 22%;
 }
 
 .exit {
     justify-content: flex-end;
+    right: 60px;
 
 }
 
 .exit a {
-    margin: 0 10px 0 0;
+    margin: 10px 10px 0 0;
     color: white;
     font-size: 1.5em;
 }
@@ -171,17 +177,17 @@ a.dropdown-toggle {
     color: white;
     font-size: 2em;
     position: relative;
-
+    margin-top: 10px;
 }
 
 .exit .quantity_of_goods {
     text-align: center;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     color: #121619;
-    top: -10px;
+    top: -11px;
     right: -7px;
-    width: 20px;
-    height: 20px;
+    width: 19px;
+    height: 19px;
     position: absolute;
     background-color: #ffff00;
     border-radius: 50%;
@@ -189,22 +195,24 @@ a.dropdown-toggle {
 
 .menu {
     text-align: center;
+    padding: 0.3%;
 }
 
 .menu a {
-    padding: 20px;
-    color: white;
+    padding: 0 2%;
+    color: #f7fbfe;
     text-decoration: none;
+    font-size: 22px;
 }
 
-.custom-sel a {
+.custom-sel div {
     text-decoration: none;
     text-transform: uppercase;
     padding: 10px;
     margin: 0;
     text-align: left;
     color: #68b3eb;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     line-height: 24px;
     display: block;
@@ -213,22 +221,22 @@ a.dropdown-toggle {
     background-color: #121619;
 }
 
-.custom-sel a.selected {
-  background-color: transparent;
+.custom-sel div.selected {
+    background-color: transparent;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 .lightblue {
-  color: #68b3eb;
-  margin-left: -4px;
+    color: #68b3eb;
+    margin-left: -4px;
 }
 
 .show-sel {
-  background-color: #ffffff;
-  box-shadow: -5px 0 65px 0 rgba(0, 0, 0, 0.18);
+    background-color: #ffffff;
+    box-shadow: -5px 0 65px 0 rgba(0, 0, 0, 0.18);
 }
 
 .custom-sel {
@@ -236,12 +244,13 @@ a.dropdown-toggle {
     display: inline-block;
     float: right;
     position: relative;
-    right: 0;
+    right: 45px;
+    bottom: 10px;
     width: 60px;
     height: 40px;
 }
 
-.custom-sel a:hover, .custom-sel a:hover i {
+.custom-sel div:hover, .custom-sel div:hover i {
     cursor: pointer;
 }
 
@@ -257,12 +266,12 @@ a.dropdown-toggle {
 }
 
 .landing-menu {
-    padding: 0;
-    height: 450px;
+    padding: 0 0 20px;
+    height: 35em;
 }
 
 .landing-menu-row {
-    height: 450px;
+    height: 100%;
 }
 
 .landing-menu-row * {
@@ -302,11 +311,11 @@ a.dropdown-toggle {
 }
 
 .slider {
-    margin-top: 175px;
+    margin-top: 150px;
     padding-left: 20px;
-    background: url('../images/fon.png');
+    background: url('../images/fon1.jpg') 100% 100% no-repeat;
     background-size: cover;
-    height: 400px;
+    height: 44em;
     color: white;
     display: flex;
     align-items: center;
@@ -317,6 +326,13 @@ a.dropdown-toggle {
     font-size: 3em;
     bottom: 20px;
     left: 50%;
+}
+
+.slider p {
+    line-height: 1.2;
+    font-size: 34px;
+    text-align: center;
+    margin-left: 2%;
 }
 
 .menu_title {
@@ -336,11 +352,11 @@ a.dropdown-toggle {
 }
 
 .big img {
-    width: max-content !important;
+    height: max-content !important;
 }
 
 .menu_title h3 {
-    padding: 20px;
+    padding: 20px 0 40px;
 }
 
 .no-padding {

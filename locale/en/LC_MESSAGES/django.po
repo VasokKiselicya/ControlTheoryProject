@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-06 20:43+0200\n"
+"POT-Creation-Date: 2017-11-18 16:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
 
-#: .\Project\settings.py:90
+#: .\Project\settings.py:91
 msgid "English"
 msgstr ""
 
-#: .\Project\settings.py:91
+#: .\Project\settings.py:92
 msgid "Russian"
 msgstr ""
 
-#: .\Project\settings.py:92
+#: .\Project\settings.py:93
 msgid "Ukrainian"
 msgstr ""
 
@@ -45,24 +45,116 @@ msgstr ""
 msgid "App Config"
 msgstr ""
 
-#: .\db\models.py:17 .\db\models.py:18
+#: .\db\models.py:12
+msgid "Category Name"
+msgstr ""
+
+#: .\db\models.py:13 .\db\models.py:31 .\db\models.py:51 .\db\models.py:73
+msgid "Description"
+msgstr ""
+
+#: .\db\models.py:14 .\db\models.py:50 .\db\models.py:71
+msgid "Image"
+msgstr ""
+
+#: .\db\models.py:18 .\db\models.py:70
+msgid "Category"
+msgstr ""
+
+#: .\db\models.py:19
 msgid "Categories"
 msgstr ""
 
-#: .\db\models.py:34 .\db\models.py:35
+#: .\db\models.py:30
+msgid "Unit Name"
+msgstr ""
+
+#: .\db\models.py:32
+msgid "Short Value"
+msgstr ""
+
+#: .\db\models.py:36 .\db\models.py:52 .\db\models.py:75
+msgid "Unit"
+msgstr ""
+
+#: .\db\models.py:37
 msgid "Units"
 msgstr ""
 
-#: .\db\models.py:53 .\db\models.py:54
+#: .\db\models.py:48
+msgid "Ingredient Name"
+msgstr ""
+
+#: .\db\models.py:56 .\db\models.py:92
+msgid "Ingredient"
+msgstr ""
+
+#: .\db\models.py:57 .\db\models.py:74
 msgid "Ingredients"
 msgstr ""
 
-#: .\db\models.py:76 .\db\models.py:77
+#: .\db\models.py:68
+msgid "Product Name"
+msgstr ""
+
+#: .\db\models.py:72 .\db\models.py:134
+msgid "Price"
+msgstr ""
+
+#: .\db\models.py:76 .\db\models.py:95
+msgid "Weight"
+msgstr ""
+
+#: .\db\models.py:80 .\db\models.py:94 .\db\models.py:133
+msgid "Product"
+msgstr ""
+
+#: .\db\models.py:81
 msgid "Products"
 msgstr ""
 
-#: .\db\models.py:94 .\db\models.py:95
+#: .\db\models.py:99 .\db\models.py:100
 msgid "Product Ingredients"
+msgstr ""
+
+#: .\db\models.py:111
+msgid "User"
+msgstr ""
+
+#: .\db\models.py:112
+msgid "Address"
+msgstr ""
+
+#: .\db\models.py:113
+msgid "Created"
+msgstr ""
+
+#: .\db\models.py:114
+msgid "Updated"
+msgstr ""
+
+#: .\db\models.py:115
+msgid "Paid"
+msgstr ""
+
+#: .\db\models.py:119 .\db\models.py:123
+msgid "Order"
+msgstr ""
+
+#: .\db\models.py:120
+msgid "Orders"
+msgstr ""
+
+#: .\db\models.py:135
+msgid "quantity"
+msgstr ""
+
+#: .\db\models.py:148
+msgid "OrderItem"
+msgstr ""
+
+#: .\db\models.py:149
+msgid "OrderItems"
 msgstr ""
 
 #: .\templates\account\email\email_confirmation_message.txt:2
@@ -117,7 +209,7 @@ msgid "Go back"
 msgstr ""
 
 #: .\templates\account\login.html:7 .\templates\account\login.html:60
-#: .\templates\account\signup.html:98
+#: .\templates\account\signup.html:98 .\templates\header.html:29
 msgid "Log in"
 msgstr ""
 
@@ -139,7 +231,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: .\templates\account\login.html:54
+#: .\templates\account\login.html:55
 msgid "Remember Me"
 msgstr ""
 
@@ -164,6 +256,7 @@ msgid "Sign up"
 msgstr ""
 
 #: .\templates\account\logout.html:4 .\templates\account\logout.html:31
+#: .\templates\header.html:24
 msgid "Log out"
 msgstr ""
 
@@ -211,11 +304,23 @@ msgstr ""
 msgid "Page Not Found"
 msgstr ""
 
-#: .\templates\header.html:34
-msgid "CHANGE LANGUAGE TITLE"
+#: .\templates\header.html:33
+msgid "головна"
 msgstr ""
 
-#: .\templates\index.html:14
+#: .\templates\header.html:34
+msgid "доставка"
+msgstr ""
+
+#: .\templates\header.html:35
+msgid "ресторан"
+msgstr ""
+
+#: .\templates\header.html:36
+msgid "контакти"
+msgstr ""
+
+#: .\templates\index.html:15
 msgid "PageTitle"
 msgstr ""
 
@@ -255,4 +360,8 @@ msgstr ""
 
 #: .\templates\landing.html:70
 msgid "Галарея"
+msgstr ""
+
+#: .\templates\service\menu.html:7
+msgid "Menu Title"
 msgstr ""

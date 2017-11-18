@@ -8,17 +8,17 @@
 {% endblock %}
 
 {% block extra_styles %}
-    <link rel="stylesheet" href="{% static 'css/account/login.css' %}">
+        <link rel="stylesheet" href="{% static 'css/account/login.css' %}">
 {% endblock %}
 
 {% block body %}
-    <div class="container body-green" style="margin-top: 5%;">
-        <div class="col-sm-6 col-sm-offset-3">
+    <div class="container auth-container">
+        <div class="col-xs-6 col-xs-offset-3 login-form">
             <h3>{% trans "Log in to an existing account" %}</h3>
             <p class="text-muted">
                 {% trans "Please fill out the form below to login to your account." %}
             </p>
-            <div class="form-white">
+            <div>
                 <form
                         role="form"
                         method="POST"
@@ -49,15 +49,15 @@
                             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
                         </div>
                     {% endif %}
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="remember" id="id_remember"> {% trans "Remember Me" %}
-                        </label>
+                    <div class="form-group material-switch pull-left" style="width: 100%;">
+                        <input id="id_remember" name="remember" type="checkbox"/>
+                        <label for="id_remember" class="label-default"></label>
+                        <span class="remember-me">{% trans "Remember Me" %}</span>
                     </div>
                     <div class="btn-toolbar" role="toolbar">
                         <div class="btn-group" role="group">
                             <button type="submit" class="btn btn-color btn-group-lg">
-                                 <i class="fa fa-sign-in" aria-hidden="true"></i> {% trans "Log in" %}
+                                <i class="fa fa-sign-in" aria-hidden="true"></i> {% trans "Log in" %}
                             </button>
                         </div>
                         <div class="full_right" role="group">
@@ -75,7 +75,7 @@
                 <p>
                     <b>
                         <a href="{% urlnext "core:auth:account_password_reset" %}">
-                        {% trans "Forgot your password?" %}
+                            {% trans "Forgot your password?" %}
                         </a>
                     </b>
                     <small>

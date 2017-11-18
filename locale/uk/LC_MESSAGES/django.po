@@ -8,27 +8,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-06 20:43+0200\n"
-"PO-Revision-Date: 2017-09-30 13:55+0000\n"
+"POT-Creation-Date: 2017-11-18 16:03+0200\n"
+"PO-Revision-Date: 2017-11-18 16:13+0000\n"
 "Last-Translator: b'  <v.kiselicya021036@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: .\Project\settings.py:90
+#: .\Project\settings.py:91
 msgid "English"
 msgstr ""
 
-#: .\Project\settings.py:91
+#: .\Project\settings.py:92
 msgid "Russian"
 msgstr ""
 
-#: .\Project\settings.py:92
+#: .\Project\settings.py:93
 msgid "Ukrainian"
 msgstr ""
 
@@ -38,35 +37,129 @@ msgstr ""
 
 #: .\db\admin.py:38
 msgid "Small Preview"
-msgstr ""
+msgstr "Зображення"
 
 #: .\db\admin.py:45
 msgid "Preview"
-msgstr ""
+msgstr "Попередній перегляд"
 
 #: .\db\apps.py:9
 msgid "App Config"
-msgstr ""
+msgstr "Налаштування сервісу"
 
-#: .\db\models.py:17 .\db\models.py:18
+#: .\db\models.py:12
+msgid "Category Name"
+msgstr "Найменування категорії"
+
+#: .\db\models.py:13 .\db\models.py:31 .\db\models.py:51 .\db\models.py:73
+msgid "Description"
+msgstr "Опис"
+
+#: .\db\models.py:14 .\db\models.py:50 .\db\models.py:71
+msgid "Image"
+msgstr "Зображення"
+
+#: .\db\models.py:18 .\db\models.py:70
+msgid "Category"
+msgstr "Категорія"
+
+#: .\db\models.py:19
 msgid "Categories"
-msgstr ""
+msgstr "Категорії"
 
-#: .\db\models.py:34 .\db\models.py:35
+#: .\db\models.py:30
+msgid "Unit Name"
+msgstr "Найменування"
+
+#: .\db\models.py:32
+msgid "Short Value"
+msgstr "Скорочення"
+
+#: .\db\models.py:36 .\db\models.py:52 .\db\models.py:75
+msgid "Unit"
+msgstr "Одиниця виміру"
+
+#: .\db\models.py:37
 msgid "Units"
-msgstr ""
+msgstr "Одиниці виміру"
 
-#: .\db\models.py:53 .\db\models.py:54
+#: .\db\models.py:48
+msgid "Ingredient Name"
+msgstr "Найменування інгредієнта"
+
+#: .\db\models.py:56 .\db\models.py:92
+msgid "Ingredient"
+msgstr "Інгредієнт"
+
+#: .\db\models.py:57 .\db\models.py:74
 msgid "Ingredients"
-msgstr ""
+msgstr "Інгредієнти"
 
-#: .\db\models.py:76 .\db\models.py:77
+#: .\db\models.py:68
+msgid "Product Name"
+msgstr "Найменування товару"
+
+#: .\db\models.py:72 .\db\models.py:134
+msgid "Price"
+msgstr "Ціна"
+
+#: .\db\models.py:76 .\db\models.py:95
+msgid "Weight"
+msgstr "Маса"
+
+#: .\db\models.py:80 .\db\models.py:94 .\db\models.py:133
+msgid "Product"
+msgstr "Товар"
+
+#: .\db\models.py:81
 msgid "Products"
-msgstr ""
+msgstr "Товари"
 
-#: .\db\models.py:94 .\db\models.py:95
+#: .\db\models.py:99 .\db\models.py:100
 msgid "Product Ingredients"
-msgstr ""
+msgstr "Інгредієнти товару"
+
+#: .\db\models.py:111
+#, fuzzy
+#| msgid "Username"
+msgid "User"
+msgstr "Логін"
+
+#: .\db\models.py:112
+msgid "Address"
+msgstr "Адреса"
+
+#: .\db\models.py:113
+msgid "Created"
+msgstr "Дата створення"
+
+#: .\db\models.py:114
+msgid "Updated"
+msgstr "Дата останньої зміни"
+
+#: .\db\models.py:115
+msgid "Paid"
+msgstr "Статус оплати"
+
+#: .\db\models.py:119 .\db\models.py:123
+msgid "Order"
+msgstr "Замовлення"
+
+#: .\db\models.py:120
+msgid "Orders"
+msgstr "Замовлення"
+
+#: .\db\models.py:135
+msgid "quantity"
+msgstr "Кількість"
+
+#: .\db\models.py:148
+msgid "OrderItem"
+msgstr "Предмет замовлення"
+
+#: .\db\models.py:149
+msgid "OrderItems"
+msgstr "Предмети замовлення"
 
 #: .\templates\account\email\email_confirmation_message.txt:2
 msgid "A user on"
@@ -111,8 +204,8 @@ msgstr ""
 msgid ""
 "We have sent you an email to <b>%(email)s</b> for verification. Follow the "
 "link provided to finalize the signup process. If you do not receive it "
-"within a few minutes, contact us at <a href=\"mailto:%(THEME_CONTACT_EMAIL)s"
-"\">%(THEME_CONTACT_EMAIL)s</a>."
+"within a few minutes, contact us at <a "
+"href=\"mailto:%(THEME_CONTACT_EMAIL)s\">%(THEME_CONTACT_EMAIL)s</a>."
 msgstr ""
 
 #: .\templates\account\email_confirmation_sent.html:11
@@ -120,7 +213,7 @@ msgid "Go back"
 msgstr "Повернутись назад"
 
 #: .\templates\account\login.html:7 .\templates\account\login.html:60
-#: .\templates\account\signup.html:98
+#: .\templates\account\signup.html:98 .\templates\header.html:29
 msgid "Log in"
 msgstr "Ввійти"
 
@@ -130,7 +223,7 @@ msgstr "Ввійти в існуючий акаунт"
 
 #: .\templates\account\login.html:19
 msgid "Please fill out the form below to login to your account."
-msgstr ""
+msgstr "Будь ласка заповніть всі поля для входу у Ваш аккаунт."
 
 #: .\templates\account\login.html:35 .\templates\account\login.html:37
 #: .\templates\account\signup.html:40 .\templates\account\signup.html:42
@@ -142,7 +235,7 @@ msgstr "Логін"
 msgid "Password"
 msgstr "Пароль"
 
-#: .\templates\account\login.html:54
+#: .\templates\account\login.html:55
 msgid "Remember Me"
 msgstr "Запам'ятати мене"
 
@@ -167,6 +260,7 @@ msgid "Sign up"
 msgstr ""
 
 #: .\templates\account\logout.html:4 .\templates\account\logout.html:31
+#: .\templates\header.html:24
 msgid "Log out"
 msgstr ""
 
@@ -212,50 +306,68 @@ msgstr ""
 
 #: .\templates\errors\404_not_found.html:7
 msgid "Page Not Found"
-msgstr ""
+msgstr "Сторінку не знайдено"
+
+#: .\templates\header.html:33
+msgid "головна"
+msgstr "Головна"
 
 #: .\templates\header.html:34
-msgid "CHANGE LANGUAGE TITLE"
-msgstr ""
+msgid "доставка"
+msgstr "Доставка"
 
-#: .\templates\index.html:14
+#: .\templates\header.html:35
+msgid "ресторан"
+msgstr "Ресторан"
+
+#: .\templates\header.html:36
+msgid "контакти"
+msgstr "Контакти"
+
+#: .\templates\index.html:15
 msgid "PageTitle"
-msgstr ""
+msgstr "Vincent"
 
 #: .\templates\landing.html:9
 msgid ""
 "Cекрет не в тому з чого, а в<br> тому як приготовлена наша<br> їжа: з "
 "любов’ю, тому і смачно.<br>"
 msgstr ""
+"Cекрет не в тому з чого, а в<br> тому як приготовлена наша<br> їжа: з "
+"любов’ю, тому і смачно.<br>"
 
 #: .\templates\landing.html:13
 msgid "Меню"
-msgstr ""
+msgstr "Меню"
 
 #: .\templates\landing.html:51
 msgid "Pесторан"
-msgstr ""
+msgstr "Pесторан"
 
 #: .\templates\landing.html:56
 msgid "Тількі свіжі <br>продукти"
-msgstr ""
+msgstr "Тількі свіжі <br>продукти"
 
 #: .\templates\landing.html:58
 msgid "Замовити столик"
-msgstr ""
+msgstr "Замовити столик"
 
 #: .\templates\landing.html:62
 msgid "Власні рецепти"
-msgstr ""
+msgstr "Власні рецепти"
 
 #: .\templates\landing.html:66
 msgid "Блог"
-msgstr ""
+msgstr "Блог"
 
 #: .\templates\landing.html:68
 msgid "Швидка доставка"
-msgstr ""
+msgstr "Швидка доставка"
 
 #: .\templates\landing.html:70
 msgid "Галарея"
-msgstr ""
+msgstr "Галарея"
+
+#: .\templates\service\menu.html:7
+msgid "Menu Title"
+msgstr "Vincent | Меню"
