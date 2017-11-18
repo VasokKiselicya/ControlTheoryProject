@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     # 'raven.contrib.django.raven_compat',
+    "ckeditor",
     "account",
     'rosetta',
     "db",
@@ -180,9 +181,9 @@ LOGGING = {
     },
 }
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uk'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Kiev'
 
 USE_I18N = True
 
@@ -231,3 +232,47 @@ EMAIL_PORT = 587
 FROM_EMAIL = 'Vincent Company <vincent.study.company@gmail.com>'
 DEFAULT_FROM_EMAIL = FROM_EMAIL
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        # 'skin': 'office2013',
+        'toolbar': 'Custom',
+        'height': 400,
+        'width': 800,
+        'removePlugins': 'stylesheetparser',
+        'toolbar_Basic': [
+            ['Source', '-', 'Bold', 'Italic']
+        ],
+        'toolbar_Custom': [
+            {"name": 'document',
+             "items": ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']},
+            {"name": 'clipboard',
+             "items": ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+            {"name": 'editing', "items": ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt']},
+            {"name": 'forms',
+             "items": ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button',
+                       'ImageButton', 'HiddenField']},
+            '/',
+            {"name": 'basicstyles',
+             "items": ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-',
+                       'RemoveFormat']},
+            {"name": 'paragraph',
+             "items": ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote',
+                       'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+                       'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language']},
+            {"name": 'links', "items": ['Link', 'Unlink', 'Anchor']},
+            {"name": 'insert',
+             "items": ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar',
+                       'PageBreak', 'Iframe']},
+            '/',
+            {"name": 'styles', "items": ['Styles', 'Format', 'Font', 'FontSize']},
+            {"name": 'colors', "items": ['TextColor', 'BGColor']},
+            {"name": 'tools', "items": ['Maximize', 'ShowBlocks']},
+            {"name": 'about', "items": ['About']}
+        ],
+        'tabSpaces': 4
+    }
+}

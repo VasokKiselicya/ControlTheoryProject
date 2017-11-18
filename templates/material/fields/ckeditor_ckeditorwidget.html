@@ -1,0 +1,45 @@
+{% load material_form material_form_internal %}
+<style>
+    .to-up {
+        margin-bottom: 4% !important;
+    }
+</style>
+{% part bound_field.field %}
+    <div class="row to-up">
+        <div{% attrs bound_field 'group' %}
+            id="id_{{ bound_field.html_name }}_container"
+            class="input-field col s12{% if field.required %} required{% endif %}{% if bound_field.errors %} has-error{% endif %}"
+        {% endattrs %}>
+            <div class="section">
+                {% part field prefix %}{% endpart %}
+                {% part field label %}
+                    <label{% attrs bound_field 'label' %}
+                        for="{{ bound_field.id_for_label }}"
+                        {% if bound_field.value %}class="active"{% endif %}
+                    {% endattrs %}>{{ bound_field.label }}</label>
+                {% endpart %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="section">
+                {% part field control %}
+                    {{ bound_field }}
+                {% endpart %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            {% part field help_text %}{% if field.help_text %}
+                <div class="help-block">{{ bound_field.help_text|safe }}</div>
+            {% endif %}
+            {% endpart %}{% part field errors %}
+                {% if bound_field.errors %}
+                    {% include  'material/field_errors.html' %}
+                {% endif %}
+            {% endpart %}{{ hidden_initial }}
+        </div>
+    </div>
+{% endpart %}

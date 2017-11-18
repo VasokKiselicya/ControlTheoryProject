@@ -67,4 +67,13 @@ class UnitAdmin(admin.ModelAdmin):
     search_fields = ("name",)
 
 
+@admin.register(models.Article)
+class ArticleAdmin(admin.ModelAdmin):
+
+    list_display = ("title", "lang", "created_at", "views", "header")
+    readonly_fields = ('views', 'likes', 'dislikes')
+    prepopulated_fields = {"slug": ("title",)}
+    icon = '<i class="material-icons">forum</i>'
+
+
 admin.site.unregister(Module)

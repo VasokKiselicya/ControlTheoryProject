@@ -1,8 +1,9 @@
-from django.db import models
-from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
+from django.db import models
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
+from ckeditor.fields import RichTextField
 
 
 fs = FileSystemStorage(location=settings.UPLOAD_PATH)
@@ -149,3 +150,23 @@ class OrderItem(models.Model):
         ordering = ('product', )
         verbose_name = _('OrderItem')
         verbose_name_plural = _('OrderItems')
+
+
+class Article(models.Model):
+    title = models.CharField(max_length=200, verbose_name=_("Article Title"), blank=False, null=False)
+    header = models.TextField(verbose_name=_("Card Article Preview"))
+    slug = models.SlugField(max_length=200, unique=True, blank=False, verbose_name=_("Unique Article Identifier"))
+    image = models.ImageField(upload_to='article_images/', max_length=200, null=True, verbose_name=_("Article Image"))
+    lang = models.CharField(max_length=20, choices=settings.LANGUAGES, default='uk', verbose_name=_("Language"))
+    body = RichTextField(verbose_name=_("Article Body"), null=False, blank=False)
+    created_at = models.DateTimeField(verbose_name=_('Created'), auto_now_add=True)
+    updated_at = models.DateTimeField(verbose_name=_('Updated'), auto_now=True)
+    views = models.PositiveIntegerField(default=0, verbose_name=_("Views Count"))
+    likes = models.PositiveIntegerField(default=0, verbose_name=_("Likes Count"))
+    dislikes = models.PositiveIntegerField(default=0, verbose_name=_("Dislikes Count"))
+
+    class Meta:
+        db_table = "vincent_articles"
+        ordering = ('-created_at', )
+        verbose_name = _('Article')
+        verbose_name_plural = _('Articles')
