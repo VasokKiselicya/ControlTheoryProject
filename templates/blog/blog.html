@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load app_tags %}
+
+{% block title %}
+    <title> {% trans "Blog" %} </title>
+{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/service/menu.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12 menu-content">
+            <div class="col-xs-8 col-xs-offset-2">
+                {% if error %}
+                 <h1>{% trans error %}</h1>
+                {% else %}
+                {% for article in articles %}
+                <a href="{% url 'core:service:blog' %}{{article.slug}}">{{article.header}}</a>
+                {% endfor %}
+                {% endif %}
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

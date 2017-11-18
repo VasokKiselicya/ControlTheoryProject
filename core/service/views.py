@@ -1,7 +1,7 @@
 from django.views import View
 from django.shortcuts import render
-
-from db.models import Category, Product, Unit
+from django.utils.translation import get_language
+from db.models import Category, Product, Unit, Article
 
 
 class MenuView(View):
@@ -17,3 +17,27 @@ class MenuView(View):
                 product["ingredients"] = ', '.join(Product.objects.get(id=product["id"]).product_ingredients.all()
                                                    .values_list('ingredient__name', flat=True))
         return render(request, self.template_name, {"section": "menu", "categories": categories})
+
+
+class ArticleView(View):
+    template_name = 'blog/article.html'
+
+    def get(self, request, slug):
+        lang = get_language()
+        article = Article.objects.filter(slug=slug, lang=lang).first()
+        if article is None:
+            return render(request, self.template_name, {'error': 'article_not_exists'} )
+        return render(request, self.template_name, {'article': article})
+
+
+class BlogView(View):
+    template_name = 'blog/blog.html'
+
+    def get(self, request):
+        lang = get_language()
+        articles = Article.objects.filter(lang=lang)
+        if not articles.count():
+            return render(request, self.template_name, {'error': 'articles_does_not_exists'})
+        return render(request, self.template_name, {'articles': articles})
+
+
