@@ -1,20 +1,21 @@
 from django.db import models
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.models import User
 
 
 fs = FileSystemStorage(location=settings.UPLOAD_PATH)
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=200, null=False, blank=False)
-    description = models.TextField(null=True)
-    photo = models.ImageField(upload_to='category_photos', null=True, storage=fs)
+    name = models.CharField(max_length=200, null=False, blank=False, verbose_name=_("Category Name"))
+    description = models.TextField(null=True, verbose_name=_("Description"))
+    photo = models.ImageField(upload_to='category_photos', null=True, storage=fs, verbose_name=_("Image"))
 
     class Meta:
         db_table = "category"
-        verbose_name = _('Categories')
+        verbose_name = _('Category')
         verbose_name_plural = _('Categories')
         ordering = ['name']
 
@@ -26,13 +27,13 @@ class Category(models.Model):
 
 
 class Unit(models.Model):
-    name = models.CharField(null=False, blank=False, unique=True, max_length=100)
-    description = models.CharField(null=True, blank=True, max_length=300)
-    short_name = models.CharField(null=False, blank=False, max_length=10, unique=True)
+    name = models.CharField(null=False, blank=False, unique=True, max_length=100, verbose_name=_("Unit Name"))
+    description = models.CharField(null=True, blank=True, max_length=300, verbose_name=_("Description"))
+    short_name = models.CharField(null=False, blank=False, max_length=10, unique=True, verbose_name=_("Short Value"))
 
     class Meta:
         db_table = "unit"
-        verbose_name = _('Units')
+        verbose_name = _('Unit')
         verbose_name_plural = _('Units')
         ordering = ['name']
 
@@ -44,15 +45,15 @@ class Unit(models.Model):
 
 
 class Ingredient(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, verbose_name=_("Ingredient Name"), blank=False, null=False)
     photo = models.ImageField(upload_to='ingredient_photos', null=True, storage=fs,
-                              default='ingredient_photos/not_found_404.png')
-    description = models.TextField(null=True)
-    unit = models.ForeignKey(Unit, on_delete=models.PROTECT, null=False)
+                              default='ingredient_photos/not_found_404.png', verbose_name=_("Image"), blank=True)
+    description = models.TextField(null=True, blank=True, verbose_name=_("Description"))
+    unit = models.ForeignKey(Unit, on_delete=models.PROTECT, null=False, verbose_name=_("Unit"))
 
     class Meta:
         db_table = "ingredient"
-        verbose_name = _('Ingredients')
+        verbose_name = _('Ingredient')
         verbose_name_plural = _('Ingredients')
         ordering = ['name']
 
@@ -64,18 +65,19 @@ class Ingredient(models.Model):
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=200)
-    category = models.ForeignKey('Category', null=True, on_delete=models.PROTECT, related_name="products")
-    photo = models.ImageField(upload_to='product_photos', null=True, storage=fs)
-    price = models.DecimalField(null=False, decimal_places=2, max_digits=10, default=0)
-    description = models.TextField(null=True)
-    ingredients = models.ManyToManyField(Ingredient, through="ProductIngredients")
-    unit = models.ForeignKey(Unit, on_delete=models.PROTECT, null=False)
-    weight = models.DecimalField(null=False, decimal_places=3, max_digits=10, default=0)
+    name = models.CharField(max_length=200, blank=False, null=False, unique=True, verbose_name=_("Product Name"))
+    category = models.ForeignKey('Category', null=True, on_delete=models.PROTECT,
+                                 related_name="products", verbose_name=_("Category"))
+    photo = models.ImageField(upload_to='product_photos', null=True, storage=fs, verbose_name=_("Image"))
+    price = models.DecimalField(null=False, decimal_places=2, max_digits=10, default=0, verbose_name=_("Price"))
+    description = models.TextField(null=True, blank=True, verbose_name=_("Description"))
+    ingredients = models.ManyToManyField(Ingredient, through="ProductIngredients", verbose_name=_("Ingredients"))
+    unit = models.ForeignKey(Unit, on_delete=models.PROTECT, null=False, verbose_name=_("Unit"))
+    weight = models.DecimalField(null=False, decimal_places=3, max_digits=10, default=0, verbose_name=_("Weight"))
 
     class Meta:
         db_table = "product"
-        verbose_name = _('Products')
+        verbose_name = _('Product')
         verbose_name_plural = _('Products')
         ordering = ['name']
 
@@ -87,9 +89,10 @@ class Product(models.Model):
 
 
 class ProductIngredients(models.Model):
-    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_ingredients')
-    weight = models.DecimalField(null=False, decimal_places=3, max_digits=10, default=0)
+    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE, verbose_name=_("Ingredient"))
+    product = models.ForeignKey(Product, on_delete=models.CASCADE,
+                                related_name='product_ingredients', verbose_name=_("Product"))
+    weight = models.DecimalField(null=False, decimal_places=3, max_digits=10, default=0, verbose_name=_("Weight"))
 
     class Meta:
         db_table = "product_ingredients"
@@ -102,3 +105,47 @@ class ProductIngredients(models.Model):
 
     def __str__(self):
         return self.__repr__()
+
+
+class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, verbose_name=_("User"))
+    address = models.CharField(verbose_name=_('Address'), max_length=250)
+    created_at = models.DateTimeField(verbose_name=_('Created'), auto_now_add=True)
+    updated_at = models.DateTimeField(verbose_name=_('Updated'), auto_now=True)
+    paid = models.BooleanField(verbose_name=_('Paid'), default=False)
+
+    class Meta:
+        db_table = "order"
+        ordering = ('-created_at', )
+        verbose_name = _('Order')
+        verbose_name_plural = _('Orders')
+
+    def __str__(self):
+        return '{}: {}'.format(_("Order"), self.id)
+
+    __repr__ = __str__
+
+    def get_total_cost(self):
+        return sum(item.get_cost() for item in self.items.all())
+
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, related_name='items')
+    product = models.ForeignKey(Product, related_name='order_items', verbose_name=_("Product"))
+    price = models.DecimalField(verbose_name=_("Price"), max_digits=10, decimal_places=2)
+    quantity = models.PositiveIntegerField(verbose_name=_("quantity"), default=1)
+
+    def __str__(self):
+        return '{}'.format(self.id)
+
+    def __repr__(self):
+        return self.__str__()
+
+    def get_cost(self):
+        return self.price * self.quantity
+
+    class Meta:
+        db_table = "order_item"
+        ordering = ('product', )
+        verbose_name = _('OrderItem')
+        verbose_name_plural = _('OrderItems')
