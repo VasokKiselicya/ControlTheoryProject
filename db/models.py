@@ -165,6 +165,11 @@ class Article(models.Model):
     likes = models.PositiveIntegerField(default=0, verbose_name=_("Likes Count"))
     dislikes = models.PositiveIntegerField(default=0, verbose_name=_("Dislikes Count"))
 
+    def __str__(self):
+        return '{} [{}]'.format(self.title, self.lang)
+
+    __repr__ = __str__
+
     class Meta:
         db_table = "vincent_articles"
         ordering = ('-created_at', )
