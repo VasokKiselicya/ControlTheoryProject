@@ -60,8 +60,17 @@ div.text-center {
 }
 
 div.menu-content {
-    margin-top: 175px;
+    margin-top: 150px;
     background-color: #121619;
+}
+
+div.menu-header-background {
+     background: url(../../images/fon_est.png);
+}
+h3.menu-header {
+    padding: 40px 0;
+    text-align: center;
+    background: rgba(243, 202, 109, 0.85);
 }
 
 div.text-center > ul[role='tablist'] {
