@@ -156,7 +156,8 @@ class Article(models.Model):
     title = models.CharField(max_length=200, verbose_name=_("Article Title"), blank=False, null=False)
     header = models.TextField(verbose_name=_("Card Article Preview"))
     slug = models.SlugField(max_length=200, unique=True, blank=False, verbose_name=_("Unique Article Identifier"))
-    image = models.ImageField(upload_to='article_images/', max_length=200, null=True, verbose_name=_("Article Image"))
+    image = models.ImageField(upload_to='article_images', storage=fs,
+                              max_length=200, null=False, verbose_name=_("Article Image"))
     lang = models.CharField(max_length=20, choices=settings.LANGUAGES, default='uk', verbose_name=_("Language"))
     body = RichTextField(verbose_name=_("Article Body"), null=False, blank=False)
     created_at = models.DateTimeField(verbose_name=_('Created'), auto_now_add=True)
