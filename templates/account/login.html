@@ -1,6 +1,5 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% load i18n %}
-{% load account_tags %}
 {% load staticfiles %}
 
 {% block title %}
@@ -22,7 +21,7 @@
                 <form
                         role="form"
                         method="POST"
-                        action="{% url "core:auth:account_login" %}"
+                        action="{% url "account_login" %}"
                         autocapitalize="off"
                         {% if form.is_multipart %}
                         enctype="multipart/form-data"
@@ -32,9 +31,9 @@
                     {{ form.non_field_errors }}
                     <div class="form-group">
                         {{ form.username.errors }}
-                        <label for="id_username">{% trans "Username" %}</label>
-                        <input type="text" name="username" maxlength="30" class="form-control"
-                               required id="id_username" placeholder="{% trans "Username" %}"
+                        <label for="id_username">{% trans "Username or e-mail" %}</label>
+                        <input type="text" name="login" maxlength="30" class="form-control"
+                               required id="id_login" placeholder="{% trans "Username or e-mail" %}"
                         >
                     </div>
                     <div class="form-group">
@@ -74,14 +73,14 @@
                 <hr>
                 <p>
                     <b>
-                        <a href="{% urlnext "core:auth:account_password_reset" %}">
+                        <a href="{% url "account_reset_password" %}">
                             {% trans "Forgot your password?" %}
                         </a>
                     </b>
                     <small>
                         {% trans "Don't have an account?" %}
                         <b>
-                            <a href="{% url 'core:auth:account_signup' %}">{% trans "Sign up" %}</a>
+                            <a href="{% url 'account_signup' %}">{% trans "Sign up" %}</a>
                         </b>
                     </small>
                 </p>

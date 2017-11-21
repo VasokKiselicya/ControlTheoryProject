@@ -1,2 +1,4 @@
 {% load i18n %}
-{% trans 'Confirm email address for' %} {{ current_site.name }}
+{% autoescape off %}
+{% blocktrans %}Please Confirm Your E-mail Address{% endblocktrans %}
+{% endautoescape %}

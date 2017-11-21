@@ -1,5 +1,4 @@
-{% extends "index.html" %}
-{% load account_tags %}
+{% extends "base.html" %}
 {% load i18n %}
 {% load staticfiles %}
 
@@ -23,7 +22,7 @@
                         role="form"
                         id="signup_form"
                         method="post"
-                        action="{% url "core:auth:account_signup" %}"
+                        action="{% url "account_signup" %}"
                         autocapitalize="off"
                         {% if form.is_multipart %}
                             enctype="multipart/form-data"
@@ -54,14 +53,14 @@
                             <div class="col-sm-6">
                                 {{ form.password.errors }}
                                 <label for="id_password">{% trans "Password" %}</label>
-                                <input type="password" name="password" class="form-control" required
+                                <input type="password" name="password1" class="form-control" required
                                        id="id_password" placeholder="{% trans "Password" %}"
                                 >
                             </div>
                             <div class="col-sm-6">
                                 {{ form.password_confirm.errors }}
                                 <label for="id_password_confirm">{% trans "Password (again)" %}</label>
-                                <input type="password" name="password_confirm" class="form-control" required
+                                <input type="password" name="password2" class="form-control" required
                                        id="id_password_confirm" placeholder="{% trans "Password (again)" %}"
                                 >
                             </div>
@@ -95,7 +94,7 @@
                 <hr>
                 <p class="login-signup">
                     {% trans "Already have an account?" %} <b><a
-                        href="{% urlnext 'core:auth:account_login' %}">{% trans "Log in" %}</a></b>
+                        href="{% url 'account_login' %}">{% trans "Log in" %}</a></b>
                 </p>
                 <hr>
             </div>

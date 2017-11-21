@@ -19,7 +19,7 @@
                  <h1>{% trans error %}</h1>
                 {% else %}
                 {% for article in articles %}
-                <a href="{% url 'core:service:blog' %}{{article.slug}}">{{article.header}}</a>
+                <a href="{% url 'service:blog' %}{{article.slug}}">{{article.header}}</a>
                 {% endfor %}
                 {% endif %}
 

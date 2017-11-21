@@ -40,9 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
     # 'raven.contrib.django.raven_compat',
     "ckeditor",
-    "account",
+    # "account",
     'rosetta',
     "db",
     "core"
@@ -58,9 +63,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "account.middleware.LocaleMiddleware",
-    "account.middleware.TimezoneMiddleware",
-    "account.middleware.ExpiredPasswordMiddleware",
 ]
 
 ROOT_URLCONF = 'Project.urls'
@@ -76,8 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                "account.context_processors.account",
+                'django.contrib.messages.context_processors.messages'
             ],
         },
     },
@@ -181,7 +182,7 @@ LOGGING = {
     },
 }
 
-LANGUAGE_CODE = 'uk'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Europe/Kiev'
 
@@ -210,13 +211,15 @@ UPLOAD_PATH = os.path.join(PROJECT_ROOT, 'static') if DEBUG else STATIC_ROOT
 # MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 # AUTH SETTINGS
-
-ACCOUNT_LOGIN_URL = 'core:auth:account_login'
-ACCOUNT_EMAIL_CONFIRMATION_URL = 'core:auth:account_confirm_email'
-ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = ACCOUNT_LOGIN_URL
-ACCOUNT_PASSWORD_RESET_REDIRECT_URL = ACCOUNT_LOGIN_URL
-ACCOUNT_PASSWORD_CHANGE_REDIRECT_URL = "core:auth:account_password"
-ACCOUNT_SETTINGS_REDIRECT_URL = "core:auth:account_settings"
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = True
+SOCIALACCOUNT_QUERY_EMAIL = True
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+LOGIN_REDIRECT_URL = "/"
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "/"
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
 # SOCIAL AUTH SETTINGS
 

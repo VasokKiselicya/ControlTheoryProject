@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% load i18n %}
 {% block title %}
     <title>{% trans "Log out" %}</title>
@@ -22,14 +22,14 @@
 {% block body %}
     <div class="container">
         <div class="col-sm-6 col-sm-offset-3">
-            <form method="POST" action="{% url "core:auth:account_logout" %}">
+            <form method="POST" action="{% url "account_logout" %}">
                 {% csrf_token %}
                 <h2 id="info">{% trans "Are you sure you want to log out?" %}</h2>
                 <button type="submit"
                         class="btn btn-warning"
                         id="logout"
                 >{% trans "Log out" %}</button>
-                <a href="{% url "core:landing:landing" %}"
+                <a href="{% url "landing:landing" %}"
                    class="btn btn-info"
                    id="cancel"
                 >{% trans 'Cancel' %}</a>
