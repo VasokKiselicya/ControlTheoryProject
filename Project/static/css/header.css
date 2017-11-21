@@ -336,10 +336,11 @@ a.dropdown-toggle {
 }
 
 .menu_title {
-    padding: 20px 0;
+    padding: 25px 0;
     background: #1a1b1f;
     color: white;
     text-align: center;
+    height: 44.2em;
 
 }
 
@@ -359,7 +360,7 @@ a.dropdown-toggle {
 }
 
 .menu_title h3 {
-    padding: 20px 0 40px;
+    padding: 0 0 25px;
 }
 
 .no-padding {
@@ -407,6 +408,7 @@ a.dropdown-toggle {
 .est {
     text-align: center;
     background: url("../images/fon_est.png");
+    height: 44em;
 }
 
 .est h3 {
@@ -418,9 +420,9 @@ a.dropdown-toggle {
     padding: 20px;
     margin: 0;
     z-index: 9;
-    height: 540px;
+    height: 44em;
     width: 100%;
-    background: rgba(243, 202, 109, 0.85);
+    background: rgba(255, 200, 75, 0.87);
 
 }
 
