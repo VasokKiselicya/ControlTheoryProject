@@ -41,3 +41,15 @@ class BlogView(View):
         return render(request, self.template_name, {'articles': articles})
 
 
+class RestaurantView(View):
+    template_name = 'blog/blog.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {})
+
+
+class ContactsView(View):
+    template_name = 'blog/blog.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {})

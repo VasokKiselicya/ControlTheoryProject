@@ -4,15 +4,28 @@
 <div class="container footer">
     <div class="black">
         <div class="newsletters">
-            <h3> Підпішіться на новини </h3>
-            <input type="email" class="email_newsletters">
-            <input type="button" class="button_newsletters" value="підписатися">
+            <h3>{% trans 'Subscribe to the news' %}</h3>
+            <div class="input-group col-xs-4 col-xs-offset-4">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="email" type="text"
+                       class="form-control"
+                       name="email_newsletters"
+                       placeholder="Email"
+                       {% if request.user.is_authenticated %}
+                           value="{{ request.user.email }}"
+                       {% endif %}
+                >
+                <div class="input-group-btn">
+                   <button class="btn btn-default" type="button">{% trans 'Subscribe' %}</button>
+                </div>
+            </div>
         </div>
         <div class="inf">
             <div class="mani_inf col-xs-3 col-sm-3 col-md-3">
                 <span><i class="fa fa-mobile" aria-hidden="true"></i> </span>
                 <span><a href="tel:+380959999999">+ 38 (095) 999-99-99</a>
-               <p> 9:00 - 23:00</p></span>
+                      <p> 9:00 - 23:00</p>
+                </span>
             </div>
             <div class="logo col-xs-6 col-sm-6 col-md-6">
                 <img src="{% static 'images/logo.png' %}">
@@ -23,9 +36,6 @@
                  <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
                  <a href=""><i class="fa fa-vk" aria-hidden="true"></i></a>
             </div>
-
         </div>
     </div>
-</div>
-
 </div>

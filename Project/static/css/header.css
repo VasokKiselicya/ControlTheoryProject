@@ -151,6 +151,7 @@ a.dropdown-toggle {
 }
 
 .logo {
+    cursor: pointer;
     display: flex;
     align-content: center
 }

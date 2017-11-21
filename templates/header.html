@@ -12,7 +12,7 @@
             </span>
         </div>
         <div class="logo col-xs-3 col-sm-6 col-md-6">
-            <img src="{% static 'images/logo.png' %}">
+            <img src="{% static 'images/logo.png' %}" ng-click="header.toMain()">
         </div>
         <div class="exit col-xs-3 col-sm-3 col-md-3">
         {% if request.user.is_authenticated %}
@@ -30,10 +30,10 @@
         {% endif %}
         </div>
         <div class="menu col-xs-12 col-sm-12 col-md-12">
-            <a href="#">{% trans 'головна'|lower %}</a>
-            <a href="#">{% trans 'доставка'|lower %}</a>
-            <a href="#">{% trans 'ресторан'|lower %}</a>
-            <a href="#{{ request.path }}">{% trans 'контакти'|lower %}</a>
+            <a href="/">{% trans 'Main'|lower %}</a>
+            <a href="{% url 'service:show-menu' %}">{% trans 'Delivery'|lower %}</a>
+            <a href="{% url 'service:restaurant' %}">{% trans 'Restaurant'|lower %}</a>
+            <a href="{% url 'service:contacts' %}">{% trans 'Contacts'|lower %}</a>
             <div class="custom-sel" ng-class="{'show-sel': !header.hide_choose}">
                 <form id="change_lang_form"
                       action="{% url 'set_language' %}"

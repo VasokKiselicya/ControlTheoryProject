@@ -1,11 +1,12 @@
-HeaderController.$inject = ["$scope", "$timeout"];
+HeaderController.$inject = ["$scope", "$timeout", "$window"];
 
 export default HeaderController;
 
-function HeaderController($scope, $timeout) {
+function HeaderController($scope, $timeout, $window) {
     const vm = this;
 
     vm.language = '';
+    vm.base_url = "/";
     vm.hide_choose = true;
 
     vm.changeLang = (code) => {
@@ -19,5 +20,9 @@ function HeaderController($scope, $timeout) {
 
     vm.showChoose = () => {
         vm.hide_choose = !vm.hide_choose;
+    };
+
+    vm.toMain = () => {
+        $window.location.href = vm.base_url;
     };
 }
