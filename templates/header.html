@@ -17,7 +17,7 @@
         <div class="exit col-xs-3 col-sm-3 col-md-3">
         {% if request.user.is_authenticated %}
             <form method="POST"
-                  action="{% url "core:auth:account_logout" %}"
+                  action="{% url "account_logout" %}"
                   name="logoutForm"
                   ng-show="false"
             >{% csrf_token %}</form>
@@ -26,7 +26,7 @@
                 <span class="quantity_of_goods">{% if count %} {{ count }} {% else %} 0 {% endif %}</span>
             </i>
         {% else %}
-            <a href="{% url "core:auth:account_login" %}">{% trans 'Log in' %}</a>
+            <a href="{% url "account_login" %}">{% trans 'Log in' %}</a>
         {% endif %}
         </div>
         <div class="menu col-xs-12 col-sm-12 col-md-12">

@@ -11,5 +11,5 @@ urlpatterns = [
     url(r'^i18n/', include(i18n)),  # Translate Provider
     url(r'^rosetta/', include('rosetta.urls')),
     url(r'^', include(frontend_urls)),
-    url(r"^", include("core.urls", namespace="core"))
+    url(r"^", include("core.urls"))
 ]

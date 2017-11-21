@@ -98,3 +98,7 @@ small {
 .form-control {
     font-size: 20px;
 }
+
+.auth-content {
+    margin-top: 150px;
+}
