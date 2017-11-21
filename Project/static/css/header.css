@@ -321,13 +321,17 @@ a.dropdown-toggle {
     align-items: center;
 }
 
-.slider i {
+.slider i, .menu_title i{
     position: absolute;
-    font-size: 3em;
-    bottom: 20px;
-    left: 50%;
-}
+    font-size: 5em;
+    bottom: 0px;
+    cursor: pointer;
 
+
+}
+.slider i{
+    left: calc(50% - 20px);
+}
 .slider p {
     line-height: 1.2;
     font-size: 34px;
@@ -342,6 +346,10 @@ a.dropdown-toggle {
     text-align: center;
     height: 44.2em;
 
+}
+
+.menu_title i{
+    left: calc(50.1% - 20px);
 }
 
 
@@ -405,10 +413,17 @@ a.dropdown-toggle {
     color: black;
 }
 
+.col-centered{
+  display: block;
+  margin: auto;
+  float: none;
+  text-align: center;
+}
+
 .est {
     text-align: center;
     background: url("../images/fon_est.png");
-    height: 44em;
+    height: 40em;
 }
 
 .est h3 {
@@ -420,7 +435,7 @@ a.dropdown-toggle {
     padding: 20px;
     margin: 0;
     z-index: 9;
-    height: 44em;
+    height: 40em;
     width: 100%;
     background: rgba(255, 200, 75, 0.87);
 

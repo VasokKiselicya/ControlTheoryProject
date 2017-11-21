@@ -8,7 +8,7 @@ function scrollArrowDirective() {
         link: function (scope, $elm) {
             $elm.on('click', function () {
                 console.log($elm.offset());
-                $("html, body").animate({scrollTop: $elm.offset().top - 50}, "slow");
+                $("html, body").animate({scrollTop: $elm.offset().top - 80}, "slow");
             });
         }
     }
