@@ -4,21 +4,9 @@
 <div class="container footer">
     <div class="black">
         <div class="newsletters">
-            <h3>{% trans 'Subscribe to the news' %}</h3>
-            <div class="input-group col-xs-4 col-xs-offset-4">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="email" type="text"
-                       class="form-control"
-                       name="email_newsletters"
-                       placeholder="Email"
-                       {% if request.user.is_authenticated %}
-                           value="{{ request.user.email }}"
-                       {% endif %}
-                >
-                <div class="input-group-btn">
-                   <button class="btn btn-default" type="button">{% trans 'Subscribe' %}</button>
-                </div>
-            </div>
+             <h3>{% trans 'підписатись на новини' %}</h3>
+            <input type="email" class="email_newsletters" placeholder="email">
+            <input type="button" class="button_newsletters" value="підписатися">
         </div>
         <div class="inf">
             <div class="mani_inf col-xs-3 col-sm-3 col-md-3">
