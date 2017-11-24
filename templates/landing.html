@@ -10,35 +10,38 @@
         <i class="fa fa-angle-down" aria-hidden="true" scroll-arrow></i>
     </div>
     <div class="menu_title col-sm-12">
-        <h3>{% trans 'меню' %}</h3>
+        <h3>{% trans 'menu' %}</h3>
         <div class="col-sm-12 relative landing-menu">
-            <a href="#" class="col-sm-5 no-padding big">
+            <a class="col-sm-5 no-padding big" href="{%  url 'service:show-menu' %}?category=pitsa">
                 <img src="{% static 'images/pizza.png' %}">
                 <div class="hovered" style="height: 100%;"></div>
             </a>
             <div class=" col-sm-7 no-padding landing-menu-row">
                 <div class="col-sm-12 no-padding relative">
-                    <a class="col-sm-4 no-padding ">
+                    <a class="col-sm-4 no-padding " href="{%  url 'service:show-menu' %}?category=burgeri">
                         <img src="{% static 'images/burger.jpg' %}">
                         <div class="hovered"></div>
                     </a>
-                    <a class="col-sm-4 no-padding ">
+                    <a class="col-sm-4 no-padding " href="{%  url 'service:show-menu' %}?category=salati">
                         <img src="{% static 'images/salt.jpg' %}">
                         <div class="hovered"></div>
                     </a>
-                    <a class="col-sm-4 no-padding ">
+                    <a class="col-sm-4 no-padding " href="{%  url 'service:show-menu' %}?category=deserti">
                         <img src="{% static 'images/desert.jpg' %}">
                         <div class="hovered"></div>
                     </a>
                 </div>
                 <div class="col-sm-12 no-padding relative">
-                    <a class="col-sm-4 no-padding "><img src="{% static 'images/sandwich.jpg' %}">
+                    <a class="col-sm-4 no-padding " href="{%  url 'service:show-menu' %}?category=sendvichi">
+                        <img src="{% static 'images/sandwich.jpg' %}">
                         <div class="hovered"></div>
                     </a>
-                    <a class="col-sm-4 no-padding "><img src="{% static 'images/lang.jpg' %}">
+                    <a class="col-sm-4 no-padding " href="{%  url 'service:show-menu' %}?category=zakuska">
+                        <img src="{% static 'images/lang.jpg' %}">
                         <div class="hovered"></div>
                     </a>
-                    <a class="col-sm-4 no-padding "><img src="{% static 'images/drink.jpg' %}">
+                    <a class="col-sm-4 no-padding " href="{%  url 'service:show-menu' %}?category=napoyi">
+                        <img src="{% static 'images/drink.jpg' %}">
                         <div class="hovered"></div>
                     </a>
                 </div>
