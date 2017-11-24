@@ -21,9 +21,9 @@
                 <div class="text-center">
                     <ul class="nav nav-tabs" role="tablist">
                         {% for category in categories %}
-                            <li class="nav-item {% if forloop.first %} active {% endif %}">
+                            <li class="nav-item {% if category.active %} active {% endif %}">
                                 <a data-toggle="tab"
-                                   href="#{{ category.name | uni_slugify }}"
+                                   href="#{{ category.slug }}"
                                    class="nav-link"
                                 >{{ category.name | lower }}</a>
                             </li>
@@ -32,8 +32,8 @@
                 </div>
                 <div class="tab-content">
                     {% for category in categories %}
-                        <div class="tab-pane {% if forloop.first %} active {% endif %} menu-page"
-                             id="{{ category.name | uni_slugify }}"
+                        <div class="tab-pane {% if category.active %} active {% endif %} menu-page"
+                             id="{{ category.slug }}"
                              role="tabpanel"
                         >
                             {% with category.products|partition:"3" as products %}
