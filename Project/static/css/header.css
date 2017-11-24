@@ -150,6 +150,10 @@ a.dropdown-toggle {
     font-size: 4em;
 }
 
+.mani_inf .fa-map-marker{
+    font-size: 4em;
+}
+
 .logo {
     cursor: pointer;
     display: flex;
@@ -292,14 +296,34 @@ a.dropdown-toggle {
 .footer {
     color: white;
     background: url("../images/fon_footer.png");
+    height: 35em;
+
 }
 
 .footer .black {
+    height: 35em;
     margin: 0;
     z-index: 9;
-    height: 300px;
     width: 100%;
     background: rgba(0, 0, 0, 0.85);
+}
+
+.footer .logo_footer img{
+    display: block;
+    position: relative;
+    bottom: 5%;
+    height: 17%;
+    width: 17%;
+
+
+}
+
+.footer .social_network{
+    left: 60%;
+    font-size: 63px;
+    margin-top: -14%;
+
+
 }
 
 .newsletters {
