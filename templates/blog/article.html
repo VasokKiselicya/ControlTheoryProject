@@ -14,11 +14,13 @@
 {% block body %}
     <div class="row">
         <div class="col-xs-12 menu-content">
+            <img src="{% static article.image %}" alt="{{ article.title }}">
+            <h1>{{ article.header }}</h1>
             <div class="col-xs-8 col-xs-offset-2">
                 {% if error %}
                  <h1>{% trans error %}</h1>
                 {% else %}
-                <h1>{{ article.title }}</h1>
+                <h1>{{ article.body | safe }}</h1>
                 {% endif %}
 
 

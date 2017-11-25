@@ -4,28 +4,44 @@
 {% load app_tags %}
 
 {% block title %}
-    <title> {% trans "Blog" %} </title>
+<title> {% trans "Blog" %} </title>
 {% endblock %}
 
 {% block extra_styles %}
-    <link rel="stylesheet" href="{% static 'css/service/blog.css' %}">
+<link rel="stylesheet" href="{% static 'css/service/blog.css' %}">
 {% endblock %}
 
 {% block body %}
-    <div class="row">
-        <div class="col-xs-12 blog-content">
-            <div class="col-xs-8 col-xs-offset-2">
-                {% if error %}
-                 <h1>{% trans error %}</h1>
-                {% else %}
-                {% for article in articles %}
-                <a href="{% url 'service:blog' %}{{article.slug}}">{{article.header}}</a>
+<div class="row">
+    <div class="col-xs-12 blog-content">
+        <div class="col-xs-8 col-xs-offset-2">
+            {% if error %}
+            <h1>{% trans error %}</h1>
+            {% else %}
+            {% with articles|partition:"3" as articles_row %}
+            {% for row in articles_row %}
+            <div class="row article-row">
+                {% for article in row %}
+                <div class="col-xs-4 article-item">
+                    <div class="article-preview">
+                        <div class="image-container">
+                            <img src="{% static article.image %}" alt="{{ article.title }}">
+                        </div>
+                    </div>
+                    <h3 class="article-title">
+                        <a href="{% url 'service:blog' %}{{article.slug}}" class="article-title">{{ article.title }}</a>
+                    </h3>
+                    <p class="description"><br>{{ article.header }}</p>
+                </div>
                 {% endfor %}
-                {% endif %}
-
-
-
             </div>
+            {% endfor %}
+            {% endwith %}
+
+            {% endif %}
+
+
         </div>
     </div>
+</div>
 {% endblock %}

@@ -268,7 +268,7 @@ CKEDITOR_CONFIGS = {
                        'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language']},
             {"name": 'links', "items": ['Link', 'Unlink', 'Anchor']},
             {"name": 'insert',
-             "items": ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar',
+             "items": ['Image', 'Flash', 'VideoDetector', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar',
                        'PageBreak', 'Iframe']},
             '/',
             {"name": 'styles', "items": ['Styles', 'Format', 'Font', 'FontSize']},
@@ -276,6 +276,9 @@ CKEDITOR_CONFIGS = {
             {"name": 'tools', "items": ['Maximize', 'ShowBlocks']},
             {"name": 'about', "items": ['About']}
         ],
-        'tabSpaces': 4
+        'tabSpaces': 4,
+        'extraPlugins': ','.join(
+            ['videodetector']
+        ),
     }
 }

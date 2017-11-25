@@ -2,3 +2,7 @@ div.blog-content {
     margin-top: 150px;
     background-color: #121619;
 }
+
+.article-preview, .image-container, .image-container img{
+    width: 100%;
+}
