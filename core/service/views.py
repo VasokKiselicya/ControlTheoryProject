@@ -1,8 +1,11 @@
 from django.views import View
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.utils.translation import get_language
 from db.models import Category, Product, Unit, Article
 from core.templatetags.app_tags import slugify
+from core.service.cart import Cart
+from core.service.forms import CartAddProductForm
 
 
 class MenuView(View):
@@ -55,7 +58,34 @@ class RestaurantView(View):
 
 
 class ContactsView(View):
-    template_name = 'blog/blog.html'
+    template_name = 'service/contacts.html'
 
     def get(self, request):
         return render(request, self.template_name, {})
+
+
+class CartControl(View):
+    def post(self, request):
+        cart = Cart(request)
+        product = get_object_or_404(Product, id=request.POST.get('product_id', 0))
+        form = CartAddProductForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            cart.add(product=product, quantity=cd['quantity'],
+                     update_quantity=cd['update'])
+            return HttpResponse({})
+        return HttpResponseBadRequest({'error': form.errors})
+
+    def delete(self, request):
+        cart = Cart(request)
+        product = get_object_or_404(Product, id=request.body.get('product_id'))
+        cart.remove(product)
+        return HttpResponse({})
+
+
+class CartView(View):
+    template_name = 'service/cart.html'
+
+    def get(self, request):
+        cart = Cart(request)
+        return render(request, self.template_name, {'cart': cart})
