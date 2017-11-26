@@ -1,13 +1,22 @@
-HeaderController.$inject = ["$scope", "$timeout", "$window"];
+HeaderController.$inject = ["$rootScope", "$scope", "$timeout", "$window", "BasketService"];
 
 export default HeaderController;
 
-function HeaderController($scope, $timeout, $window) {
+function HeaderController($rootScope, $scope, $timeout, $window, BasketService) {
     const vm = this;
 
     vm.language = '';
     vm.base_url = "/";
+    vm.basket_url = "/basket/";
     vm.hide_choose = true;
+    $rootScope.basket_len = 0;
+    loadCount();
+
+    function loadCount() {
+        BasketService.count().then(res=> {
+            $rootScope.basket_len = parseInt(res.data.count);
+        })
+    }
 
     vm.changeLang = (code) => {
         vm.language = code;
@@ -25,4 +34,8 @@ function HeaderController($scope, $timeout, $window) {
     vm.toMain = () => {
         $window.location.href = vm.base_url;
     };
+
+    vm.load_basket = () => {
+        $window.location.href = vm.basket_url;
+    }
 }

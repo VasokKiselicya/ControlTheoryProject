@@ -1,0 +1,59 @@
+.empty-basket h1 {
+    text-align: center;
+    padding: 40px 0;
+    color: #f7fbfe;
+}
+
+div.table-responsive table thead tr th,
+div.table-responsive table tbody tr td {
+    text-align: center;
+    color: #f7fbfe;
+    font-size: 20px;
+}
+
+div.table-responsive table thead tr th {
+    font-weight: 600;
+}
+
+div.table-responsive table tbody tr td {
+    vertical-align: middle;
+}
+div.table-responsive table {
+    width: calc(100% - 4px);  /* - 4px для Рамки (Border) */
+}
+
+div.table-responsive table thead tr {
+    border: solid 2px transparent;
+}
+
+/*
+div.table-responsive table tbody tr:hover {
+    border: solid 2px #ffc851;
+}
+*/
+
+div.table-responsive table tbody tr td i {
+    color: transparent;
+}
+
+div.table-responsive table tbody tr:hover td:first-child i {
+    color: #f7fbfe;
+}
+
+table.table>tbody>tr>td,
+table.table>thead>tr>th {
+    border: none;
+}
+table.table {
+    margin-top: 20px;
+}
+table.table>thead {
+    background-color: #121619;
+}
+
+table.table>tbody:before {
+    content: "-";
+    display: block;
+    line-height: 1em;
+    color: transparent;
+}

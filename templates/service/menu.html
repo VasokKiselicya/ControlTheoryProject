@@ -13,7 +13,7 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-xs-12 menu-content">
+        <div class="col-xs-12 menu-content" ng-controller="BasketController as basket">
             <div class="menu-header-background">
                 <h3 class="menu-header">{% trans "Menu" %}</h3>
             </div>
@@ -41,7 +41,7 @@
                                     <div class="row menu-row">
                                         {% for product in row %}
                                             <div class="col-xs-4 menu-item">
-                                                <div class="hovered"></div>
+                                                <div class="hovered" ng-click="basket.addToBasket('{{ product.id }}', 1)"></div>
                                                 <div class="product-preview" hovered-image>
                                                     <div class="image-container">
                                                         <img src="{% static product.photo %}" alt="{{ product.name }}">

@@ -9,4 +9,8 @@ angular
     .module(name, [
         landing,
         core
-    ]);
+    ])
+    .config(($interpolateProvider) => {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+    });

@@ -181,6 +181,7 @@ a.dropdown-toggle {
     font-size: 2em;
     position: relative;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .exit .quantity_of_goods {

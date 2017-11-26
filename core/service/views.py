@@ -1,12 +1,16 @@
+import json
+
 from django.views import View
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.utils.translation import get_language
+from django.views.decorators.csrf import csrf_exempt
 
 from db.models import Category, Product, Unit, Article
 from core.templatetags.app_tags import slugify
 from core.service.cart import Cart
 from core.service.forms import CartAddProductForm
+from core.utils import DecimalEncoder
 
 
 class MenuView(View):
@@ -22,8 +26,8 @@ class MenuView(View):
             cat["products"] = list(Product.objects.filter(category_id=cat["id"]).order_by("name").values())
             for product in cat["products"]:
                 product['unit_name'] = unit_names.get(product['unit_id'], '')
-                product["ingredients"] = ', '.join(Product.objects.get(id=product["id"]).product_ingredients.all()
-                                                   .values_list('ingredient__name', flat=True))
+                # product["ingredients"] = ', '.join(Product.objects.get(id=product["id"]).product_ingredients.all()
+                #                                    .values_list('ingredient__name', flat=True))
         if not active_category:
             categories[0].update({'active': True})
         return render(request, self.template_name, {"section": "menu", "categories": categories})
@@ -68,28 +72,44 @@ class ContactsView(View):
 class CartControl(View):
 
     @classmethod
+    @csrf_exempt
+    def get(cls, request):
+        cart = Cart(request)
+        return HttpResponse(json.dumps({"count": len(cart)}), content_type="application/json")
+
+    @classmethod
+    @csrf_exempt
     def post(cls, request):
         cart = Cart(request)
-        product = get_object_or_404(Product, id=request.POST.get('product_id', 0))
-        form = CartAddProductForm(request.POST)
+        request_body = json.loads(request.body.decode("utf-8") or "{}")
+        product = get_object_or_404(Product, id=request_body.get('product_id', 0))
+
+        form = CartAddProductForm(request_body)
         if form.is_valid():
             cd = form.cleaned_data
             cart.add(product=product, quantity=cd['quantity'],
                      update_quantity=cd['update'])
-            return HttpResponse({})
-        return HttpResponseBadRequest({'error': form.errors})
+            return HttpResponse(json.dumps({"count": len(cart)}), content_type="application/json")
+        return HttpResponseBadRequest(json.dumps({'error': form.errors}), content_type="application/json")
 
     @classmethod
+    @csrf_exempt
     def delete(cls, request):
         cart = Cart(request)
-        product = get_object_or_404(Product, id=request.body.get('product_id'))
+        request_body = json.loads(request.body.decode("utf-8") or "{}")
+        product = get_object_or_404(Product, id=request_body.get('product_id'))
         cart.remove(product)
-        return HttpResponse({})
+        return HttpResponse(json.dumps({"count": len(cart)}), content_type="application/json")
 
 
 class CartView(View):
     template_name = 'service/basket.html'
 
     def get(self, request):
+        return render(request, self.template_name)
+
+    @classmethod
+    def post(cls, request):
         cart = Cart(request)
-        return render(request, self.template_name, {'cart': cart})
+        return HttpResponse(json.dumps({"basket": [x for x in cart]}, cls=DecimalEncoder),
+                            content_type="application/json")

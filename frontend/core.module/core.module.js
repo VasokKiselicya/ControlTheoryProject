@@ -1,6 +1,7 @@
 import angular from "angular";
 
 import HeaderController from "./controllers/header.controller";
+import BasketController from "./controllers/basket.controller";
 
 import scrollArrowDirective from './directives/scroll.directive'
 import hoveredImageDirective from './directives/hovered-image.directive'
@@ -17,6 +18,7 @@ angular
 
     .service("BasketService", basketService)
 
+    .controller("BasketController", BasketController)
     .controller("HeaderController", HeaderController);
 
 export default name;
