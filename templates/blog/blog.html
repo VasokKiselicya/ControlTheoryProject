@@ -12,7 +12,16 @@
 {% endblock %}
 
 {% block body %}
+
 <div class="row">
+    <div class="yellow">
+        <div class="col-xs-12 our-blog">
+
+            <h3 class="our-blog-title">{% trans "Blog" %}</h3>
+        </div>
+    </div>
+
+
     <div class="col-xs-12 blog-content">
         <div class="col-xs-8 col-xs-offset-2">
             {% if error %}
@@ -26,12 +35,19 @@
                     <div class="article-preview">
                         <div class="image-container">
                             <img src="{% static article.image %}" alt="{{ article.title }}">
+                            </a>
                         </div>
                     </div>
                     <h3 class="article-title">
-                        <a href="{% url 'service:blog' %}{{article.slug}}" class="article-title">{{ article.title }}</a>
+                        <p>{{ article.title }}</p>
                     </h3>
+                    <h4 class="article-date">
+                        <p>{{ article.created_at|date:"d M, y" }}</p>
+                    </h4>
                     <p class="description"><br>{{ article.header }}</p>
+                    <br><br>
+                    <a class="read btn" href="{% url 'service:blog' %}{{article.slug}}">
+                        {% trans 'read' %} &nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 </div>
                 {% endfor %}
             </div>
@@ -44,4 +60,14 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block extra_scripts %}
+<script src="{% static 'js/grids.min.js' %}"></script>
+<script>
+    $(document).ready(() => {
+        $(".article-item").responsiveEqualHeightGrid();
+
+    });
+
+</script>
 {% endblock %}

@@ -363,7 +363,7 @@ a.dropdown-toggle {
     background: url('../images/fon1.jpg') 100% 100% no-repeat;
     background-size: cover;
     height: 44em;
-    color: white;
+    color: #f7fbfe;
     display: flex;
     align-items: center;
 }
