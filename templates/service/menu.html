@@ -41,7 +41,8 @@
                                     <div class="row menu-row">
                                         {% for product in row %}
                                             <div class="col-xs-4 menu-item">
-                                                <div class="product-preview">
+                                                <div class="hovered"></div>
+                                                <div class="product-preview" hovered-image>
                                                     <div class="image-container">
                                                         <img src="{% static product.photo %}" alt="{{ product.name }}">
                                                     </div>
@@ -50,7 +51,8 @@
                                                     <span class="product-name">{{ product.name }}</span>
                                                     <span class="product-price">{{ product.weight | floatformat }} {{ product.unit_name }}</span>
                                                 </h3>
-                                                <p class="ingredients"><br>{{ product.description }}</p>
+                                                <br><p class="ingredients"><br>{{ product.description }}</p><br>
+                                                <h4 class="product-price" hovered-image> {{ product.price | floatformat }} грн.</h4>
                                             </div>
                                         {% endfor %}
                                     </div>
@@ -62,4 +64,17 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block extra_scripts %}
+    <script src="{% static 'js/grids.min.js' %}"></script>
+    <script>
+    $(document).ready(() => {
+        $(".menu-item").responsiveEqualHeightGrid();
+        $("li.nav-item a").click(() => {
+            setTimeout(() => {
+                $(".menu-item").responsiveEqualHeightGrid();
+            }, 100);
+        });
+    });
+    </script>
 {% endblock %}

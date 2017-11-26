@@ -13,6 +13,7 @@ class Category(models.Model):
     name = models.CharField(max_length=200, null=False, blank=False, verbose_name=_("Category Name"))
     description = models.TextField(null=True, verbose_name=_("Description"))
     photo = models.ImageField(upload_to='category_photos', null=True, storage=fs, verbose_name=_("Image"))
+    order_no = models.PositiveIntegerField(null=False, unique=True, verbose_name=_("Order Number"))
 
     class Meta:
         db_table = "category"
@@ -134,7 +135,7 @@ class OrderItem(models.Model):
     order = models.ForeignKey(Order, related_name='items')
     product = models.ForeignKey(Product, related_name='order_items', verbose_name=_("Product"))
     price = models.DecimalField(verbose_name=_("Price"), max_digits=10, decimal_places=2)
-    quantity = models.PositiveIntegerField(verbose_name=_("quantity"), default=1)
+    quantity = models.PositiveIntegerField(verbose_name=_("Quantity"), default=1)
 
     def __str__(self):
         return '{}'.format(self.id)

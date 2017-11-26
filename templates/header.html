@@ -22,12 +22,12 @@
                   ng-show="false"
             >{% csrf_token %}</form>
             <a href="#" ng-click="header.logout();">{% trans 'Log out' %}</a>
-            <i class="fa fa-shopping-basket" aria-hidden="true">
-                <span class="quantity_of_goods">{% if count %} {{ count }} {% else %} 0 {% endif %}</span>
-            </i>
         {% else %}
             <a href="{% url "account_login" %}">{% trans 'Log in' %}</a>
         {% endif %}
+            <i class="fa fa-shopping-basket" aria-hidden="true">
+                <span class="quantity_of_goods">{% if count %} {{ count }} {% else %} 0 {% endif %}</span>
+            </i>
         </div>
         <div class="menu col-xs-12 col-sm-12 col-md-12">
             <a href="/">{% trans 'Main'|lower %}</a>

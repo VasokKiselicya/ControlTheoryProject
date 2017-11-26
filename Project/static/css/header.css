@@ -105,9 +105,7 @@ a.dropdown-toggle {
 }
 
 .social_network {
-    margin-top: 10px;
     color: white;
-    font-size: 2.4em;
 }
 
 .social_network a {
@@ -308,22 +306,22 @@ a.dropdown-toggle {
     background: rgba(0, 0, 0, 0.85);
 }
 
+.footer .logo_footer {
+    margin-top: 15px;
+}
+
 .footer .logo_footer img{
     display: block;
     position: relative;
     bottom: 5%;
     height: 17%;
     width: 17%;
-
-
+    margin: 0 auto;
 }
 
 .footer .social_network{
-    left: 60%;
+    right: 50px;
     font-size: 63px;
-    margin-top: -14%;
-
-
 }
 
 .newsletters {
@@ -457,12 +455,12 @@ a.dropdown-toggle {
     cursor: pointer;
 }
 
-.hovered:hover {
+.hovered:hover, .hovered.active-hover {
     z-index: 333;
     background: rgba(255, 200, 75, 0.87);
 }
 
-.hovered:hover::before {
+.hovered:hover::before,.hovered.active-hover::before {
     font-family: 'FontAwesome', serif;
     content: "\f055";
     color: black;
@@ -505,6 +503,26 @@ a.dropdown-toggle {
     width: 30%;
 }
 
+.mani_inf table {
+    width: 100%;
+}
+
+span.inline {
+    display: inline-block;
+}
+
+span.town, span.street {
+    font-size: 17px;
+}
+
+span.inline .fa-mobile {
+    font-size: 3.6em !important;
+}
+
+span.inline .fa-map-marker {
+    font-size: 3.2em !important;
+}
+
 .est .icon {
     font-size: 23px;
     line-height: 1.2;
@@ -516,11 +534,9 @@ a.dropdown-toggle {
     justify-content: center;
     position: relative;
     height: 200px;
-
 }
 
 .est .order {
-
     background: url("../images/order_fon.png") 100% 100% no-repeat;
     background-size: cover;
 }
@@ -528,7 +544,6 @@ a.dropdown-toggle {
 
 
 .est .blog {
-
     background: url("../images/fon_blog.png") 0% 100% no-repeat;
     background-size: cover;
 }
@@ -537,7 +552,6 @@ a.dropdown-toggle {
 
 
 .est .photo {
-
     background: url("../images/photo_fon.png") 70% 100% no-repeat;
     background-size: cover;
 }
@@ -545,7 +559,6 @@ a.dropdown-toggle {
 
 
 .est .white {
-    font-size: 1.3em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -565,7 +578,7 @@ a.dropdown-toggle {
     z-index: 333;
     background: rgba(17, 15, 18, 0.87);
     color: #f7fbfe;
-
+    cursor: pointer;
 }
 
 
