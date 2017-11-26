@@ -19,7 +19,7 @@
                 <h3 class="menu-header">{% trans "your basket" %}</h3>
             </div>
             <div class="col-xs-8 col-xs-offset-2" ng-init="basket.loadCart();">
-                <div class="empty-basket" ng-if="!basket.cartItems.length">
+                <div class="empty-basket" ng-if="!basket.cartItems.length && basket.cart_loaded">
                     <h1>{% trans "Your Basket Is Empty" %}</h1>
                 </div>
                 <div class="table-responsive" ng-if="basket.cartItems.length">
