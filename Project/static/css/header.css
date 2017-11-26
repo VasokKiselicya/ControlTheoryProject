@@ -364,7 +364,7 @@ a.dropdown-toggle {
     background: url('../images/fon1.jpg') 100% 100% no-repeat;
     background-size: cover;
     height: 44em;
-    color: white;
+    color: #f7fbfe;
     display: flex;
     align-items: center;
 }
@@ -476,7 +476,7 @@ a.dropdown-toggle {
 
 .est {
     text-align: center;
-    background: url("../images/fon_est.png") 0% 50% no-repeat;
+    background: url("../images/fon_est.png") 100% 50% no-repeat;
     height: 40em;
 }
 

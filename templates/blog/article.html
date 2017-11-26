@@ -4,26 +4,32 @@
 {% load app_tags %}
 
 {% block title %}
-    <title> {{  article.title  }} </title>
+<title> {{ article.title }} </title>
 {% endblock %}
 
 {% block extra_styles %}
-    <link rel="stylesheet" href="{% static 'css/service/menu.css' %}">
+<link rel="stylesheet" href="{% static 'css/service/article.css' %}">
 {% endblock %}
 
 {% block body %}
-    <div class="row">
-        <div class="col-xs-12 menu-content">
-            <div class="col-xs-8 col-xs-offset-2">
-                {% if error %}
-                 <h1>{% trans error %}</h1>
-                {% else %}
-                <h1>{{ article.title }}</h1>
-                {% endif %}
+<div class="row">
+    <div class="col-xs-12 article-content">
+        <div class="image-title col-xs-12 col-sm-12 col-md-12">
+            <img class="image" src="{% static article.image %}" alt="{{ article.title }}">
+            <h1 class="article-title">{{ article.title }}</h1>
+            <h2 class="description"><br>{{ article.header }}</h2>
+        </div>
+        <div class="article-border col-xs-8 col-xs-offset-2">
+            {% if error %}
+            <h1>{% trans error %}</h1>
+            {% else %}
+            <h1 class="article-body">{{ article.body | safe }}</h1>
+            {% endif %}
+            <a class="back btn" href="{% url 'service:blog' %}">
+                        {% trans 'back' %} &nbsp; <i class="fa fa-angle-left" aria-hidden="true"></i></a>
 
 
-
-            </div>
         </div>
     </div>
+</div>
 {% endblock %}
