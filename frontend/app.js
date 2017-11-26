@@ -10,7 +10,7 @@ angular
         landing,
         core
     ])
-    .config(($interpolateProvider) => {
+    .config(['$interpolateProvider', function ($interpolateProvider) {
         $interpolateProvider.startSymbol('[[');
         $interpolateProvider.endSymbol(']]');
-    });
+    }]);
