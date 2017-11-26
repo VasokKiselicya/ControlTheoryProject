@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load app_tags %}
+
+{% block title %}
+    <title>{% trans 'Contact Title' %}</title>
+{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/service/menu.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12 menu-content">
+            <div class="menu-header-background">
+                <h3 class="menu-header">{% trans "Menu" %}</h3>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2">
+                <h1>TEXT</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}

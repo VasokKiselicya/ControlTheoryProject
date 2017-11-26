@@ -2,6 +2,7 @@ from django.views import View
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.utils.translation import get_language
+
 from db.models import Category, Product, Unit, Article
 from core.templatetags.app_tags import slugify
 from core.service.cart import Cart
@@ -13,7 +14,7 @@ class MenuView(View):
 
     def get(self, request):
         unit_names = dict(Unit.objects.all().values_list('id', 'short_name'))
-        categories = list(Category.objects.all().values("id", "name", "description", "photo").order_by("id"))
+        categories = list(Category.objects.all().values("id", "name", "description", "photo").order_by("order_no"))
         active_category = request.GET.get("category", "")
         for cat in categories:
             cat['slug'] = slugify(cat['name'])
@@ -35,7 +36,7 @@ class ArticleView(View):
         lang = get_language()
         article = Article.objects.filter(slug=slug, lang=lang).first()
         if article is None:
-            return render(request, self.template_name, {'error': 'article_not_exists'} )
+            return render(request, self.template_name, {'error': 'article_not_exists'})
         return render(request, self.template_name, {'article': article})
 
 
@@ -65,7 +66,9 @@ class ContactsView(View):
 
 
 class CartControl(View):
-    def post(self, request):
+
+    @classmethod
+    def post(cls, request):
         cart = Cart(request)
         product = get_object_or_404(Product, id=request.POST.get('product_id', 0))
         form = CartAddProductForm(request.POST)
@@ -76,7 +79,8 @@ class CartControl(View):
             return HttpResponse({})
         return HttpResponseBadRequest({'error': form.errors})
 
-    def delete(self, request):
+    @classmethod
+    def delete(cls, request):
         cart = Cart(request)
         product = get_object_or_404(Product, id=request.body.get('product_id'))
         cart.remove(product)
@@ -84,7 +88,7 @@ class CartControl(View):
 
 
 class CartView(View):
-    template_name = 'service/cart.html'
+    template_name = 'service/basket.html'
 
     def get(self, request):
         cart = Cart(request)

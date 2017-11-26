@@ -1,7 +1,21 @@
 .menu-page .menu-row {
-    /*height: 300px;*/
+    /*height: 400px;*/
     /*min-height: 150px;*/
     /*max-height: 350px;*/
+}
+
+h4.product-price {
+    text-align: center;
+    bottom: 0;
+    font-size: 23px;
+    line-height: 2.1;
+    color: #f7fbfe;
+    position: absolute;
+    font-weight: 600;
+    display: block;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
 }
 
 .menu-page .menu-row div.image-container img {
@@ -13,6 +27,7 @@
 }
 
 .menu-item {
+    position: relative;
     text-align: center;
     padding: 45px 0 15px 0;
 }
@@ -35,6 +50,7 @@ h3.product-title {
 
 h3.product-title > .product-name {
     float: left;
+    max-width: 70%;
 }
 
 h3.product-title > .product-price {
