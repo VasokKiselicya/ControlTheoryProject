@@ -153,7 +153,28 @@ class OrderItem(models.Model):
         verbose_name_plural = _('OrderItems')
 
 
+class ArticleName(models.Model):
+    created_at = models.DateTimeField(verbose_name=_('Created'), auto_now_add=True)
+    updated_at = models.DateTimeField(verbose_name=_('Updated'), auto_now=True)
+    name = models.CharField(max_length=200, unique=True, blank=False, null=False,
+                            verbose_name=_("Unique Article Name"), default="")
+
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.__str__()
+
+    class Meta:
+        ordering = ['-id']
+        verbose_name = _("Article Identifier")
+        verbose_name_plural = _("Articles Identifiers")
+        db_table = "vincent_article_name"
+
+
 class Article(models.Model):
+    unique_name = models.ForeignKey(ArticleName, on_delete=models.CASCADE, null=False,
+                                    verbose_name=_("Article Identifier"))
     title = models.CharField(max_length=200, verbose_name=_("Article Title"), blank=False, null=False)
     header = models.TextField(verbose_name=_("Card Article Preview"))
     slug = models.SlugField(max_length=200, unique=True, blank=False, verbose_name=_("Unique Article Identifier"))
@@ -177,3 +198,4 @@ class Article(models.Model):
         ordering = ('-created_at', )
         verbose_name = _('Article')
         verbose_name_plural = _('Articles')
+        unique_together = (("unique_name", "lang"),)

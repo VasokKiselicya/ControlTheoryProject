@@ -65,8 +65,9 @@
 <script src="{% static 'js/grids.min.js' %}"></script>
 <script>
     $(document).ready(() => {
-        $(".article-item").responsiveEqualHeightGrid();
-
+        setTimeout(() => {
+            $(".article-item").responsiveEqualHeightGrid();
+        }, 100);
     });
 
 </script>

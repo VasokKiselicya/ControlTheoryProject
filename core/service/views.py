@@ -2,7 +2,7 @@ import json
 
 from django.views import View
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseBadRequest, Http404
 from django.utils.translation import get_language
 from django.views.decorators.csrf import csrf_exempt
 
@@ -38,9 +38,19 @@ class ArticleView(View):
 
     def get(self, request, slug):
         lang = get_language()
-        article = Article.objects.filter(slug=slug, lang=lang).first()
+        article = Article.objects.filter(slug=slug).first()
+
         if article is None:
-            return render(request, self.template_name, {'error': 'article_not_exists'})
+            raise Http404
+
+        if article.lang != lang:
+            another_article = Article.objects.filter(unique_name=article.unique_name, lang=lang).first()
+            if another_article is not None:
+                article = another_article
+
+        article.views += 1
+        article.save()
+
         return render(request, self.template_name, {'article': article})
 
 

@@ -23,6 +23,19 @@ class IngredientsStackedInline(admin.StackedInline):
     formset = IngredientInlineFormset
 
 
+class OrderItemsStackedInline(admin.StackedInline):
+    extra = 0
+    fields = ('product', 'price', 'quantity')
+    model = models.OrderItem
+    readonly_fields = ['product', 'price', 'quantity']
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def has_add_permission(self, request):
+        return False
+
+
 @admin.register(models.Category)
 class CategoryAdmin(admin.ModelAdmin):
     icon = '<i class="material-icons">free_breakfast</i>'
@@ -55,25 +68,56 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(models.Ingredient)
 class IngredientAdmin(admin.ModelAdmin):
-    icon = '<i class="material-icons">cake</i>'
+    icon = '<i class="material-icons">favorite</i>'
     list_display = ("name", "description", "unit")
     search_fields = ("name",)
 
 
 @admin.register(models.Unit)
 class UnitAdmin(admin.ModelAdmin):
-    icon = '<i class="material-icons">cake</i>'
+    icon = '<i class="material-icons">grade</i>'
     list_display = ("name", "short_name", "description")
     search_fields = ("name",)
 
 
+@admin.register(models.Order)
+class OrderAdmin(admin.ModelAdmin):
+    icon = '<i class="material-icons">credit_card</i>'
+    list_display = ("user", "address", "paid")
+    search_fields = ("user", "address")
+    # fields = ("user", "paid", "delivery_type", "address", "pay_method")
+    readonly_fields = ["total_price"]
+    exclude = ("id", )
+    inlines = [OrderItemsStackedInline]
+
+    def total_price(self, order):
+        return "{:2f}".format(order.get_total_cost())
+
+    total_price.short_description = 'Загальна вартість'
+
+    def get_readonly_fields(self, request, obj=None):
+        return self.readonly_fields + list(set([field.name for field in self.opts.local_fields]) - {"id"})
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
 @admin.register(models.Article)
 class ArticleAdmin(admin.ModelAdmin):
-
+    icon = '<i class="material-icons">forum</i>'
     list_display = ("title", "lang", "created_at", "views", "header")
     readonly_fields = ('views', 'likes', 'dislikes')
     prepopulated_fields = {"slug": ("title",)}
-    icon = '<i class="material-icons">forum</i>'
+
+
+@admin.register(models.ArticleName)
+class ArticleNameAdmin(admin.ModelAdmin):
+    icon = '<i class="material-icons">language</i>'
+    list_display = ("name", "created_at")
+    readonly_fields = ('created_at', 'updated_at')
 
 
 admin.site.unregister(Module)
