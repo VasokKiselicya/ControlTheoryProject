@@ -4,17 +4,43 @@
 {% load app_tags %}
 
 {% block title %}
-    <title>{% trans 'Contact Title' %}</title>
+<title>{% trans 'Contact Title' %}</title>
 {% endblock %}
 
 {% block extra_styles %}
-    <!--<link rel="stylesheet" href="{% static 'css/service/menu.css' %}">-->
+<link rel="stylesheet" href="{% static 'css/service/menu.css' %}">
+<link rel="stylesheet" href="{% static 'css/service/contacts.css' %}">
+
 {% endblock %}
 
 {% block body %}
-    <div class="row">
-        <div class="col-xs-12 menu-content" style="margin-top: 200px">
-            <p>Heeee </p>
+<div class="row">
+    <div class="col-xs-12 menu-content">
+        <div class="menu-header-background">
+            <h3 class="menu-header">{% trans "зв'яжіться з нами" %}</h3>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1">
+            <div class="col-xs-4">
+                <span>
+                    <p>{% trans "м. Чернівці вул. Університетська 28" %}</p>
+                    <p> +38(095)999-99-99 - {% trans "ресторан" %}</p>
+                    <p> +38(095)999-23-23 - {% trans "доставка" %}</p>
+                    <p>restaurant@vincent.com</p>
+                    </span>
+            </div>
+            <div class="col-xs-8">
+
+
+                <div class="map-container">
+                    <div id='gmap_canvas'></div>
+                </div>
+
+            </div>
         </div>
     </div>
+</div>
+{% endblock %}
+{% block extra_scripts %}
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+<script type='text/javascript' src="{% static 'js/google_maps.js' %}"></script>
 {% endblock %}
