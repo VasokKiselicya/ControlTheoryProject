@@ -10,21 +10,22 @@
 
 .menu-content .col-xs-10 .col-xs-4 p {
     color: #f7fbfe;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 2em;
-
 }
 
 .menu-content .col-xs-10 {
     padding: 40px 0;
     position: relative;
+    display: flex;
 }
 
-.map-container.col-xs-10 .col-xs-4 span {
+.menu-content .col-xs-10 .col-xs-4 {
     display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;;
+}
+
+.col-xs-4 .middle-vertical {
+    margin: auto;
 }
 
 .menu-content .map-container {
@@ -32,6 +33,3 @@
     height: 500px;
     width: 100%;
 }
-
-
-

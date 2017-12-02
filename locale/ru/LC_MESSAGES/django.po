@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-21 20:01+0200\n"
+"POT-Creation-Date: 2017-12-02 22:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,27 +20,27 @@ msgstr ""
 "10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
 "100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\Project\settings.py:93
+#: .\Project\settings.py:94
 msgid "English"
 msgstr ""
 
-#: .\Project\settings.py:94
+#: .\Project\settings.py:95
 msgid "Russian"
 msgstr ""
 
-#: .\Project\settings.py:95
+#: .\Project\settings.py:96
 msgid "Ukrainian"
 msgstr ""
 
-#: .\core\landing\views.py:9
-msgid "abc"
+#: .\core\service\forms.py:8 .\db\models.py:138
+msgid "Quantity"
 msgstr ""
 
-#: .\db\admin.py:38
+#: .\db\admin.py:51
 msgid "Small Preview"
 msgstr ""
 
-#: .\db\admin.py:45
+#: .\db\admin.py:58
 msgid "Preview"
 msgstr ""
 
@@ -58,157 +58,169 @@ msgstr ""
 msgid "Category Name"
 msgstr "Категории"
 
-#: .\db\models.py:14 .\db\models.py:32 .\db\models.py:52 .\db\models.py:74
+#: .\db\models.py:14 .\db\models.py:33 .\db\models.py:53 .\db\models.py:75
 msgid "Description"
 msgstr ""
 
-#: .\db\models.py:15 .\db\models.py:51 .\db\models.py:72
+#: .\db\models.py:15 .\db\models.py:52 .\db\models.py:73
 msgid "Image"
 msgstr ""
 
-#: .\db\models.py:19 .\db\models.py:71
+#: .\db\models.py:16
+msgid "Order Number"
+msgstr ""
+
+#: .\db\models.py:20 .\db\models.py:72
 #, fuzzy
 #| msgid "Categories"
 msgid "Category"
 msgstr "Категории"
 
-#: .\db\models.py:20
+#: .\db\models.py:21
 msgid "Categories"
 msgstr "Категории"
 
-#: .\db\models.py:31
+#: .\db\models.py:32
 msgid "Unit Name"
 msgstr ""
 
-#: .\db\models.py:33
+#: .\db\models.py:34
 msgid "Short Value"
 msgstr ""
 
-#: .\db\models.py:37 .\db\models.py:53 .\db\models.py:76
+#: .\db\models.py:38 .\db\models.py:54 .\db\models.py:77
 msgid "Unit"
 msgstr ""
 
-#: .\db\models.py:38
+#: .\db\models.py:39
 msgid "Units"
 msgstr ""
 
-#: .\db\models.py:49
+#: .\db\models.py:50
 msgid "Ingredient Name"
 msgstr ""
 
-#: .\db\models.py:57 .\db\models.py:93
+#: .\db\models.py:58 .\db\models.py:94
 msgid "Ingredient"
 msgstr ""
 
-#: .\db\models.py:58 .\db\models.py:75
+#: .\db\models.py:59 .\db\models.py:76
 msgid "Ingredients"
 msgstr ""
 
-#: .\db\models.py:69
+#: .\db\models.py:70
 msgid "Product Name"
 msgstr ""
 
-#: .\db\models.py:73 .\db\models.py:136
+#: .\db\models.py:74 .\db\models.py:137
 msgid "Price"
 msgstr ""
 
-#: .\db\models.py:77 .\db\models.py:96
+#: .\db\models.py:78 .\db\models.py:97
 msgid "Weight"
 msgstr ""
 
-#: .\db\models.py:81 .\db\models.py:95 .\db\models.py:135
+#: .\db\models.py:82 .\db\models.py:96 .\db\models.py:136
 msgid "Product"
 msgstr ""
 
-#: .\db\models.py:82
+#: .\db\models.py:83
 msgid "Products"
 msgstr ""
 
-#: .\db\models.py:100 .\db\models.py:101
+#: .\db\models.py:101 .\db\models.py:102
 msgid "Product Ingredients"
 msgstr ""
 
-#: .\db\models.py:112
+#: .\db\models.py:113
 msgid "User"
 msgstr ""
 
-#: .\db\models.py:113
+#: .\db\models.py:114
 msgid "Address"
 msgstr ""
 
-#: .\db\models.py:114 .\db\models.py:163
+#: .\db\models.py:115 .\db\models.py:157 .\db\models.py:185
 msgid "Created"
 msgstr ""
 
-#: .\db\models.py:115 .\db\models.py:164
+#: .\db\models.py:116 .\db\models.py:158 .\db\models.py:186
 msgid "Updated"
 msgstr ""
 
-#: .\db\models.py:116
+#: .\db\models.py:117
 msgid "Paid"
 msgstr ""
 
-#: .\db\models.py:121 .\db\models.py:125
+#: .\db\models.py:122 .\db\models.py:126
 msgid "Order"
 msgstr ""
 
-#: .\db\models.py:122
+#: .\db\models.py:123
 msgid "Orders"
 msgstr ""
 
-#: .\db\models.py:137
-msgid "quantity"
-msgstr ""
-
-#: .\db\models.py:151
+#: .\db\models.py:152
 msgid "OrderItem"
 msgstr ""
 
-#: .\db\models.py:152
+#: .\db\models.py:153
 msgid "OrderItems"
 msgstr ""
 
-#: .\db\models.py:156
-msgid "Article Title"
-msgstr ""
-
-#: .\db\models.py:157
-msgid "Card Article Preview"
-msgstr ""
-
-#: .\db\models.py:158
-msgid "Unique Article Identifier"
-msgstr ""
-
 #: .\db\models.py:160
-msgid "Article Image"
+msgid "Unique Article Name"
 msgstr ""
 
-#: .\db\models.py:161
-msgid "Language"
+#: .\db\models.py:170 .\db\models.py:177
+msgid "Article Identifier"
 msgstr ""
 
-#: .\db\models.py:162
-msgid "Article Body"
-msgstr ""
-
-#: .\db\models.py:165
-msgid "Views Count"
-msgstr ""
-
-#: .\db\models.py:166
-msgid "Likes Count"
-msgstr ""
-
-#: .\db\models.py:167
-msgid "Dislikes Count"
-msgstr ""
-
-#: .\db\models.py:177
-msgid "Article"
+#: .\db\models.py:171
+msgid "Articles Identifiers"
 msgstr ""
 
 #: .\db\models.py:178
+msgid "Article Title"
+msgstr ""
+
+#: .\db\models.py:179
+msgid "Card Article Preview"
+msgstr ""
+
+#: .\db\models.py:180
+msgid "Unique Article Identifier"
+msgstr ""
+
+#: .\db\models.py:182
+msgid "Article Image"
+msgstr ""
+
+#: .\db\models.py:183
+msgid "Language"
+msgstr ""
+
+#: .\db\models.py:184
+msgid "Article Body"
+msgstr ""
+
+#: .\db\models.py:187
+msgid "Views Count"
+msgstr ""
+
+#: .\db\models.py:188
+msgid "Likes Count"
+msgstr ""
+
+#: .\db\models.py:189
+msgid "Dislikes Count"
+msgstr ""
+
+#: .\db\models.py:199
+msgid "Article"
+msgstr ""
+
+#: .\db\models.py:200
 msgid "Articles"
 msgstr ""
 
@@ -355,7 +367,7 @@ msgid ""
 msgstr ""
 
 #: .\templates\account\login.html:6 .\templates\account\login.html:59
-#: .\templates\account\signup.html:97 .\templates\header.html:29
+#: .\templates\account\signup.html:97 .\templates\header.html:26
 msgid "Log in"
 msgstr ""
 
@@ -611,8 +623,16 @@ msgid ""
 "mail address</a>."
 msgstr ""
 
-#: .\templates\blog\blog.html:7 .\templates\landing.html:65
+#: .\templates\blog\article.html:29
+msgid "back"
+msgstr ""
+
+#: .\templates\blog\blog.html:7 .\templates\blog\blog.html:20
 msgid "Blog"
+msgstr ""
+
+#: .\templates\blog\blog.html:50
+msgid "read"
 msgstr ""
 
 #: .\templates\errors\404_not_found.html:7
@@ -620,11 +640,19 @@ msgid "Page Not Found"
 msgstr ""
 
 #: .\templates\footer.html:7
-msgid "Subscribe to the news"
+msgid "subscribe to the news"
 msgstr ""
 
-#: .\templates\footer.html:19
-msgid "Subscribe"
+#: .\templates\footer.html:15
+msgid "subscribe"
+msgstr ""
+
+#: .\templates\footer.html:33
+msgid "м. Чернівці"
+msgstr ""
+
+#: .\templates\footer.html:34
+msgid "вул. Раздва, 13"
 msgstr ""
 
 #: .\templates\header.html:33
@@ -635,7 +663,7 @@ msgstr ""
 msgid "Delivery"
 msgstr ""
 
-#: .\templates\header.html:35 .\templates\landing.html:51
+#: .\templates\header.html:35
 msgid "Restaurant"
 msgstr ""
 
@@ -653,34 +681,82 @@ msgid ""
 "любов’ю, тому і смачно.<br>"
 msgstr ""
 
-#: .\templates\landing.html:13
-msgid "меню"
+#: .\templates\landing.html:13 .\templates\service\menu.html:18
+msgid "menu"
 msgstr ""
 
-#: .\templates\landing.html:56
-msgid "Only fresh <br>products"
+#: .\templates\landing.html:54
+msgid "restaurant"
 msgstr ""
 
 #: .\templates\landing.html:59
-msgid "Order a table"
+msgid "only fresh <br>products"
 msgstr ""
 
-#: .\templates\landing.html:61
-msgid "Own recipes"
+#: .\templates\landing.html:62
+msgid "order a table"
 msgstr ""
 
-#: .\templates\landing.html:67
-msgid "Fast delivery"
+#: .\templates\landing.html:65
+msgid "own recipes"
 msgstr ""
 
 #: .\templates\landing.html:69
-msgid "Gallery"
+msgid "blog"
+msgstr ""
+
+#: .\templates\landing.html:71
+msgid "fast delivery"
+msgstr ""
+
+#: .\templates\landing.html:73
+msgid "gallery"
+msgstr ""
+
+#: .\templates\service\basket.html:7 .\templates\service\contacts.html:7
+msgid "Contact Title"
+msgstr ""
+
+#: .\templates\service\basket.html:19
+msgid "your basket"
+msgstr ""
+
+#: .\templates\service\basket.html:23
+msgid "Your Basket Is Empty"
+msgstr ""
+
+#: .\templates\service\basket.html:29
+msgid "product"
+msgstr ""
+
+#: .\templates\service\basket.html:30
+msgid "price"
+msgstr ""
+
+#: .\templates\service\basket.html:31
+msgid "qty"
+msgstr ""
+
+#: .\templates\service\basket.html:32
+msgid "total price"
+msgstr ""
+
+#: .\templates\service\contacts.html:20
+msgid "зв'яжіться з нами"
+msgstr ""
+
+#: .\templates\service\contacts.html:25
+msgid "м. Чернівці вул. Університетська 28"
+msgstr ""
+
+#: .\templates\service\contacts.html:26
+msgid "ресторан"
+msgstr ""
+
+#: .\templates\service\contacts.html:27
+msgid "доставка"
 msgstr ""
 
 #: .\templates\service\menu.html:7
 msgid "Menu Title"
-msgstr ""
-
-#: .\templates\service\menu.html:18
-msgid "Menu"
 msgstr ""
