@@ -5,18 +5,8 @@
 {% endblock %}
 
 {% block body %}
-    {% if messages %}
-        <div>
-            <strong>Messages:</strong>
-            <ul>
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
     <div class="container">
-        <div class="auth-content">
+        <div class="auth-content text-auth-container">
             {% block content %}
             {% endblock %}
         </div>

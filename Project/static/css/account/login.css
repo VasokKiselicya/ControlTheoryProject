@@ -68,7 +68,18 @@ small {
 }
 
 .auth-container {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(18,22,25, 0.96);
+}
+
+.text-auth-container {
+    margin: 150px 0 0 0;
+    padding: 5% 10%;
+    display: block;
+}
+
+.container {
+    background-color: rgba(18,22,25, 0.96);
+    color: #f7fbfe;
 }
 
 .login-form {
@@ -76,6 +87,15 @@ small {
     margin-top: 180px;
     font-size: 1.8rem;
 }
+
+form .form-group .col-sm-6:first-child {
+    padding-left: 0 !important;
+}
+
+form .form-group .col-sm-6:nth-child(2) {
+    padding-right: 0 !important;
+}
+
 
 .remember-me {
     font-size: 2rem;
@@ -92,6 +112,7 @@ small {
 }
 
 .btn {
+    background-color: buttonface;
     color: #333 !important;
 }
 
