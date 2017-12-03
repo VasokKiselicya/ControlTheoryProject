@@ -68,13 +68,18 @@
 {% block extra_scripts %}
     <script src="{% static 'js/grids.min.js' %}"></script>
     <script>
-    $(document).ready(() => {
-        $(".menu-item").responsiveEqualHeightGrid();
-        $("li.nav-item a").click(() => {
-            setTimeout(() => {
-                $(".menu-item").responsiveEqualHeightGrid();
-            }, 100);
+        $(document).ready(() => {
+
+            function setGridHeight() {
+                setTimeout(() => {
+                    $(".menu-item").responsiveEqualHeightGrid();
+                }, 100);
+            }
+
+            setGridHeight();
+            $("li.nav-item a").click(() => {
+                setGridHeight();
+            });
         });
-    });
     </script>
 {% endblock %}

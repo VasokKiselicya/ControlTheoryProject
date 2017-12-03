@@ -22,7 +22,7 @@ DEBUG = False
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-ALLOWED_HOSTS = ['controltheory.herokuapp.com', 'vincent-project.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['controltheory.herokuapp.com', 'vincent-project.herokuapp.com', '127.0.0.1', 'localhost']
 
 RAVEN_CONFIG = {
     'dsn': 'https://0f1ad400c39c44b7bdce0c7ceb25e608:aac13a9ba9a543aeb1a39074f57ce59f@sentry.io/217895',
@@ -63,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "Project.middleware.LocaleMiddleware"
 ]
 
 ROOT_URLCONF = 'Project.urls'
@@ -222,7 +223,29 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
 # SOCIAL AUTH SETTINGS
-CART_SESSION_ID = 'cart'
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': ['email', 'profile'],
+        'AUTH_PARAMS': {'access_type': 'online'}
+    },
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile', 'user_friends'],
+        'FIELDS': [
+            'id',
+            'email',
+            'name',
+            'first_name',
+            'last_name',
+            'verified',
+            'locale',
+            'timezone',
+            'link',
+            'gender',
+            'updated_time'],
+        'VERIFIED_EMAIL': True,
+    }
+}
 
 # MAIL SETTINGS
 
@@ -282,3 +305,5 @@ CKEDITOR_CONFIGS = {
         ),
     }
 }
+
+CART_SESSION_ID = 'cart'
