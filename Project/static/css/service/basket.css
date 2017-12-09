@@ -22,15 +22,17 @@ div.table-responsive table {
     width: calc(100% - 4px);  /* - 4px для Рамки (Border) */
 }
 
-div.table-responsive table thead tr {
-    border: solid 2px transparent;
+div.table-responsive table tbody tr {
+    outline: solid 2px transparent;
+    border-left: transparent;
 }
 
-/*
+/* MEGA CSS Crutches =) */
+
 div.table-responsive table tbody tr:hover {
-    border: solid 2px #ffc851;
+    outline: solid 2px #ffc851;
+    border-left: solid 2px #ffc851;
 }
-*/
 
 div.table-responsive table tbody tr td i {
     color: transparent;
@@ -56,4 +58,39 @@ table.table>tbody:before {
     display: block;
     line-height: 1em;
     color: transparent;
+}
+
+
+input[type="text"].quantity,
+input[type="text"].quantity:hover,
+input[type="text"].quantity:active,
+input[type="text"].quantity:focus,
+input[type="text"].quantity:visited {
+    background: transparent;
+    color: #f7fbfe;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    display: inline;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 17px;
+    cursor: default !important;
+    width: 50%;
+    vertical-align: middle;
+    padding: 0;
+}
+
+span.control-basket {
+    cursor: pointer !important;
+}
+
+span.control-basket i {
+    color:  #f7fbfe !important;
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+div.table-responsive table {
+    user-select: none;
 }

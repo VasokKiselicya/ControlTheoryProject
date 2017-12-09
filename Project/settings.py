@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '4_y*@hf!ja2*wonf-66ivh05vo=b(76(^#ktqb_6=qb9x_rjr8'
 
-DEBUG = False
+DEBUG = True
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
-    'raven.contrib.django.raven_compat',
+    # 'raven.contrib.django.raven_compat',
     "ckeditor",
     # "account",
     'rosetta',

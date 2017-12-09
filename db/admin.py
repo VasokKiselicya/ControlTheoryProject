@@ -93,7 +93,7 @@ class OrderAdmin(admin.ModelAdmin):
     def total_price(self, order):
         return "{:2f}".format(order.get_total_cost())
 
-    total_price.short_description = 'Загальна вартість'
+    total_price.short_description = _('Total Price')
 
     def get_readonly_fields(self, request, obj=None):
         return self.readonly_fields + list(set([field.name for field in self.opts.local_fields]) - {"id"})
@@ -118,6 +118,22 @@ class ArticleNameAdmin(admin.ModelAdmin):
     icon = '<i class="material-icons">language</i>'
     list_display = ("name", "created_at")
     readonly_fields = ('created_at', 'updated_at')
+
+
+@admin.register(models.TableBooking)
+class TableBookingAdmin(admin.ModelAdmin):
+    icon = ""
+    list_display = ("full_name", "place_qty", "date")
+    exclude = ("id",)
+
+    def get_readonly_fields(self, request, obj=None):
+        return list(set([field.name for field in self.opts.local_fields]) - {"id"})
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 
 admin.site.unregister(Module)

@@ -57,7 +57,28 @@
                             </td>
                             <td ng-bind="item.product.name"></td>
                             <td ng-bind="item.price"></td>
-                            <td ng-bind="item.quantity"></td>
+                            <td>
+                                <label>
+                                    <span class="control-basket">
+                                        <i class="fa fa-angle-left" aria-hidden="true"
+                                           ng-click="basket.changeBasketItem(item, -1)">
+                                        </i>
+                                    </span>
+                                    <input type="text" id="quantity" name="quantity"
+                                           class="form-control input-number quantity"
+                                           value="[[ item.quantity ]]"
+                                           min="[[ basket.MIN ]]"
+                                           max="[[ basket.MAX ]]"
+                                           ng-model="item.quantity"
+                                           disabled
+                                    >
+                                    <span class="control-basket">
+                                        <i class="fa fa-angle-right" aria-hidden="true"
+                                            ng-click="basket.changeBasketItem(item)">
+                                        </i>
+                                    </span>
+                                </label>
+                            </td>
                             <td ng-bind="item.total_price"></td>
                         </tr>
                         </tbody>

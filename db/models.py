@@ -199,3 +199,24 @@ class Article(models.Model):
         verbose_name = _('Article')
         verbose_name_plural = _('Articles')
         unique_together = (("unique_name", "lang"),)
+
+
+class TableBooking(models.Model):
+    full_name = models.CharField(max_length=300, blank=False, null=False, verbose_name=_("Full Name"))
+    place_qty = models.IntegerField(default=2, verbose_name=_("Places Quantity"))
+    date = models.DateTimeField(auto_now_add=True, verbose_name=_("Booking Date"))
+    wish = models.TextField(blank=True, default="", null=False, max_length=300, verbose_name=_("User Wish"))
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, verbose_name=_("User"))
+    created_at = models.DateTimeField(verbose_name=_('Created'), auto_now_add=True)
+
+    class Meta:
+        db_table = "table_booking"
+        ordering = ('-created_at', )
+        verbose_name = _('TableBooking')
+        verbose_name_plural = _('Bookings')
+
+    def __str__(self):
+        return '{} => {} [{}]'.format(self.full_name, self.place_qty,
+                                      self.date.strftime("%Y-%m-%d %H:%M"))
+
+    __repr__ = __str__
