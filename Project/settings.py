@@ -257,13 +257,10 @@ if DEBUG:
     EMAIL_HOST_PASSWORD = 'VincentTheory'
     EMAIL_HOST_USER = 'vincent.study.company@gmail.com'
     EMAIL_PORT = 587
+    FROM_EMAIL = f'Vincent Company <{EMAIL_HOST_USER}>'
+    DEFAULT_FROM_EMAIL = FROM_EMAIL
 else:
     from herokuify.mail.mailgun import EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT
-
-FROM_EMAIL = f'Vincent Company <{EMAIL_HOST_USER}>'
-
-
-DEFAULT_FROM_EMAIL = FROM_EMAIL
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
