@@ -12,3 +12,4 @@ django-material==1.0.0
 unidecode==0.4.21
 django-ckeditor==5.3.1
 django-allauth==0.34.0
+django-herokuify==1.0rc3

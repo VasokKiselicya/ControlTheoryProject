@@ -251,11 +251,18 @@ SOCIALACCOUNT_PROVIDERS = {
 
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_PASSWORD = 'VincentTheory'
-EMAIL_HOST_USER = 'vincent.study.company@gmail.com'
-EMAIL_PORT = 587
-FROM_EMAIL = 'Vincent Company <vincent.study.company@gmail.com>'
+
+if DEBUG:
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_PASSWORD = 'VincentTheory'
+    EMAIL_HOST_USER = 'vincent.study.company@gmail.com'
+    EMAIL_PORT = 587
+else:
+    from herokuify.mail.mailgun import EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT
+
+FROM_EMAIL = f'Vincent Company <{EMAIL_HOST_USER}>'
+
+
 DEFAULT_FROM_EMAIL = FROM_EMAIL
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
