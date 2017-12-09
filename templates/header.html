@@ -17,13 +17,13 @@
         <div class="exit col-xs-3 col-sm-3 col-md-3">
         {% if request.user.is_authenticated %}
             <form method="POST"
-                  action="{% url "account_logout" %}"
+                  action="{% url "account_logout" %}?next={{ request.path }}"
                   name="logoutForm"
                   ng-show="false"
             >{% csrf_token %}</form>
             <a href="#" ng-click="header.logout();">{% trans 'Log out' %}</a>
         {% else %}
-            <a href="{% url "account_login" %}">{% trans 'Log in' %}</a>
+            <a href="{% url "account_login" %}?next={{ request.path }}">{% trans 'Log in' %}</a>
         {% endif %}
             <i class="fa fa-shopping-basket" aria-hidden="true" ng-click="header.load_basket()">
                 <span class="quantity_of_goods" ng-bind="basket_len"></span>

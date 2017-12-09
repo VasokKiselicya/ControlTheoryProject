@@ -20,17 +20,20 @@
             </div>
             <div class="col-xs-8 col-xs-offset-2" ng-init="basket.loadCart();">
                 <div class="empty-basket" ng-if="!basket.cartItems.length && basket.cart_loaded">
-                    <h1>{% trans "Your Basket Is Empty" %}</h1>
+                    <h1 ng-if="!basket.basketIsClosed">{% trans "Your Basket Is Empty" %}</h1>
+                    <div ng-if="basket.basketIsClosed">
+                        <h1>{% trans "Your Order Now In Processing" %}</h1>
+                    </div>
                 </div>
                 <div class="table-responsive" ng-if="basket.cartItems.length">
                     <table class="table">
                         <thead>
-                            <tr>
-                                <th colspan="3">{% trans 'product' %}</th>
-                                <th>{% trans "price" %}</th>
-                                <th>{% trans "qty" %}</th>
-                                <th>{% trans "total price" %}</th>
-                            </tr>
+                        <tr>
+                            <th colspan="3">{% trans 'product' %}</th>
+                            <th>{% trans "price" %}</th>
+                            <th>{% trans "qty" %}</th>
+                            <th>{% trans "total price" %}</th>
+                        </tr>
                         </thead>
                         <tbody>
                         <tr ng-repeat="item in basket.cartItems track by $index"
@@ -74,15 +77,46 @@
                                     >
                                     <span class="control-basket">
                                         <i class="fa fa-angle-right" aria-hidden="true"
-                                            ng-click="basket.changeBasketItem(item)">
+                                           ng-click="basket.changeBasketItem(item)">
                                         </i>
                                     </span>
                                 </label>
                             </td>
                             <td ng-bind="item.total_price"></td>
                         </tr>
+                        <tr>
+                            <td colspan="4">&nbsp;</td>
+                            <td>{% trans "to pay" %}</td>
+                            <td ng-bind="basket.totalCost"></td>
+                        </tr>
                         </tbody>
                     </table>
+
+                    <div class="order-complete col-xs-8 col-xs-offset-2">
+                        {% if request.user.is_authenticated %}
+                            <form name="order" ng-submit="basket.closeBasket()">
+                                <div class="form-group">
+                                    <label class="col-xs-8">
+                                        <input type="text"
+                                               class="address"
+                                               name="address"
+                                               placeholder="{% trans "Fill Your Address Here" %}"
+                                               required
+                                               ng-model="basket.address"
+                                        >
+                                    </label>
+                                    <button type="submit" class="col-xs-4 close-basket">
+                                        {% trans 'Close Basket' %}
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        {% else %}
+                            <a href="{% url "account_login" %}?next={{ request.path }}"
+                               class="login-href"
+                            >{% trans "Login in Your Account For Close Order" %}</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>

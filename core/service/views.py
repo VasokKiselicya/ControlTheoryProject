@@ -123,3 +123,15 @@ class CartView(View):
         cart = Cart(request)
         return HttpResponse(json.dumps({"basket": [x for x in cart]}, cls=DecimalEncoder),
                             content_type="application/json")
+
+
+class CloseBasket(View):
+
+    @classmethod
+    @csrf_exempt
+    def post(cls, request):
+        body = json.loads(request.body.decode("utf-8") or "{}")
+        cart = Cart(request)
+        cart.save_to_db(request.user, address=body.get("address", ""))
+        cart.clear()
+        return HttpResponse(json.dumps({"success": True}), content_type="application/json")

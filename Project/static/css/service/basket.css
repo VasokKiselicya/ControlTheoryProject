@@ -22,7 +22,8 @@ div.table-responsive table {
     width: calc(100% - 4px);  /* - 4px для Рамки (Border) */
 }
 
-div.table-responsive table tbody tr {
+div.table-responsive table tbody tr,
+div.table-responsive table tbody tr:last-child:hover {
     outline: solid 2px transparent;
     border-left: transparent;
 }
@@ -93,4 +94,30 @@ span.control-basket i {
 
 div.table-responsive table {
     user-select: none;
+}
+
+form input.address {
+    border: 1px solid #f7fbfe;
+    color: #f7fbfe;
+    background-color: inherit;
+    height: 50px;
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+}
+
+form button.close-basket {
+    height: 50px;
+    border: 1px solid #f7fbfe;
+    color: #f7fbfe;
+    background-color: inherit;
+    font-size: 20px;
+}
+
+a.login-href {
+    text-align: center;
+    color: #f7fbfe;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 20px;
 }

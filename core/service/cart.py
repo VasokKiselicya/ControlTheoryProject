@@ -1,6 +1,6 @@
 from decimal import Decimal
 from django.conf import settings
-from db.models import Product
+from db.models import Product, Order, OrderItem
 
 
 class Cart(object):
@@ -55,3 +55,13 @@ class Cart(object):
     def clear(self):
         del self.session[settings.CART_SESSION_ID]
         self.session.modified = True
+
+    def save_to_db(self, user, address=""):
+        order = Order.objects.create(user=user, address=address)
+        order_items = []
+        for product, item in self.cart.items():
+            order_items.append(
+                OrderItem(order=order, product_id=product,
+                          quantity=item["quantity"], price=item["price"])
+            )
+        OrderItem.objects.bulk_create(order_items, batch_size=100)

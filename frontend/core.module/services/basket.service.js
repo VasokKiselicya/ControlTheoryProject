@@ -39,8 +39,9 @@ function basketService($http) {
            return response;
         }).catch(console.log);
     }
-    function close() {
-        return $http.patch(ControlURL, data, HEADERS).then((response) => {
+
+    function close(data) {
+        return $http.post("/basket/close/", data, HEADERS).then((response) => {
             return response;
         }).catch(console.log);
     }
