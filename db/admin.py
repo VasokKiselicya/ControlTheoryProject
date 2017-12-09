@@ -122,7 +122,7 @@ class ArticleNameAdmin(admin.ModelAdmin):
 
 @admin.register(models.TableBooking)
 class TableBookingAdmin(admin.ModelAdmin):
-    icon = ""
+    icon = '<i class="material-icons">loyalty</i>'
     list_display = ("full_name", "place_qty", "date")
     exclude = ("id",)
 

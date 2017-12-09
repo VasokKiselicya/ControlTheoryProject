@@ -34,6 +34,7 @@ function BasketController($rootScope, BasketService) {
 
     vm.removeFromBasket = (product_id, idx) => {
         vm.cartItems.splice(idx, 1);
+        calculateCost();
         BasketService.remove({product_id}).then(res => {
             if (res.status !== 200) return;
             $rootScope.basket_len = res.data.count;

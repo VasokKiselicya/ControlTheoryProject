@@ -123,3 +123,19 @@ form .form-group .col-sm-6:nth-child(2) {
 .auth-content {
     margin-top: 150px;
 }
+
+.text-auth-container input[type="email"],
+.text-auth-container input[type="password"] {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    margin: 10px 25px;
+}
+
+.text-auth-container input[type="submit"],
+.text-auth-container button[type="submit"] {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    margin: 10px 0;
+}
