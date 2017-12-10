@@ -4,12 +4,18 @@
 
 }
 
-.image{
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 35em;
+  opacity: 0.65;
+}
+
+.image-title img{
     width: 100%;
     position: relative;
     left: 0;
     padding: 0;
-
 
 
 }
@@ -18,11 +24,13 @@
     margin-top: 150px;
     padding-left: 0;
     padding-right: 0;
+    height: 35em;
+    background: rgb(17, 15, 18);
 }
 
 .article-title {
 	position : absolute;
-	top : 170px;
+	top : 140px;
 	left : 80px;
 	width : 70%;
 	color: #f7fbfe;
@@ -31,7 +39,7 @@
 
 .description {
 	position : absolute;
-	top : 210px;
+	top : 180px;
 	left : 80px;
 	width : 90%;
 	color: #f7fbfe;
@@ -44,7 +52,7 @@
 
 .article-body{
     line-height: 1.25;
-
+    padding-top: 20px;
     font-size: 27px;
     padding-bottom: 15px;
 }

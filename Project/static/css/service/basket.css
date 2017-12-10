@@ -113,6 +113,7 @@ form button.close-basket {
     color: #f7fbfe;
     background-color: inherit;
     font-size: 20px;
+    margin-bottom: 20px;
 }
 
 a.login-href {
@@ -121,4 +122,10 @@ a.login-href {
     display: block;
     font-size: 20px;
     margin-bottom: 20px;
+}
+
+input.phoneNumber {
+    background: url(../../images/ua-flag.png) no-repeat scroll 0 10px;
+    padding-left: 50px !important;
+    background-size: 35px 30px;
 }

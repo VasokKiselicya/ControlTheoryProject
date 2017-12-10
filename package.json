@@ -1,7 +1,7 @@
 {
   "name": "control_project",
   "version": "1.0.0",
-   "engines": {
+  "engines": {
     "node": "6.11.3",
     "npm": "5.4.2"
   },
@@ -30,6 +30,7 @@
   "dependencies": {
     "angular": "^1.5.7",
     "angular-ui-bootstrap": "^2.5.0",
+    "angular-ui-carousel": "^0.1.10",
     "bootstrap": "^3.3.6",
     "jquery": "^1.12.4",
     "moment": "^2.13.0",

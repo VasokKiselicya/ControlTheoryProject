@@ -56,8 +56,9 @@ class Cart(object):
         del self.session[settings.CART_SESSION_ID]
         self.session.modified = True
 
-    def save_to_db(self, user, address=""):
-        order = Order.objects.create(user=user, address=address)
+    def save_to_db(self, user, **kwargs):
+        order = Order.objects.create(user=user, address=kwargs.get("address", ""),
+                                     phone_number=kwargs.get("phone", ""))
         order_items = []
         for product, item in self.cart.items():
             order_items.append(

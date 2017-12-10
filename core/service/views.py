@@ -1,10 +1,12 @@
 import json
+import os
 
 from django.views import View
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseBadRequest, Http404
 from django.utils.translation import get_language
 from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 
 from db.models import Category, Product, Unit, Article
 from core.templatetags.app_tags import slugify
@@ -66,10 +68,12 @@ class BlogView(View):
 
 
 class RestaurantView(View):
-    template_name = 'blog/blog.html'
+    template_name = 'restaurant/restaurant.html'
 
     def get(self, request):
-        return render(request, self.template_name, {})
+        root = os.path.join(settings.PROJECT_ROOT, 'static', 'images', 'slider')
+        allfiles = [f'/static/images/slider/{f}' for f in os.listdir(root) if os.path.isfile(os.path.join(root, f))]
+        return render(request, self.template_name, {'files': json.dumps(allfiles).replace("'", "\'")})
 
 
 class ContactsView(View):
@@ -132,6 +136,6 @@ class CloseBasket(View):
     def post(cls, request):
         body = json.loads(request.body.decode("utf-8") or "{}")
         cart = Cart(request)
-        cart.save_to_db(request.user, address=body.get("address", ""))
+        cart.save_to_db(request.user, **body)
         cart.clear()
         return HttpResponse(json.dumps({"success": True}), content_type="application/json")

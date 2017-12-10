@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load app_tags %}
+
+{% block title %}
+<title> {% trans "Restautant" %} </title>
+{% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/service/restaurant.css' %}">
+<link rel="stylesheet" href="{% static 'carousel/ui-carousel.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<div class="row" ng-controller="RestaurantController as restaurant"
+     ng-init="restaurant.set_items()">
+    <div class="col-xs-12 restaurant-content">
+        <div class="yellow">
+            <div class="our-restaurant">
+                <h3 class="our-restaurant-title">{% trans "Welcome" %}</h3>
+            </div>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 main-content">
+            <ui-carousel
+                    slides="restaurant.slides"
+                    slides-to-show="2"
+                    slides-to-scroll="1"
+                    autoplay="true"
+                    autoplay-speed="5000"
+                    dots="true"
+            >
+                <carousel-item>
+                    <img src="[[ item ]]"
+                         alt="{% trans 'Image Not Found' %}"
+                         class="carousel-item">
+                </carousel-item>
+            </ui-carousel>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_scripts %}
+    <script>window.CarouselItems = JSON.parse('{{ files | safe }}');</script>
+{% endblock %}

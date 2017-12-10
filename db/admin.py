@@ -83,9 +83,8 @@ class UnitAdmin(admin.ModelAdmin):
 @admin.register(models.Order)
 class OrderAdmin(admin.ModelAdmin):
     icon = '<i class="material-icons">credit_card</i>'
-    list_display = ("user", "address", "paid")
+    list_display = ("user", "address", "phone_number", "paid")
     search_fields = ("user", "address")
-    # fields = ("user", "paid", "delivery_type", "address", "pay_method")
     readonly_fields = ["total_price"]
     exclude = ("id", )
     inlines = [OrderItemsStackedInline]
@@ -123,7 +122,7 @@ class ArticleNameAdmin(admin.ModelAdmin):
 @admin.register(models.TableBooking)
 class TableBookingAdmin(admin.ModelAdmin):
     icon = '<i class="material-icons">loyalty</i>'
-    list_display = ("full_name", "place_qty", "date")
+    list_display = ("full_name", "phone_number", "place_qty", "date")
     exclude = ("id",)
 
     def get_readonly_fields(self, request, obj=None):
