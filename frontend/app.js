@@ -7,6 +7,7 @@ const name = "app";
 
 angular
     .module(name, [
+        'ui.carousel',
         landing,
         core
     ])

@@ -9,61 +9,42 @@
 
 {% block extra_styles %}
 <link rel="stylesheet" href="{% static 'css/service/restaurant.css' %}">
+<link rel="stylesheet" href="{% static 'carousel/ui-carousel.css' %}">
 {% endblock %}
 
 {% block body %}
 
-<div class="row">
-    <div class="yellow">
-        <div class="col-xs-12 our-restaurant">
-
-            <h3 class="our-restaurant-title">{% trans "Welcome" %}</h3>
+<div class="row" ng-controller="RestaurantController as restaurant"
+     ng-init="restaurant.set_items()">
+    <div class="col-xs-12 restaurant-content">
+        <div class="yellow">
+            <div class="our-restaurant">
+                <h3 class="our-restaurant-title">{% trans "Welcome" %}</h3>
+            </div>
         </div>
-    </div>
-
-
-    <div class="restaurant-content">
-        <div class="col-xs-12 ">
-            <div id="myCarousel" class="carousel slide" data-interval="false">
-
-                <div class="carousel-inner">
-                    {% for image in files %}
-
-                    <div class="item {% if forloop.first %} active {% endif %}">
-                        <div class="col-xs-6">
-                            <a href="#">
-                            <img src="{% static image %}" alt="..." class="img-responsive">
-                                </a>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </div> <!-- Carousel -->
+        <div class="col-xs-10 col-xs-offset-1 main-content">
+            <ui-carousel
+                    slides="restaurant.slides"
+                    slides-to-show="2"
+                    slides-to-scroll="1"
+                    autoplay="true"
+                    autoplay-speed="5000"
+                    dots="true"
+            >
+                <carousel-item>
+                    <img src="[[ item ]]"
+                         alt="{% trans 'Image Not Found' %}"
+                         class="carousel-item">
+                </carousel-item>
+            </ui-carousel>
         </div>
     </div>
 </div>
 {% endblock %}
 {% block extra_scripts %}
-<script>$('#myCarousel').carousel({
-})
-
-$('.carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-
-});
-</script>
-
+    <script>
+        window.CarouselItems = JSON.parse('{{ files | safe }}');
+    </script>
+    <script src="{% static 'carousel/ui-carousel.js' %}"></script>
 {% endblock %}
 

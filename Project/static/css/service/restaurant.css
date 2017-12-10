@@ -1,11 +1,9 @@
 .restaurant-content {
-
-    background-color: #1a1b1f;
-    padding: 30px;
-    height: 30em;
+    margin-top: 150px;
+    background-color: rgba(18,22,25, 0.96);
+    padding: 0;
 }
 .our-restaurant {
-    margin-top: 150px;
     background: url("../../images/fon.png") 100% 50% no-repeat;
     background-size: cover;
     height: 115px;
@@ -18,9 +16,16 @@
     font-size: 26px;
     padding: 43px 0;
     background: rgba(250, 200, 81, 0.85);
-    height: 116px;
+    height: 100%;
+}
+.main-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.carousel-inner .active.left { left: -33%; }
-.carousel-inner .next        { left:  33%; }
-.carousel-control.left,.carousel-control.right {background-image:none;}
+.carousel-item {
+    height: 250px;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}

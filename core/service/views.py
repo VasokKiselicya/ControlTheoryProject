@@ -1,20 +1,19 @@
 import json
+import os
 
 from django.views import View
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseBadRequest, Http404
 from django.utils.translation import get_language
 from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 
 from db.models import Category, Product, Unit, Article
 from core.templatetags.app_tags import slugify
 from core.service.cart import Cart
 from core.service.forms import CartAddProductForm
 from core.utils import DecimalEncoder
-from os import listdir
-from os.path import isfile, join
-from django.contrib.staticfiles.templatetags.staticfiles import static
-from django.conf import settings
+
 
 class MenuView(View):
     template_name = 'service/menu.html'
@@ -72,14 +71,9 @@ class RestaurantView(View):
     template_name = 'restaurant/restaurant.html'
 
     def get(self, request):
-        mypath = join(settings.PROJECT_ROOT, 'static', 'images', 'slider')
-
-        allfiles = [f'images/slider/{f}'
-            for f in listdir(mypath)
-                if isfile(join(mypath,  f))]
-        print(mypath)
-        print(allfiles)
-        return render(request, self.template_name, {'files': allfiles })
+        root = os.path.join(settings.PROJECT_ROOT, 'static', 'images', 'slider')
+        allfiles = [f'/static/images/slider/{f}' for f in os.listdir(root) if os.path.isfile(os.path.join(root, f))]
+        return render(request, self.template_name, {'files': json.dumps(allfiles).replace("'", "\'")})
 
 
 class ContactsView(View):
