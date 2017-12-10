@@ -11,7 +11,10 @@ from core.templatetags.app_tags import slugify
 from core.service.cart import Cart
 from core.service.forms import CartAddProductForm
 from core.utils import DecimalEncoder
-
+from os import listdir
+from os.path import isfile, join
+from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.conf import settings
 
 class MenuView(View):
     template_name = 'service/menu.html'
@@ -66,10 +69,17 @@ class BlogView(View):
 
 
 class RestaurantView(View):
-    template_name = 'blog/blog.html'
+    template_name = 'restaurant/restaurant.html'
 
     def get(self, request):
-        return render(request, self.template_name, {})
+        mypath = join(settings.PROJECT_ROOT, 'static', 'images', 'slider')
+
+        allfiles = [f'images/slider/{f}'
+            for f in listdir(mypath)
+                if isfile(join(mypath,  f))]
+        print(mypath)
+        print(allfiles)
+        return render(request, self.template_name, {'files': allfiles })
 
 
 class ContactsView(View):

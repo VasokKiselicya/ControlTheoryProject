@@ -1,0 +1,69 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load app_tags %}
+
+{% block title %}
+<title> {% trans "Restautant" %} </title>
+{% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/service/restaurant.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="yellow">
+        <div class="col-xs-12 our-restaurant">
+
+            <h3 class="our-restaurant-title">{% trans "Welcome" %}</h3>
+        </div>
+    </div>
+
+
+    <div class="restaurant-content">
+        <div class="col-xs-12 ">
+            <div id="myCarousel" class="carousel slide" data-interval="false">
+
+                <div class="carousel-inner">
+                    {% for image in files %}
+
+                    <div class="item {% if forloop.first %} active {% endif %}">
+                        <div class="col-xs-6">
+                            <a href="#">
+                            <img src="{% static image %}" alt="..." class="img-responsive">
+                                </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div> <!-- Carousel -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_scripts %}
+<script>$('#myCarousel').carousel({
+})
+
+$('.carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+
+});
+</script>
+
+{% endblock %}
+

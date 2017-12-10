@@ -1,0 +1,26 @@
+.restaurant-content {
+
+    background-color: #1a1b1f;
+    padding: 30px;
+    height: 30em;
+}
+.our-restaurant {
+    margin-top: 150px;
+    background: url("../../images/fon.png") 100% 50% no-repeat;
+    background-size: cover;
+    height: 115px;
+    color: #110f12;
+    text-align: center;
+    padding: 0;
+}
+
+.our-restaurant h3{
+    font-size: 26px;
+    padding: 43px 0;
+    background: rgba(250, 200, 81, 0.85);
+    height: 116px;
+}
+
+.carousel-inner .active.left { left: -33%; }
+.carousel-inner .next        { left:  33%; }
+.carousel-control.left,.carousel-control.right {background-image:none;}
