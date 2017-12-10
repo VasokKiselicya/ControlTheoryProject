@@ -136,6 +136,6 @@ class CloseBasket(View):
     def post(cls, request):
         body = json.loads(request.body.decode("utf-8") or "{}")
         cart = Cart(request)
-        cart.save_to_db(request.user, address=body.get("address", ""))
+        cart.save_to_db(request.user, **body)
         cart.clear()
         return HttpResponse(json.dumps({"success": True}), content_type="application/json")

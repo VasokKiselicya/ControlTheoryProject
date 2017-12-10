@@ -96,19 +96,33 @@
                         {% if request.user.is_authenticated %}
                             <form name="order" ng-submit="basket.closeBasket()">
                                 <div class="form-group">
-                                    <label class="col-xs-8">
+                                    <label class="col-xs-10">
                                         <input type="text"
                                                class="address"
                                                name="address"
                                                placeholder="{% trans "Fill Your Address Here" %}"
+                                               autocomplete="off"
                                                required
                                                ng-model="basket.address"
                                         >
                                     </label>
-                                    <button type="submit" class="col-xs-4 close-basket">
-                                        {% trans 'Close Basket' %}
-                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                    </button>
+                                    <label class="col-xs-10">
+                                        <input type="text"
+                                               class="address phoneNumber"
+                                               name="phone"
+                                               placeholder="{% trans "Fill Your Phone Number" %}"
+                                               autocomplete="off"
+                                               required
+                                               ng-model="basket.phoneNumber"
+                                               phone-number
+                                        >
+                                    </label>
+                                    <label class="col-xs-10">
+                                        <button type="submit" class="col-md-6 col-xs-12 col-sm-8 close-basket">
+                                            {% trans 'Close Basket' %}
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </button>
+                                    </label>
                                 </div>
                             </form>
                         {% else %}

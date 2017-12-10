@@ -11,7 +11,8 @@ function BasketController($rootScope, BasketService) {
     vm.MAX = 20;
     vm.basketIsClosed = false;
     vm.address = "";
-    
+    vm.phoneNumber = "0";
+
     function calculateCost() {
         vm.totalCost = vm.cartItems.map(x => +x.price * +x.quantity).reduce((a, b) => a + b, 0);
     }
@@ -55,7 +56,7 @@ function BasketController($rootScope, BasketService) {
 
     vm.closeBasket = () => {
         BasketService
-            .close({address: vm.address})
+            .close({address: vm.address, phone: vm.phoneNumber})
             .then(res => {
                 if (res.status !== 200) return;
                 $rootScope.basket_len = 0;
