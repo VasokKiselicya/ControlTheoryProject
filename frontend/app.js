@@ -8,6 +8,7 @@ const name = "app";
 angular
     .module(name, [
         'ui.carousel',
+        'ngMaterialDatePicker',
         landing,
         core
     ])

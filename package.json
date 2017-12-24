@@ -29,11 +29,15 @@
   "homepage": "https://github.com/VasokKiselicya/ControlTheoryProject#readme",
   "dependencies": {
     "angular": "^1.5.7",
+    "angular-animate": "^1.6.8",
+    "angular-aria": "^1.6.8",
+    "angular-material": "^1.1.5",
     "angular-ui-bootstrap": "^2.5.0",
     "angular-ui-carousel": "^0.1.10",
     "bootstrap": "^3.3.6",
     "jquery": "^1.12.4",
     "moment": "^2.13.0",
+    "ng-material-datetimepicker": "^1.11.0",
     "path": "^0.12.7"
   },
   "devDependencies": {

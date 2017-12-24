@@ -31,20 +31,24 @@
 }
 
 .booking{
-    display: block;
-    margin: 0 auto;
     height: 30em;
 }
 .name, .phone, .date, .quantity, .wish, .btn{
+    color: white;
     background-color: inherit;
     border: 1px solid white;
     margin: 6px;
-
+    font-size: 16px;
 }
 
-.btn{
+.booking-btn {
     margin: 10px auto;
+    display: block;
     width: 120px;
+}
+
+.booking-btn:hover {
+    color: white;
 }
 
 .main-content div.carousel-prev button{
@@ -93,5 +97,17 @@
 
 .blog{
     height:35em;
+}
 
+.dtp-picker *::-webkit-scrollbar {
+    display: none;
+}
+
+.md-dialog-container {
+    top: 60px !important;
+}
+
+
+.form-booking {
+    padding: 40px 0;
 }
