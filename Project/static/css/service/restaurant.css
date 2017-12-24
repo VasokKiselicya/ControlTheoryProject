@@ -24,8 +24,74 @@
 }
 
 .carousel-item {
-    height: 250px;
-    width: 80%;
+    height: 32em;
+    width: 95%;
     display: block;
     margin: 0 auto;
+}
+
+.booking{
+    display: block;
+    margin: 0 auto;
+    height: 30em;
+}
+.name, .phone, .date, .quantity, .wish, .btn{
+    background-color: inherit;
+    border: 1px solid white;
+    margin: 6px;
+
+}
+
+.btn{
+    margin: 10px auto;
+    width: 120px;
+}
+
+.main-content div.carousel-prev button{
+    left: 2% !important;
+}
+
+.main-content div.carousel-next button{
+    right: 2% !important;
+
+}
+
+.booking-title, .photo-title, .blog-title{
+    font-size: 26px;
+    text-align: center;
+    color: #f7fbfe;
+    margin: 10px;
+}
+
+
+
+.ui-carousel .carousel-btn{
+    font-size: 50px !important;
+    color: white;
+}
+
+.parallax {
+    background-image: url("../../images/booking.jpg");
+
+    height: 30em;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax1 {
+    background-image: url("../../images/make.jpg");
+
+    height: 40em;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blog{
+    height:35em;
+
 }

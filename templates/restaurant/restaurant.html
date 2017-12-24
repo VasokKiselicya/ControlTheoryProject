@@ -4,7 +4,7 @@
 {% load app_tags %}
 
 {% block title %}
-<title> {% trans "Restautant" %} </title>
+<title xmlns="http://www.w3.org/1999/html"> {% trans "Restautant" %} </title>
 {% endblock %}
 
 {% block extra_styles %}
@@ -19,28 +19,111 @@
     <div class="col-xs-12 restaurant-content">
         <div class="yellow">
             <div class="our-restaurant">
-                <h3 class="our-restaurant-title">{% trans "Welcome" %}</h3>
+                <h3 class="our-restaurant-title">{% trans "welcome" %}</h3>
             </div>
         </div>
-        <div class="col-xs-10 col-xs-offset-1 main-content">
-            <ui-carousel
-                    slides="restaurant.slides"
-                    slides-to-show="2"
-                    slides-to-scroll="1"
-                    autoplay="true"
-                    autoplay-speed="5000"
-                    dots="true"
-            >
-                <carousel-item>
-                    <img src="[[ item ]]"
-                         alt="{% trans 'Image Not Found' %}"
-                         class="carousel-item">
-                </carousel-item>
-            </ui-carousel>
+        <div class="parallax">
+            <div class="col-xs-8 booking">
+                <h3 class="booking-title">{% trans "booking" %}</h3>
+
+                <div class="form-booking">
+                    <form
+                            role="form"
+                            id="signup_form"
+                            method="post"
+                            action="{% url " account_signup" %}"
+                    autocapitalize="off"
+                    {% if form.is_multipart %}
+                    enctype="multipart/form-data"
+                    {% endif %}
+                    >
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control name" fequired id="name" placeholder="{% trans " your name" %}">
+
+                            </div>
+                            <div class="col-sm-6">
+
+                                {{ form.username.errors }}
+                                <input type="phone" name="phone" maxlength="30" class="form-control phone"
+                                       required id="phone" placeholder="{% trans " phone" %}">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+
+                                {{ form.email.errors }}
+                                <input type="date" name="date" class="form-control date"
+                                       required id="cate" placeholder="{% trans " date" %}"
+                                >
+                            </div>
+                            <div class="col-sm-6">
+                                {{ form.password.errors }}
+                                <input type="text" name="quantity" class="form-control quantity" required
+                                       id="quantity" placeholder="{% trans " places quantity" %}"
+                                >
+                            </div>
+                        </div>
+                        <div class=" form-group">
+                            <div class="col-xs-12">
+
+                                {{ form.email.errors }}
+                                <textarea name="wish" class="form-control wish"
+                                          required id="wish" rows="2" placeholder="{% trans " wish" %}"
+                                ></textarea>
+
+                            </div>
+                        </div>
+
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group" role="group">
+                                <button type="submit" class="btn btn-color btn-group-lg">
+                                    <i class="fa fa-user-plus" aria-hidden="true"></i> {% trans "booking" %}
+                                </button>
+                            </div>
+
+                        </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
         </div>
+        <div class="parallax1">
+            <h3 class="photo-title">{% trans "photo" %}</h3>
+
+            <div class="col-xs-12 main-content">
+                <ui-carousel
+                        slides="restaurant.slides"
+                        slides-to-show="2"
+                        slides-to-scroll="1"
+                        autoplay="true"
+                        autoplay-speed="10000"
+                        dots="false"
+                >
+                    <carousel-item>
+                        <img src="[[ item ]]"
+                             alt="{% trans 'Image Not Found' %}"
+                             class="carousel-item">
+                    </carousel-item>
+                </ui-carousel>
+            </div>
+
+            <h3 class="blog-title">{% trans "blog" %}</h3>
+            <div class="col-xs-8 blog">
+
+
+            </div>
+        </div>
+
     </div>
 </div>
 {% endblock %}
 {% block extra_scripts %}
-    <script>window.CarouselItems = JSON.parse('{{ files | safe }}');</script>
+<script>window.CarouselItems = JSON.parse('{{ files | safe }}');</script>
+<script src="{% static 'carousel/ui-carousel.js' %}"></script>
 {% endblock %}
