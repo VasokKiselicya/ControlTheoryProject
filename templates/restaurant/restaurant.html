@@ -120,10 +120,4 @@
 {% endblock %}
 {% block extra_scripts %}
     <script>window.CarouselItems = JSON.parse('{{ files | safe }}');</script>
-    <script src="{% static 'carousel/ui-carousel.js' %}"></script>
-    <script src="{% static 'js/angular-animate.min.js' %}"></script>
-    <script src="{% static 'js/angular-aria.min.js' %}"></script>
-    <script src="{% static 'js/angular-material.min.js' %}"></script>
-    <script src="{% static 'js/moment-with-locales.min.js' %}"></script>
-    <script src="{% static 'js/angular-material-datetimepicker.min.js' %}"></script>
 {% endblock %}
