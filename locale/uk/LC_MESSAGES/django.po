@@ -9,15 +9,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-02 22:51+0200\n"
-"PO-Revision-Date: 2017-11-18 16:13+0000\n"
-"Last-Translator: b'  <v.kiselicya021036@gmail.com>'\n"
+"PO-Revision-Date: 2017-12-25 19:17+0202\n"
+"Last-Translator: b'  <unreal@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
 #: .\Project\settings.py:94
@@ -202,123 +201,130 @@ msgstr "Зображення"
 
 #: .\db\models.py:180
 msgid "Unique Article Identifier"
-msgstr ""
+msgstr "Унікальна назва статті"
 
 #: .\db\models.py:182
 msgid "Article Image"
-msgstr ""
+msgstr "Зображення статті"
 
 #: .\db\models.py:183
 msgid "Language"
-msgstr ""
+msgstr "Мова"
 
 #: .\db\models.py:184
 msgid "Article Body"
-msgstr ""
+msgstr "Тіло статті"
 
 #: .\db\models.py:187
 msgid "Views Count"
-msgstr ""
+msgstr "Кількість перегляду"
 
 #: .\db\models.py:188
 msgid "Likes Count"
-msgstr ""
+msgstr "Кількість лайків"
 
 #: .\db\models.py:189
 msgid "Dislikes Count"
-msgstr ""
+msgstr "Кількість дизлайків"
 
 #: .\db\models.py:199
 #, fuzzy
 #| msgid "Price"
 msgid "Article"
-msgstr "Ціна"
+msgstr "Стаття"
 
 #: .\db\models.py:200
 #, fuzzy
 #| msgid "Price"
 msgid "Articles"
-msgstr "Ціна"
+msgstr "Стаття"
 
 #: .\templates\account\account_inactive.html:6
 #: .\templates\account\account_inactive.html:10
 msgid "Account Inactive"
-msgstr ""
+msgstr "Акаунт не неактивний"
 
 #: .\templates\account\account_inactive.html:12
 msgid "This account is inactive."
-msgstr ""
+msgstr "Цей акаунт не неактивний"
 
 #: .\templates\account\email.html:4
 msgid "Account"
-msgstr ""
+msgstr "Аккаунт"
 
 #: .\templates\account\email.html:8
 #, fuzzy
 #| msgid "Address"
 msgid "E-mail Addresses"
-msgstr "Адреса"
+msgstr "E-mail адреса"
 
 #: .\templates\account\email.html:10
 msgid "The following e-mail addresses are associated with your account:"
-msgstr ""
+msgstr "Наступна e-mail "
 
 #: .\templates\account\email.html:24
 msgid "Verified"
-msgstr ""
+msgstr "Підтвердження"
 
 #: .\templates\account\email.html:26
 msgid "Unverified"
-msgstr ""
+msgstr "Не підтверджений"
 
 #: .\templates\account\email.html:28
 msgid "Primary"
-msgstr ""
+msgstr "Основний"
 
 #: .\templates\account\email.html:34
 msgid "Make Primary"
-msgstr ""
+msgstr "Зробити основним"
 
 #: .\templates\account\email.html:35
 msgid "Re-send Verification"
-msgstr ""
+msgstr "Відправити підтвердження ще раз"
 
 #: .\templates\account\email.html:36
 msgid "Remove"
-msgstr ""
+msgstr "Видалити"
 
 #: .\templates\account\email.html:43
 msgid "Warning:"
-msgstr ""
+msgstr "Увага"
 
 #: .\templates\account\email.html:43
 msgid ""
 "You currently do not have any e-mail address set up. You should really add "
-"an e-mail address so you can receive notifications, reset your password, etc."
+"an e-mail address so you can receive notifications, reset your password, "
+"etc."
 msgstr ""
+"Зараз у вас не підключена e-mail адреса. Рекомендуємо додати, щоб отримувати"
+" повідомлення, зміни паролю і інше."
 
 #: .\templates\account\email.html:48
 msgid "Add E-mail Address"
-msgstr ""
+msgstr "Додати е-mail адресу"
 
 #: .\templates\account\email.html:53
 msgid "Add E-mail"
-msgstr ""
+msgstr "Додати е-mail "
 
 #: .\templates\account\email.html:62
 msgid "Do you really want to remove the selected e-mail address?"
-msgstr ""
+msgstr "Видійсно хочете видалити цю  е-mail адресу?"
 
 #: .\templates\account\email\email_confirmation_message.txt:1
 #, python-format
 msgid ""
 "Hello from %(site_name)s!\n"
 "\n"
-"You're receiving this e-mail because user %(user_display)s has given yours "
-"as an e-mail address to connect their account.\n"
+"You're receiving this e-mail because user %(user_display)s has given yours as an e-mail address to connect their account.\n"
 "\n"
 "To confirm this is correct, go to %(activate_url)s\n"
 msgstr ""
+"Вітаю вас %(site_name)s!\n"
+"\n"
+"Ви отримали цей лист, тому що користувач%(user_display)s вказав  ваш e-mail для підключення до свого аккаунту\n"
+"\n"
+"Щоб підтвердити перейдіть по  посиланню %(activate_url)s\n"
 
 #: .\templates\account\email\email_confirmation_message.txt:7
 #, python-format
@@ -326,26 +332,30 @@ msgid ""
 "Thank you from %(site_name)s!\n"
 "%(site_domain)s"
 msgstr ""
+"Дякую вам від %(site_name)s!\n"
+"%(site_domain)s"
 
 #: .\templates\account\email\email_confirmation_subject.txt:3
 msgid "Please Confirm Your E-mail Address"
-msgstr ""
+msgstr "Будь ласка підтвердіть свію e-mail адресу"
 
 #: .\templates\account\email\password_reset_key_message.txt:1
 #, python-format
 msgid ""
 "Hello from %(site_name)s!\n"
 "\n"
-"You're receiving this e-mail because you or someone else has requested a "
-"password for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the "
-"link below to reset your password."
+"You're receiving this e-mail because you or someone else has requested a password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
 msgstr ""
+"Вітаю вас %(site_name)s!\n"
+"\n"
+"Ви отримуєте це повідомлення, оскільки ви або хтось інший просив пароль для облікового запису користувача.\n"
+"Якщо це були не ви, просто проігноруйте  це повідомлення. Інакше перейдіть по посиланню для зміни паролю."
 
 #: .\templates\account\email\password_reset_key_message.txt:8
 #, python-format
 msgid "In case you forgot, your username is %(username)s."
-msgstr ""
+msgstr "Якщо ви часом забули, ваше імя користувача: %(username)s."
 
 #: .\templates\account\email\password_reset_key_message.txt:10
 #, python-format
@@ -353,24 +363,27 @@ msgid ""
 "Thank you for using %(site_name)s!\n"
 "%(site_domain)s"
 msgstr ""
+"Дякую вам за користування сайтом %(site_name)s!\n"
+"%(site_domain)s"
 
 #: .\templates\account\email\password_reset_key_subject.txt:3
 msgid "Password Reset E-mail"
-msgstr ""
+msgstr "Повідомлення для зміни пароля"
 
 #: .\templates\account\email_confirm.html:5
 #: .\templates\account\email_confirm.html:9
 msgid "Confirm E-mail Address"
-msgstr ""
+msgstr "Підтвердіть e-mail адресу"
 
 #: .\templates\account\email_confirm.html:15
 #, python-format
 msgid ""
 "Please confirm that\n"
-"            <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address "
-"for user %(user_display)s\n"
+"            <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s\n"
 "            ."
 msgstr ""
+"Будь ласка, підтвердіть <a href=\"mailto:%(email)s\">%(email)s</a> для "
+"користувача  %(user_display)s"
 
 #: .\templates\account\email_confirm.html:21
 msgid "Confirm"
@@ -380,9 +393,10 @@ msgstr "Підтвердити"
 #, python-format
 msgid ""
 "This e-mail confirmation link expired or is invalid. Please\n"
-"            <a href=\"%(email_url)s\">issue a new e-mail confirmation "
-"request</a>."
+"            <a href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
 msgstr ""
+"Посилання не коректне або термін дії вийшов. Будь ласка <a "
+"href=\"%(email_url)s\"> підтвердіть e-mail заново</a>."
 
 #: .\templates\account\login.html:6 .\templates\account\login.html:59
 #: .\templates\account\signup.html:97 .\templates\header.html:26
@@ -426,65 +440,65 @@ msgstr "Забули пароль?"
 
 #: .\templates\account\login.html:81
 msgid "Don't have an account?"
-msgstr ""
+msgstr "Ви ще не маєте аккаунт?"
 
 #: .\templates\account\login.html:83 .\templates\account\signup.html:6
 msgid "Sign up"
-msgstr ""
+msgstr "Реєстрація"
 
 #: .\templates\account\logout.html:4 .\templates\account\logout.html:31
 #: .\templates\header.html:24
 msgid "Log out"
-msgstr ""
+msgstr "Вийти"
 
 #: .\templates\account\logout.html:27
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Ви дійсно хочете вийти?"
 
 #: .\templates\account\logout.html:35
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 #: .\templates\account\messages\cannot_delete_primary_email.txt:2
 #, python-format
 msgid "You cannot remove your primary e-mail address (%(email)s)."
-msgstr ""
+msgstr "Ви не можете видалити вашу основну e-mail адресу (%(email)s)."
 
 #: .\templates\account\messages\email_confirmation_sent.txt:2
 #, python-format
 msgid "Confirmation e-mail sent to %(email)s."
-msgstr ""
+msgstr "Підтвердження e-mail адреси відправлене  на %(email)s."
 
 #: .\templates\account\messages\email_confirmed.txt:2
 #, python-format
 msgid "You have confirmed %(email)s."
-msgstr ""
+msgstr "Адреса %(email)s підтверджена."
 
 #: .\templates\account\messages\email_deleted.txt:2
 #, python-format
 msgid "Removed e-mail address %(email)s."
-msgstr ""
+msgstr "E-mail адреса %(email)s видалена."
 
 #: .\templates\account\messages\logged_in.txt:4
 #, python-format
 msgid "Successfully signed in as %(name)s."
-msgstr ""
+msgstr "Ви увійшли як %(name)s."
 
 #: .\templates\account\messages\logged_out.txt:2
 msgid "You have signed out."
-msgstr ""
+msgstr "Ви вийшли."
 
 #: .\templates\account\messages\password_changed.txt:2
 msgid "Password successfully changed."
-msgstr ""
+msgstr "Пароль успішно змінений."
 
 #: .\templates\account\messages\password_set.txt:2
 msgid "Password successfully set."
-msgstr ""
+msgstr "Пароль успішно вказаний."
 
 #: .\templates\account\messages\primary_email_set.txt:2
 msgid "Primary e-mail address set."
-msgstr ""
+msgstr "Обрана основна e-mail адреса."
 
 #: .\templates\account\messages\unverified_primary_email.txt:2
 msgid "Your primary e-mail address must be verified."
@@ -513,8 +527,8 @@ msgstr "Пароль"
 
 #: .\templates\account\password_reset.html:17
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll send you "
-"an e-mail allowing you to reset it."
+"Forgotten your password? Enter your e-mail address below, and we'll send you"
+" an e-mail allowing you to reset it."
 msgstr ""
 
 #: .\templates\account\password_reset.html:22
@@ -541,8 +555,8 @@ msgstr ""
 #, python-format
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
-"a>."
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
+"reset</a>."
 msgstr ""
 
 #: .\templates\account\password_reset_from_key.html:18
@@ -649,8 +663,8 @@ msgstr ""
 #: .\templates\account\verified_email_required.html:22
 #, python-format
 msgid ""
-"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
-"mail address</a>."
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
+"e-mail address</a>."
 msgstr ""
 
 #: .\templates\blog\article.html:29
@@ -787,11 +801,11 @@ msgstr ""
 
 #: .\templates\service\contacts.html:20
 msgid "зв'яжіться з нами"
-msgstr ""
+msgstr "Зв'яжіться з нами"
 
 #: .\templates\service\contacts.html:25
 msgid "м. Чернівці вул. Університетська 28"
-msgstr ""
+msgstr "м. Чернівці вул. Університетська 28"
 
 #: .\templates\service\contacts.html:26
 msgid "ресторан"
@@ -806,7 +820,6 @@ msgid "Menu Title"
 msgstr "Vincent | Меню"
 
 #, fuzzy
-#~| msgid "Меню"
 #~ msgid "меню"
 #~ msgstr "Меню"
 
