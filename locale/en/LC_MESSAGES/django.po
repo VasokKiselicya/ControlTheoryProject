@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-25 20:22+0200\n"
+"POT-Creation-Date: 2017-12-25 20:55+0200\n"
 "PO-Revision-Date: 2017-12-24 23:20+0202\n"
 "Last-Translator: b'  <unreal@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -650,12 +650,16 @@ msgstr ""
 msgid "Blog Page"
 msgstr ""
 
-#: .\templates\blog\blog.html:20 .\templates\landing.html:69
-#: .\templates\restaurant\restaurant.html:114
+#: .\templates\blog\blog.html:18 .\templates\landing.html:69
+#: .\templates\restaurant\restaurant.html:115
 msgid "blog"
 msgstr ""
 
-#: .\templates\blog\blog.html:50 .\templates\restaurant\restaurant.html:133
+#: .\templates\blog\blog.html:24
+msgid "articles_does_not_exists"
+msgstr ""
+
+#: .\templates\blog\blog.html:45 .\templates\restaurant\restaurant.html:133
 msgid "read"
 msgstr ""
 
@@ -778,6 +782,10 @@ msgstr ""
 
 #: .\templates\restaurant\restaurant.html:109
 msgid "Image Not Found"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:137
+msgid "more"
 msgstr ""
 
 #: .\templates\service\basket.html:7
