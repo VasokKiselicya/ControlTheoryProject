@@ -67,7 +67,7 @@
 }
 .black{
     background: rgba(0, 0, 0, 0.85);
-    height: 81.2em;
+    height: 86.2em;
 }
 
 
@@ -89,7 +89,7 @@
 .parallax1 {
     background: url("../../images/pizzeria.jpg") 100% 50%;
 
-    height: 81.2em;
+    height: 86.2em;
 
     background-attachment: fixed;
     background-position: center;
@@ -99,7 +99,7 @@
 
 .restaurant-blog{
     padding: 10px 0;
-    height: 35.2em;
+    height: 40.2em;
 }
 
 .dtp-picker *::-webkit-scrollbar {
@@ -152,7 +152,7 @@
 
 }
 
-.restaurant-read{
+.restaurant-read, .blog-read{
     background-color: inherit;
     width: 120px;
     border: 1px solid white;
@@ -165,8 +165,17 @@
 
 }
 
-.restaurant-read:hover{
+.blog-read{
+    width: 180px;
+    bottom: 25px;
+}
+
+.smaller-container {
+    height: 45em !important;
+}
+
+
+.restaurant-read:hover, .blog-read:hover{
     color: #ffc851;
     border-color: #ffc851;
-
 }

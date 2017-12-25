@@ -63,7 +63,7 @@ class BlogView(View):
         lang = get_language()
         articles = Article.objects.filter(lang=lang)
         if not articles.count():
-            return render(request, self.template_name, {'error': 'articles_does_not_exists'})
+            return render(request, self.template_name, {'error': True})
         return render(request, self.template_name, {'articles': articles})
 
 
