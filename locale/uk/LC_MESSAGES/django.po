@@ -938,6 +938,9 @@ msgstr ""
 msgid "Menu Title"
 msgstr "Vincent | Меню"
 
+msgid "Your Booking In Processing Now"
+msgstr "Ваше замовлення щодо бронювання прийняте"
+
 #, fuzzy
 #~ msgid "меню"
 #~ msgstr "Меню"

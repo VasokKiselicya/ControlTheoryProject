@@ -58,18 +58,17 @@
                     <div class=" icon col-sm-4"><img src="{% static 'images/fruit.png' %}">
                         {% blocktrans %}only fresh <br>products{% endblocktrans %}
                     </div>
-                    <a class="order col-sm-4">
+                    <a class="order col-sm-4" href="{% url 'service:restaurant' %}" target="_blank">
                         <div class="white">{% trans 'order a table' %}</div>
-
                     </a>
                     <div class="icon col-sm-4"><img src="{% static 'images/alcohol.png' %}">{% trans 'own recipes' %}</div>
                 </div>
                 <div class="col-sm-12">
-                    <a class="blog col-sm-4">
+                    <a class="blog col-sm-4" href="{% url 'service:blog' %}" target="_blank">
                         <div class="white">{% trans 'blog' %}</div>
                     </a>
                     <div class="icon col-sm-4"><img src="{% static 'images/delivery.png' %}">{% trans 'fast delivery' %}</div>
-                    <a class="photo col-sm-4" h>
+                    <a class="photo col-sm-4" href="{% url 'service:restaurant' %}" target="_blank">
                         <div class="white">{% trans 'gallery' %}</div>
                     </a>
                 </div>

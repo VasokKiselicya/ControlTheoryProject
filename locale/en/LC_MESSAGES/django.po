@@ -865,3 +865,6 @@ msgstr "delivery"
 #: .\templates\service\menu.html:7
 msgid "Menu Title"
 msgstr "Vincent | Menu"
+
+msgid "Your Booking In Processing Now"
+msgstr ""

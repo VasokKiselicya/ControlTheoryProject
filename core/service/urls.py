@@ -11,5 +11,6 @@ urlpatterns = [
     url(r"^blog/$", views.BlogView.as_view(), name="blog"),
     url(r"^cart-control/$", views.CartControl.as_view(), name="cart-control"),
     url(r"^basket/$", views.CartView.as_view(), name="basket"),
-    url(r"^basket/close/$", login_required(views.CloseBasket.as_view()), name='close-basket')
+    url(r"^basket/close/$", login_required(views.CloseBasket.as_view()), name='close-basket'),
+    url(r"^save-booking/$", views.SaveBookingView.as_view(), name='save-booking'),
 ]

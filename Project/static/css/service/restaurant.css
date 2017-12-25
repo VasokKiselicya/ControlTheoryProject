@@ -43,7 +43,7 @@
 .booking-btn {
     margin: 10px auto;
     display: block;
-    width: 120px;
+    min-width: 120px;
 }
 
 .booking-btn:hover {
@@ -56,7 +56,6 @@
 
 .main-content div.carousel-next button{
     right: 2% !important;
-
 }
 
 .booking-title, .photo-title, .blog-title{
@@ -78,9 +77,7 @@
 
 .parallax {
     background-image: url("../../images/booking.jpg");
-
     height: 37em;
-
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -88,9 +85,7 @@
 }
 .parallax1 {
     background: url("../../images/pizzeria.jpg") 100% 50%;
-
     height: 86.2em;
-
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -122,19 +117,16 @@
 .restaurant-article-item{
     position: relative;
     margin-bottom: 15px;
-
 }
 
 .restaurant-article-item:hover{
     z-index: 333;
     border: 1px solid white;
-
 }
 
 .restaurant-article-title{
     color: #f7fbfe;
     text-align: center;
-
 }
 
 .restaurant-article-date{
@@ -147,9 +139,7 @@
     color: #f7fbfe;
     font-size: 15px;
     text-align: justify;
-    padding: 0px 5px;
-
-
+    padding: 0 5px;
 }
 
 .restaurant-read, .blog-read{
@@ -162,7 +152,6 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-
 }
 
 .blog-read{

@@ -920,3 +920,6 @@ msgstr "Vincent | Меню"
 
 #~ msgid "Db"
 #~ msgstr "Сервис"
+
+msgid "Your Booking In Processing Now"
+msgstr "Заказ по бронированию принят"

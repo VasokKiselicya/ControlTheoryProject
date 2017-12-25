@@ -29,7 +29,8 @@
                 <h3 class="booking-title">{% trans "booking" %}</h3>
 
                 <div class="form-booking">
-                    <form role="form" id="myForm">
+                    <form role="form" id="myForm" ng-if="!restaurant.closeBooking"
+                          ng-submit="restaurant.saveBooking()">
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-6">
@@ -89,6 +90,10 @@
                             </div>
                         </div>
                     </form>
+                    <p style="font-size: 25px; color: white; text-align: center;"
+                       ng-if="restaurant.closeBooking">
+                        {% trans "Your Booking In Processing Now" %}
+                    </p>
                 </div>
             </div>
         </div>
