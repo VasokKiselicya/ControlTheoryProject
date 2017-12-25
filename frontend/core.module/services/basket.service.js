@@ -22,6 +22,9 @@ function basketService($http) {
     this.close = close;
     this.count = count;
     this.load_basket = load_basket;
+
+    this.booking = booking;
+
     const HEADERS = {headers: {'X-CSRFToken': getCookie('csrftoken')}};
 
     function count (data) {
@@ -52,4 +55,9 @@ function basketService($http) {
         }).catch(console.log);
     }
 
+    function booking(data) {
+        return $http.post("/save-booking/", data, HEADERS).then((response) => {
+           return response;
+        }).catch(console.log);
+    }
 }

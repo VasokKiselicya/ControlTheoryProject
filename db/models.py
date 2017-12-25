@@ -205,7 +205,7 @@ class Article(models.Model):
 class TableBooking(models.Model):
     full_name = models.CharField(max_length=300, blank=False, null=False, verbose_name=_("Full Name"))
     place_qty = models.IntegerField(default=2, verbose_name=_("Places Quantity"))
-    date = models.DateTimeField(auto_now_add=True, verbose_name=_("Booking Date"))
+    date = models.DateTimeField(verbose_name=_("Booking Date"))
     phone_number = models.CharField(verbose_name=_("Phone Number"), max_length=25)
     wish = models.TextField(blank=True, default="", null=False, max_length=300, verbose_name=_("User Wish"))
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, verbose_name=_("User"))

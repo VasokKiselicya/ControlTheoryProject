@@ -1,5 +1,6 @@
 import json
 import os
+import datetime
 
 from django.views import View
 from django.shortcuts import render, get_object_or_404
@@ -8,7 +9,7 @@ from django.utils.translation import get_language
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 
-from db.models import Category, Product, Unit, Article
+from db.models import Category, Product, Unit, Article, TableBooking
 from core.templatetags.app_tags import slugify
 from core.service.cart import Cart
 from core.service.forms import CartAddProductForm
@@ -63,7 +64,7 @@ class BlogView(View):
         lang = get_language()
         articles = Article.objects.filter(lang=lang)
         if not articles.count():
-            return render(request, self.template_name, {'error': 'articles_does_not_exists'})
+            return render(request, self.template_name, {'error': True})
         return render(request, self.template_name, {'articles': articles})
 
 
@@ -141,4 +142,24 @@ class CloseBasket(View):
         cart = Cart(request)
         cart.save_to_db(request.user, **body)
         cart.clear()
+        return HttpResponse(json.dumps({"success": True}), content_type="application/json")
+
+
+class SaveBookingView(View):
+
+    @classmethod
+    @csrf_exempt
+    def post(cls, request):
+        body = json.loads(request.body.decode("utf-8") or "{}")
+        try:
+            dt = datetime.datetime.strptime(body.get("date_time"), "%Y-%m-%d %H:%M")
+            TableBooking.objects.create(
+                date=dt,
+                full_name=body.get("fullName", "Unknown"),
+                wish=body.get("wishes", ""),
+                phone_number=body.get("phone", "No Number"),
+                place_qty=body.get("quantity", 2)
+            )
+        except Exception as e:
+            print(e)
         return HttpResponse(json.dumps({"success": True}), content_type="application/json")
