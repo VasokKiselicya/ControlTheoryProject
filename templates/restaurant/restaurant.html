@@ -4,95 +4,96 @@
 {% load i18n %}
 
 {% block title %}
-    <title> {% trans "Restautant" %} </title>
+<title> {% trans "Restautant" %} </title>
 {% endblock %}
 
 {% block extra_styles %}
-    <link rel="stylesheet" href="{% static 'css/service/restaurant.css' %}">
-    <link rel="stylesheet" href="{% static 'carousel/ui-carousel.css' %}">
-    <link rel="stylesheet" href="{% static 'css/angular-material.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/material-datetimepicker.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/service/restaurant.css' %}">
+<link rel="stylesheet" href="{% static 'carousel/ui-carousel.css' %}">
+<link rel="stylesheet" href="{% static 'css/angular-material.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/material-datetimepicker.min.css' %}">
 {% endblock %}
 
 {% block body %}
 
-    <div class="row" ng-controller="RestaurantController as restaurant"
-         ng-init="restaurant.set_items()">
-        <div class="col-xs-12 restaurant-content">
-            <div class="yellow">
-                <div class="our-restaurant">
-                    <h3 class="our-restaurant-title">{% trans "welcome" %}</h3>
-                </div>
+<div class="row" ng-controller="RestaurantController as restaurant"
+     ng-init="restaurant.set_items()">
+    <div class="col-xs-12 restaurant-content">
+        <div class="yellow">
+            <div class="our-restaurant">
+                <h3 class="our-restaurant-title">{% trans "welcome" %}</h3>
             </div>
-            <div class="parallax">
-                <div class="col-xs-8 booking col-xs-offset-2">
-                    <h3 class="booking-title">{% trans "booking" %}</h3>
+        </div>
+        <div class="parallax">
+            <div class="col-xs-8 booking col-xs-offset-2">
+                <h3 class="booking-title">{% trans "booking" %}</h3>
 
-                    <div class="form-booking">
-                        <form role="form" id="myForm">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control name"
-                                               required id="name" placeholder="{% trans " your name" %}"
-                                               ng-model="restaurant.formValues.fullName">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="phone" name="phone" maxlength="30" class="form-control phone"
-                                               required id="phone" placeholder="{% trans " phone" %}"
-                                               phone-number ng-model="restaurant.formValues.phone">
-                                    </div>
+                <div class="form-booking">
+                    <form role="form" id="myForm">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control name"
+                                           required id="name" placeholder="{% trans " your name" %}"
+                                    ng-model="restaurant.formValues.fullName">
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <input
-                                                class="form-control date"
-                                                type="text"
-                                                id="datetime"
-                                                placeholder="{% trans 'Date + Time' %}"
-                                                mdc-datetime-picker
-                                                show-todays-date
-                                                ng-model="restaurant.formValues.date_time"
-                                                date="true"
-                                                time="true"
-                                                short-time="false"
-                                                lang="{{ request.LANGUAGE_CODE }}"
-                                                weekStart="1"
-                                                cancelText="{% trans 'Cancel' %}"
-                                                todayText="{% trans 'Today' %}"
-                                                okText="{% trans 'Apply' %}"
-                                                min-date="restaurant.minDate"
-                                                max-date="restaurant.maxDate"
-                                                format="YYYY-MM-DD HH:mm"
-                                        >
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="number" name="quantity" class="form-control quantity" required
-                                               id="quantity" placeholder="{% trans " places quantity" %}"
-                                               min="1" max="10" step="1" ng-model="restaurant.formValues.quantity">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <textarea name="wish" class="form-control wish"
-                                                  id="wish" rows="4" placeholder="{% trans " wish" %}"
-                                                  maxlength="150" ng-model="restaurant.formValues.wishes"
-                                        ></textarea>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <button type="submit" class="btn btn-md booking-btn">
-                                            <i class="fa fa-cutlery" aria-hidden="true"></i>{% trans "booking" %}
-                                        </button>
-                                    </div>
+                                <div class="col-sm-6">
+                                    <input type="phone" name="phone" maxlength="30" class="form-control phone"
+                                           required id="phone" placeholder="{% trans " phone" %}"
+                                    phone-number ng-model="restaurant.formValues.phone">
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input
+                                            class="form-control date"
+                                            type="text"
+                                            id="datetime"
+                                            placeholder="{% trans 'Date + Time' %}"
+                                            mdc-datetime-picker
+                                            show-todays-date
+                                            ng-model="restaurant.formValues.date_time"
+                                            date="true"
+                                            time="true"
+                                            short-time="false"
+                                            lang="{{ request.LANGUAGE_CODE }}"
+                                            weekStart="1"
+                                            cancelText="{% trans 'Cancel' %}"
+                                            todayText="{% trans 'Today' %}"
+                                            okText="{% trans 'Apply' %}"
+                                            min-date="restaurant.minDate"
+                                            max-date="restaurant.maxDate"
+                                            format="YYYY-MM-DD HH:mm"
+                                    >
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="number" name="quantity" class="form-control quantity" required
+                                           id="quantity" placeholder="{% trans " places quantity" %}"
+                                    min="1" max="10" step="1" ng-model="restaurant.formValues.quantity">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                        <textarea name="wish" class="form-control wish"
+                                                  id="wish" rows="4" placeholder="{% trans " wish" %}"
+                                    maxlength="150" ng-model="restaurant.formValues.wishes"
+                                    ></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-md booking-btn">
+                                        <i class="fa fa-cutlery" aria-hidden="true"></i>{% trans "booking" %}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="parallax1">
+        </div>
+        <div class="parallax1">
+            <div class="black">
                 <h3 class="photo-title">{% trans "photo" %}</h3>
                 <div class="col-xs-12 main-content">
                     <ui-carousel
@@ -111,16 +112,44 @@
                     </ui-carousel>
                 </div>
                 <h3 class="blog-title">{% trans "blog" %}</h3>
-                <div class="col-xs-8 blog col-xs-offset-2">
+                <div class="col-xs-8 restaurant-blog col-xs-offset-2">
                     {% for article in articles %}
-                       <p style="color: white">{{ article.title }}</p>
+                    <div class="col-xs-4 restaurant-article-item">
+                        <div class="restaurant-article-preview">
+                            <div class="restaurant-image-container">
+                                <img src="{% static article.image %}" alt="{{ article.title }}">
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="restaurant-article-title">
+                            <p>{{ article.title }}</p>
+                        </h3>
+                        <h4 class="restaurant-article-date">
+                            <p>{{ article.created_at|date:"d M, y" }}</p>
+                        </h4>
+                        <p class="restaurant-article-description"><br>{{ article.header }}</p>
+                        <br><br>
+                        <a class="restaurant-read btn" href="{% url 'service:blog' %}{{article.slug}}">
+                            {% trans 'read' %} &nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
-
         </div>
+
     </div>
+</div>
 {% endblock %}
 {% block extra_scripts %}
-    <script>window.CarouselItems = JSON.parse('{{ files | safe }}');</script>
+<script>window.CarouselItems = JSON.parse('{{ files | safe }}');</script>
+<script src="{% static 'js/grids.min.js' %}"></script>
+<script>
+    $(document).ready(() => {
+        setTimeout(() => {
+            $(".restaurant-article-item").responsiveEqualHeightGrid();
+        }, 100);
+    });
+
+
+</script>
 {% endblock %}

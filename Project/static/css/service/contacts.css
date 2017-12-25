@@ -33,3 +33,14 @@
     height: 500px;
     width: 100%;
 }
+
+div.contact-header-background {
+     background: url("../../images/contact-back.jpg") 100% 10% no-repeat;
+     height: 115px;
+}
+h3.contact-header {
+    padding: 40px 0;
+    text-align: center;
+    background: rgba(255, 200, 81, 0.85);
+    height: 100%;
+}
