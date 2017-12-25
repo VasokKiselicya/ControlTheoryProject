@@ -9,13 +9,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-02 22:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2017-12-24 23:20+0202\n"
+"Last-Translator: b'  <unreal@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
+"X-Translated-Using: django-rosetta 0.7.13\n"
 
 #: .\Project\settings.py:94
 msgid "English"
@@ -269,7 +270,8 @@ msgstr ""
 #: .\templates\account\email.html:43
 msgid ""
 "You currently do not have any e-mail address set up. You should really add "
-"an e-mail address so you can receive notifications, reset your password, etc."
+"an e-mail address so you can receive notifications, reset your password, "
+"etc."
 msgstr ""
 
 #: .\templates\account\email.html:48
@@ -289,8 +291,7 @@ msgstr ""
 msgid ""
 "Hello from %(site_name)s!\n"
 "\n"
-"You're receiving this e-mail because user %(user_display)s has given yours "
-"as an e-mail address to connect their account.\n"
+"You're receiving this e-mail because user %(user_display)s has given yours as an e-mail address to connect their account.\n"
 "\n"
 "To confirm this is correct, go to %(activate_url)s\n"
 msgstr ""
@@ -311,10 +312,8 @@ msgstr ""
 msgid ""
 "Hello from %(site_name)s!\n"
 "\n"
-"You're receiving this e-mail because you or someone else has requested a "
-"password for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the "
-"link below to reset your password."
+"You're receiving this e-mail because you or someone else has requested a password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
 msgstr ""
 
 #: .\templates\account\email\password_reset_key_message.txt:8
@@ -342,8 +341,7 @@ msgstr ""
 #, python-format
 msgid ""
 "Please confirm that\n"
-"            <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address "
-"for user %(user_display)s\n"
+"            <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s\n"
 "            ."
 msgstr ""
 
@@ -355,8 +353,7 @@ msgstr ""
 #, python-format
 msgid ""
 "This e-mail confirmation link expired or is invalid. Please\n"
-"            <a href=\"%(email_url)s\">issue a new e-mail confirmation "
-"request</a>."
+"            <a href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
 msgstr ""
 
 #: .\templates\account\login.html:6 .\templates\account\login.html:59
@@ -482,8 +479,8 @@ msgstr ""
 
 #: .\templates\account\password_reset.html:17
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll send you "
-"an e-mail allowing you to reset it."
+"Forgotten your password? Enter your e-mail address below, and we'll send you"
+" an e-mail allowing you to reset it."
 msgstr ""
 
 #: .\templates\account\password_reset.html:22
@@ -508,8 +505,8 @@ msgstr ""
 #, python-format
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
-"a>."
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
+"reset</a>."
 msgstr ""
 
 #: .\templates\account\password_reset_from_key.html:18
@@ -612,8 +609,8 @@ msgstr ""
 #: .\templates\account\verified_email_required.html:22
 #, python-format
 msgid ""
-"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
-"mail address</a>."
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
+"e-mail address</a>."
 msgstr ""
 
 #: .\templates\blog\article.html:29
@@ -642,11 +639,11 @@ msgstr ""
 
 #: .\templates\footer.html:33
 msgid "м. Чернівці"
-msgstr ""
+msgstr "Chernivtsi"
 
 #: .\templates\footer.html:34
 msgid "вул. Раздва, 13"
-msgstr ""
+msgstr "s. Onetwo, 13"
 
 #: .\templates\header.html:33
 msgid "Main"
@@ -666,13 +663,15 @@ msgstr ""
 
 #: .\templates\index.html:15
 msgid "PageTitle"
-msgstr ""
+msgstr "Vincent"
 
 #: .\templates\landing.html:9
 msgid ""
 "Cекрет не в тому з чого, а в<br> тому як приготовлена наша<br> їжа: з "
 "любов’ю, тому і смачно.<br>"
 msgstr ""
+"No, it’s not about what it is <br>made of, but how it is made: love <br>in "
+"our food is the key ingredient."
 
 #: .\templates\landing.html:13 .\templates\service\menu.html:18
 msgid "menu"
@@ -708,7 +707,7 @@ msgstr ""
 
 #: .\templates\service\basket.html:7 .\templates\service\contacts.html:7
 msgid "Contact Title"
-msgstr ""
+msgstr "Vincent | Contact"
 
 #: .\templates\service\basket.html:19
 msgid "your basket"
@@ -736,20 +735,20 @@ msgstr ""
 
 #: .\templates\service\contacts.html:20
 msgid "зв'яжіться з нами"
-msgstr ""
+msgstr "contact us"
 
 #: .\templates\service\contacts.html:25
 msgid "м. Чернівці вул. Університетська 28"
-msgstr ""
+msgstr "Chernivtsi, Universitetska, 28"
 
 #: .\templates\service\contacts.html:26
 msgid "ресторан"
-msgstr ""
+msgstr "restaurant"
 
 #: .\templates\service\contacts.html:27
 msgid "доставка"
-msgstr ""
+msgstr "delivery"
 
 #: .\templates\service\menu.html:7
 msgid "Menu Title"
-msgstr ""
+msgstr "Vincent | Menu"

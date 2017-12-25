@@ -73,7 +73,10 @@ class RestaurantView(View):
     def get(self, request):
         root = os.path.join(settings.PROJECT_ROOT, 'static', 'images', 'slider')
         allfiles = [f'/static/images/slider/{f}' for f in os.listdir(root) if os.path.isfile(os.path.join(root, f))]
-        return render(request, self.template_name, {'files': json.dumps(allfiles).replace("'", "\'")})
+        lang = get_language()
+        articles = Article.objects.filter(lang=lang).order_by("views")[:3]
+        return render(request, self.template_name, {'files': json.dumps(allfiles).replace("'", "\'"),
+                                                    "articles": articles})
 
 
 class ContactsView(View):

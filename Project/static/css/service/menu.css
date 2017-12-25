@@ -82,12 +82,14 @@ div.menu-content {
 }
 
 div.menu-header-background {
-     background: url(../../images/fon_est.png);
+     background: url("../../images/menu-back.jpg") 100% 40% no-repeat;
+     height: 115px;
 }
 h3.menu-header {
     padding: 40px 0;
     text-align: center;
     background: rgba(255, 200, 81, 0.85);
+    height: 100%;
 }
 
 div.text-center > ul[role='tablist'] {
