@@ -168,12 +168,14 @@
 .blog-read{
     width: 180px;
     bottom: 25px;
+}
 
+.smaller-container {
+    height: 45em !important;
 }
 
 
 .restaurant-read:hover, .blog-read:hover{
     color: #ffc851;
     border-color: #ffc851;
-
 }
