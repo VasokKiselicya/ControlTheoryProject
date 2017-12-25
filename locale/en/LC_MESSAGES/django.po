@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-02 22:51+0200\n"
+"POT-Creation-Date: 2017-12-25 20:55+0200\n"
 "PO-Revision-Date: 2017-12-24 23:20+0202\n"
 "Last-Translator: b'  <unreal@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
 #: .\Project\settings.py:94
@@ -30,7 +30,7 @@ msgstr ""
 msgid "Ukrainian"
 msgstr ""
 
-#: .\core\service\forms.py:8 .\db\models.py:138
+#: .\core\service\forms.py:8 .\db\models.py:139
 msgid "Quantity"
 msgstr ""
 
@@ -42,8 +42,8 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: .\db\apps.py:7
-msgid "Db"
+#: .\db\admin.py:95
+msgid "Total Price"
 msgstr ""
 
 #: .\db\apps.py:9
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Product Name"
 msgstr ""
 
-#: .\db\models.py:74 .\db\models.py:137
+#: .\db\models.py:74 .\db\models.py:138
 msgid "Price"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Weight"
 msgstr ""
 
-#: .\db\models.py:82 .\db\models.py:96 .\db\models.py:136
+#: .\db\models.py:82 .\db\models.py:96 .\db\models.py:137
 msgid "Product"
 msgstr ""
 
@@ -126,7 +126,7 @@ msgstr ""
 msgid "Product Ingredients"
 msgstr ""
 
-#: .\db\models.py:113
+#: .\db\models.py:113 .\db\models.py:211
 msgid "User"
 msgstr ""
 
@@ -134,88 +134,116 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: .\db\models.py:115 .\db\models.py:157 .\db\models.py:185
+#: .\db\models.py:115 .\db\models.py:209
+msgid "Phone Number"
+msgstr ""
+
+#: .\db\models.py:116 .\db\models.py:158 .\db\models.py:186 .\db\models.py:212
 msgid "Created"
 msgstr ""
 
-#: .\db\models.py:116 .\db\models.py:158 .\db\models.py:186
+#: .\db\models.py:117 .\db\models.py:159 .\db\models.py:187
 msgid "Updated"
 msgstr ""
 
-#: .\db\models.py:117
+#: .\db\models.py:118
 msgid "Paid"
 msgstr ""
 
-#: .\db\models.py:122 .\db\models.py:126
+#: .\db\models.py:123 .\db\models.py:127
 msgid "Order"
 msgstr ""
 
-#: .\db\models.py:123
+#: .\db\models.py:124
 msgid "Orders"
 msgstr ""
 
-#: .\db\models.py:152
+#: .\db\models.py:153
 msgid "OrderItem"
 msgstr ""
 
-#: .\db\models.py:153
+#: .\db\models.py:154
 msgid "OrderItems"
 msgstr ""
 
-#: .\db\models.py:160
+#: .\db\models.py:161
 msgid "Unique Article Name"
 msgstr ""
 
-#: .\db\models.py:170 .\db\models.py:177
+#: .\db\models.py:171 .\db\models.py:178
 msgid "Article Identifier"
 msgstr ""
 
-#: .\db\models.py:171
+#: .\db\models.py:172
 msgid "Articles Identifiers"
 msgstr ""
 
-#: .\db\models.py:178
+#: .\db\models.py:179
 msgid "Article Title"
 msgstr ""
 
-#: .\db\models.py:179
+#: .\db\models.py:180
 msgid "Card Article Preview"
 msgstr ""
 
-#: .\db\models.py:180
+#: .\db\models.py:181
 msgid "Unique Article Identifier"
 msgstr ""
 
-#: .\db\models.py:182
+#: .\db\models.py:183
 msgid "Article Image"
 msgstr ""
 
-#: .\db\models.py:183
+#: .\db\models.py:184
 msgid "Language"
 msgstr ""
 
-#: .\db\models.py:184
+#: .\db\models.py:185
 msgid "Article Body"
 msgstr ""
 
-#: .\db\models.py:187
+#: .\db\models.py:188
 msgid "Views Count"
 msgstr ""
 
-#: .\db\models.py:188
+#: .\db\models.py:189
 msgid "Likes Count"
 msgstr ""
 
-#: .\db\models.py:189
+#: .\db\models.py:190
 msgid "Dislikes Count"
 msgstr ""
 
-#: .\db\models.py:199
+#: .\db\models.py:200
 msgid "Article"
 msgstr ""
 
-#: .\db\models.py:200
+#: .\db\models.py:201
 msgid "Articles"
+msgstr ""
+
+#: .\db\models.py:206 .\templates\account\signup.html:34
+msgid "Full Name"
+msgstr ""
+
+#: .\db\models.py:207
+msgid "Places Quantity"
+msgstr ""
+
+#: .\db\models.py:208
+msgid "Booking Date"
+msgstr ""
+
+#: .\db\models.py:210
+msgid "User Wish"
+msgstr ""
+
+#: .\db\models.py:217
+msgid "TableBooking"
+msgstr ""
+
+#: .\db\models.py:218
+msgid "Bookings"
 msgstr ""
 
 #: .\templates\account\account_inactive.html:6
@@ -270,8 +298,7 @@ msgstr ""
 #: .\templates\account\email.html:43
 msgid ""
 "You currently do not have any e-mail address set up. You should really add "
-"an e-mail address so you can receive notifications, reset your password, "
-"etc."
+"an e-mail address so you can receive notifications, reset your password, etc."
 msgstr ""
 
 #: .\templates\account\email.html:48
@@ -291,7 +318,8 @@ msgstr ""
 msgid ""
 "Hello from %(site_name)s!\n"
 "\n"
-"You're receiving this e-mail because user %(user_display)s has given yours as an e-mail address to connect their account.\n"
+"You're receiving this e-mail because user %(user_display)s has given yours "
+"as an e-mail address to connect their account.\n"
 "\n"
 "To confirm this is correct, go to %(activate_url)s\n"
 msgstr ""
@@ -312,8 +340,10 @@ msgstr ""
 msgid ""
 "Hello from %(site_name)s!\n"
 "\n"
-"You're receiving this e-mail because you or someone else has requested a password for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
+"You're receiving this e-mail because you or someone else has requested a "
+"password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
 msgstr ""
 
 #: .\templates\account\email\password_reset_key_message.txt:8
@@ -341,7 +371,8 @@ msgstr ""
 #, python-format
 msgid ""
 "Please confirm that\n"
-"            <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s\n"
+"            <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address "
+"for user %(user_display)s\n"
 "            ."
 msgstr ""
 
@@ -353,7 +384,8 @@ msgstr ""
 #, python-format
 msgid ""
 "This e-mail confirmation link expired or is invalid. Please\n"
-"            <a href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+"            <a href=\"%(email_url)s\">issue a new e-mail confirmation "
+"request</a>."
 msgstr ""
 
 #: .\templates\account\login.html:6 .\templates\account\login.html:59
@@ -412,6 +444,7 @@ msgid "Are you sure you want to log out?"
 msgstr ""
 
 #: .\templates\account\logout.html:35
+#: .\templates\restaurant\restaurant.html:61
 msgid "Cancel"
 msgstr ""
 
@@ -479,8 +512,8 @@ msgstr ""
 
 #: .\templates\account\password_reset.html:17
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll send you"
-" an e-mail allowing you to reset it."
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
 msgstr ""
 
 #: .\templates\account\password_reset.html:22
@@ -505,15 +538,15 @@ msgstr ""
 #, python-format
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
-"reset</a>."
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
 msgstr ""
 
-#: .\templates\account\password_reset_from_key.html:18
+#: .\templates\account\password_reset_from_key.html:34
 msgid "change password"
 msgstr ""
 
-#: .\templates\account\password_reset_from_key.html:21
+#: .\templates\account\password_reset_from_key.html:37
 #: .\templates\account\password_reset_from_key_done.html:8
 msgid "Your password is now changed."
 msgstr ""
@@ -530,10 +563,6 @@ msgstr ""
 
 #: .\templates\account\signup.html:18
 msgid "Please fill out the form below to create a new account."
-msgstr ""
-
-#: .\templates\account\signup.html:34
-msgid "Full Name"
 msgstr ""
 
 #: .\templates\account\signup.html:35
@@ -609,24 +638,29 @@ msgstr ""
 #: .\templates\account\verified_email_required.html:22
 #, python-format
 msgid ""
-"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
-"e-mail address</a>."
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
 msgstr ""
 
 #: .\templates\blog\article.html:29
 msgid "back"
 msgstr ""
 
-#: .\templates\blog\blog.html:7 .\templates\blog\blog.html:20
-msgid "Blog"
+#: .\templates\blog\blog.html:7
+msgid "Blog Page"
 msgstr ""
 
-#: .\templates\blog\blog.html:50
+#: .\templates\blog\blog.html:18 .\templates\landing.html:69
+#: .\templates\restaurant\restaurant.html:115
+msgid "blog"
+msgstr ""
+
+#: .\templates\blog\blog.html:24
+msgid "articles_does_not_exists"
+msgstr ""
+
+#: .\templates\blog\blog.html:45 .\templates\restaurant\restaurant.html:133
 msgid "read"
-msgstr ""
-
-#: .\templates\errors\404_not_found.html:7
-msgid "Page Not Found"
 msgstr ""
 
 #: .\templates\footer.html:7
@@ -693,10 +727,6 @@ msgstr ""
 msgid "own recipes"
 msgstr ""
 
-#: .\templates\landing.html:69
-msgid "blog"
-msgstr ""
-
 #: .\templates\landing.html:71
 msgid "fast delivery"
 msgstr ""
@@ -705,9 +735,64 @@ msgstr ""
 msgid "gallery"
 msgstr ""
 
-#: .\templates\service\basket.html:7 .\templates\service\contacts.html:7
-msgid "Contact Title"
-msgstr "Vincent | Contact"
+#: .\templates\restaurant\restaurant.html:7
+msgid "Restautant"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:24
+msgid "welcome"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:29
+#: .\templates\restaurant\restaurant.html:86
+msgid "booking"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:37
+msgid " your name"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:42
+msgid " phone"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:52
+msgid "Date + Time"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:62
+msgid "Today"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:63
+msgid "Apply"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:71
+msgid " places quantity"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:78
+msgid " wish"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:97
+msgid "photo"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:109
+msgid "Image Not Found"
+msgstr ""
+
+#: .\templates\restaurant\restaurant.html:137
+msgid "more"
+msgstr ""
+
+#: .\templates\service\basket.html:7
+#, fuzzy
+#| msgid "PageTitle"
+msgid "Basket Title"
+msgstr "Vincent | Basket"
 
 #: .\templates\service\basket.html:19
 msgid "your basket"
@@ -717,38 +802,69 @@ msgstr ""
 msgid "Your Basket Is Empty"
 msgstr ""
 
-#: .\templates\service\basket.html:29
-msgid "product"
-msgstr ""
-
-#: .\templates\service\basket.html:30
-msgid "price"
-msgstr ""
-
-#: .\templates\service\basket.html:31
-msgid "qty"
+#: .\templates\service\basket.html:25
+msgid "Your Order Now In Processing"
 msgstr ""
 
 #: .\templates\service\basket.html:32
+msgid "product"
+msgstr ""
+
+#: .\templates\service\basket.html:33
+msgid "price"
+msgstr ""
+
+#: .\templates\service\basket.html:34
+msgid "qty"
+msgstr ""
+
+#: .\templates\service\basket.html:35
 msgid "total price"
 msgstr ""
 
-#: .\templates\service\contacts.html:20
+#: .\templates\service\basket.html:89
+msgid "to pay"
+msgstr ""
+
+#: .\templates\service\basket.html:103
+msgid "Fill Your Address Here"
+msgstr ""
+
+#: .\templates\service\basket.html:113
+msgid "Fill Your Phone Number"
+msgstr ""
+
+#: .\templates\service\basket.html:122
+msgid "Close Basket"
+msgstr ""
+
+#: .\templates\service\basket.html:131
+msgid "Login in Your Account For Close Order"
+msgstr ""
+
+#: .\templates\service\contacts.html:7
+msgid "Contact Title"
+msgstr "Vincent | Contact"
+
+#: .\templates\service\contacts.html:19
 msgid "зв'яжіться з нами"
 msgstr "contact us"
 
-#: .\templates\service\contacts.html:25
+#: .\templates\service\contacts.html:24
 msgid "м. Чернівці вул. Університетська 28"
 msgstr "Chernivtsi, Universitetska, 28"
 
-#: .\templates\service\contacts.html:26
+#: .\templates\service\contacts.html:25
 msgid "ресторан"
 msgstr "restaurant"
 
-#: .\templates\service\contacts.html:27
+#: .\templates\service\contacts.html:26
 msgid "доставка"
 msgstr "delivery"
 
 #: .\templates\service\menu.html:7
 msgid "Menu Title"
 msgstr "Vincent | Menu"
+
+msgid "Your Booking In Processing Now"
+msgstr ""
