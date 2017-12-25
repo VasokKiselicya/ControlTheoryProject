@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-02 22:51+0200\n"
-"PO-Revision-Date: 2017-12-25 19:17+0202\n"
+"PO-Revision-Date: 2017-12-25 20:43+0202\n"
 "Last-Translator: b'  <unreal@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -502,7 +502,7 @@ msgstr "Обрана основна e-mail адреса."
 
 #: .\templates\account\messages\unverified_primary_email.txt:2
 msgid "Your primary e-mail address must be verified."
-msgstr ""
+msgstr "Ваша основна e-mail адреса має бути підтвердженою."
 
 #: .\templates\account\password_change.html:6
 #: .\templates\account\password_change.html:10
@@ -514,7 +514,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Password"
 msgid "Change Password"
-msgstr "Пароль"
+msgstr " Змінити пароль"
 
 #: .\templates\account\password_reset.html:7
 #: .\templates\account\password_reset.html:12
@@ -523,33 +523,37 @@ msgstr "Пароль"
 #, fuzzy
 #| msgid "Password"
 msgid "Password Reset"
-msgstr "Пароль"
+msgstr "Скинути пароль"
 
 #: .\templates\account\password_reset.html:17
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll send you"
 " an e-mail allowing you to reset it."
 msgstr ""
+"Забули пароль? Введіть свію e-mail адресу нижче, і ми надішлем вам листа для"
+" зміни паролю."
 
 #: .\templates\account\password_reset.html:22
 #, fuzzy
 #| msgid "Password"
 msgid "Reset My Password"
-msgstr "Пароль"
+msgstr "Скинути мій пароль"
 
 #: .\templates\account\password_reset.html:25
 msgid "Please contact us if you have any trouble resetting your password."
-msgstr ""
+msgstr "Зв'яжіться з нами, якщо у вас виникли проблеми з зміною паролю."
 
 #: .\templates\account\password_reset_done.html:17
 msgid ""
 "We have sent you an e-mail. Please contact us if you do not receive it "
 "within a few minutes."
 msgstr ""
+"Ми відправили вам листа. Будь ласка зв'яжіться з нами, якщо не отримали його"
+" продовж декількох хвилин."
 
 #: .\templates\account\password_reset_from_key.html:8
 msgid "Bad Token"
-msgstr ""
+msgstr "Невірний ключ"
 
 #: .\templates\account\password_reset_from_key.html:12
 #, python-format
@@ -558,17 +562,20 @@ msgid ""
 "used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
 "reset</a>."
 msgstr ""
+"Посилання на зміну пароля невірне, напевно, воно вже було використано. Для "
+"нової зміни пароля <a href=\"%(passwd_reset_url)s\">перейдіть по посиланю "
+"</a>."
 
 #: .\templates\account\password_reset_from_key.html:18
 #, fuzzy
 #| msgid "Password"
 msgid "change password"
-msgstr "Пароль"
+msgstr "Зміна пароль"
 
 #: .\templates\account\password_reset_from_key.html:21
 #: .\templates\account\password_reset_from_key_done.html:8
 msgid "Your password is now changed."
-msgstr ""
+msgstr "Ваш пароль змінено."
 
 #: .\templates\account\password_set.html:4
 #: .\templates\account\password_set.html:8
@@ -576,23 +583,24 @@ msgstr ""
 #, fuzzy
 #| msgid "Password"
 msgid "Set Password"
-msgstr "Пароль"
+msgstr "Встановити пароль"
 
 #: .\templates\account\signup.html:16
 msgid "Sign Up to your account"
-msgstr ""
+msgstr "Створити аккаунт"
 
 #: .\templates\account\signup.html:18
 msgid "Please fill out the form below to create a new account."
 msgstr ""
+"Будь ласка, заповніть форму нижче, щоб створити новий обліковий запис."
 
 #: .\templates\account\signup.html:34
 msgid "Full Name"
-msgstr ""
+msgstr "Повне ім'я"
 
 #: .\templates\account\signup.html:35
 msgid "Your name"
-msgstr ""
+msgstr "Ваше ім'я"
 
 #: .\templates\account\signup.html:39 .\templates\account\signup.html:41
 msgid "Username"
@@ -604,40 +612,40 @@ msgstr ""
 
 #: .\templates\account\signup.html:62 .\templates\account\signup.html:64
 msgid "Password (again)"
-msgstr ""
+msgstr "Пароль (ще раз)"
 
 #: .\templates\account\signup.html:80
 msgid "Create an account"
-msgstr ""
+msgstr "Создать акаунт"
 
 #: .\templates\account\signup.html:96
 msgid "Already have an account?"
-msgstr ""
+msgstr "Вже зареєстровані?"
 
 #: .\templates\account\signup_closed.html:6
 #: .\templates\account\signup_closed.html:10
 msgid "Sign Up Closed"
-msgstr ""
+msgstr "Реєстрація закрита"
 
 #: .\templates\account\signup_closed.html:12
 msgid "We are sorry, but the sign up is currently closed."
-msgstr ""
+msgstr "Вибачте але реєстрація в даний момент закрита"
 
 #: .\templates\account\snippets\already_logged_in.html:5
 msgid "Note"
-msgstr ""
+msgstr "Замітка"
 
 #: .\templates\account\snippets\already_logged_in.html:5
 #, python-format
 msgid "you are already logged in as %(user_display)s."
-msgstr ""
+msgstr "Ви вже зайшли як користувач %(user_display)s."
 
 #: .\templates\account\verification_sent.html:5
 #: .\templates\account\verification_sent.html:8
 #: .\templates\account\verified_email_required.html:6
 #: .\templates\account\verified_email_required.html:10
 msgid "Verify Your E-mail Address"
-msgstr ""
+msgstr "Підтвердіть свій е-mail "
 
 #: .\templates\account\verification_sent.html:10
 msgid ""
@@ -645,13 +653,16 @@ msgid ""
 "finalize the signup process. Please contact us if you do not receive it "
 "within a few minutes."
 msgstr ""
+"Ми відправили вам e-mail з підтвердженням. Для завершення процесу реєстрації"
+" перейдіть за вказаним посиланням. Якщо ви не отримаєте від нас повідомлення"
+" протягом декількох хвилин, будь ласка, зв'яжіться з нами."
 
 #: .\templates\account\verified_email_required.html:14
 msgid ""
 "This part of the site requires us to verify that\n"
 "you are who you claim to be. For this purpose, we require that you\n"
 "verify ownership of your e-mail address. "
-msgstr ""
+msgstr "Ця частина сайту вимагає підтвердження e-mail адреси."
 
 #: .\templates\account\verified_email_required.html:18
 msgid ""
@@ -659,6 +670,8 @@ msgid ""
 "verification. Please click on the link inside this e-mail. Please\n"
 "contact us if you do not receive it within a few minutes."
 msgstr ""
+"Ми відправили вам лист з підтвердженням. Будь ласка, перейдіть за посиланням.\n"
+"Зв'яжіться з нами, якщо ви не отримали листа протягом декількох хвилин."
 
 #: .\templates\account\verified_email_required.html:22
 #, python-format
@@ -666,6 +679,8 @@ msgid ""
 "<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
 "e-mail address</a>."
 msgstr ""
+"<strong>Замітка:</strong> ви можете <a href=\"%(email_url)s\">змінити свію "
+"e-mail адресу</a>."
 
 #: .\templates\blog\article.html:29
 #, fuzzy
@@ -675,7 +690,7 @@ msgstr "Повернутись назад"
 
 #: .\templates\blog\blog.html:7 .\templates\blog\blog.html:20
 msgid "Blog"
-msgstr ""
+msgstr "Блог"
 
 #: .\templates\blog\blog.html:50
 #, fuzzy
@@ -689,35 +704,35 @@ msgstr "Сторінку не знайдено"
 
 #: .\templates\footer.html:7
 msgid "subscribe to the news"
-msgstr ""
+msgstr "Підписатися на новини"
 
 #: .\templates\footer.html:15
 msgid "subscribe"
-msgstr ""
+msgstr "Підписатися"
 
 #: .\templates\footer.html:33
 msgid "м. Чернівці"
-msgstr ""
+msgstr "м. Чернівці"
 
 #: .\templates\footer.html:34
 msgid "вул. Раздва, 13"
-msgstr ""
+msgstr "вул. Раздва, 13"
 
 #: .\templates\header.html:33
 msgid "Main"
-msgstr ""
+msgstr "Головна"
 
 #: .\templates\header.html:34
 msgid "Delivery"
-msgstr ""
+msgstr "Доставка"
 
 #: .\templates\header.html:35
 msgid "Restaurant"
-msgstr ""
+msgstr "Ресторан"
 
 #: .\templates\header.html:36
 msgid "Contacts"
-msgstr ""
+msgstr "Контакти"
 
 #: .\templates\index.html:15
 msgid "PageTitle"
@@ -733,15 +748,15 @@ msgstr ""
 
 #: .\templates\landing.html:13 .\templates\service\menu.html:18
 msgid "menu"
-msgstr ""
+msgstr "меню"
 
 #: .\templates\landing.html:54
 msgid "restaurant"
-msgstr ""
+msgstr "ресторан"
 
 #: .\templates\landing.html:59
 msgid "only fresh <br>products"
-msgstr ""
+msgstr "тільки свіжі <br> продукти"
 
 #: .\templates\landing.html:62
 #, fuzzy
@@ -751,57 +766,57 @@ msgstr "Предмет замовлення"
 
 #: .\templates\landing.html:65
 msgid "own recipes"
-msgstr ""
+msgstr "наші рецепти"
 
 #: .\templates\landing.html:69
 msgid "blog"
-msgstr ""
+msgstr "блог"
 
 #: .\templates\landing.html:71
 msgid "fast delivery"
-msgstr ""
+msgstr "швидка доставка"
 
 #: .\templates\landing.html:73
 msgid "gallery"
-msgstr ""
+msgstr "галерея"
 
 #: .\templates\service\basket.html:7 .\templates\service\contacts.html:7
 #, fuzzy
 #| msgid "Menu Title"
 msgid "Contact Title"
-msgstr "Vincent | Меню"
+msgstr "Vincent | Контакти"
 
 #: .\templates\service\basket.html:19
 msgid "your basket"
-msgstr ""
+msgstr "ваша корзина"
 
 #: .\templates\service\basket.html:23
 msgid "Your Basket Is Empty"
-msgstr ""
+msgstr "Ваша корзана порожня"
 
 #: .\templates\service\basket.html:29
 #, fuzzy
 #| msgid "Product"
 msgid "product"
-msgstr "Товар"
+msgstr "товар"
 
 #: .\templates\service\basket.html:30
 #, fuzzy
 #| msgid "Price"
 msgid "price"
-msgstr "Ціна"
+msgstr "ціна"
 
 #: .\templates\service\basket.html:31
 msgid "qty"
-msgstr ""
+msgstr "кількість"
 
 #: .\templates\service\basket.html:32
 msgid "total price"
-msgstr ""
+msgstr "загальна сума"
 
 #: .\templates\service\contacts.html:20
 msgid "зв'яжіться з нами"
-msgstr "Зв'яжіться з нами"
+msgstr "зв'яжіться з нами"
 
 #: .\templates\service\contacts.html:25
 msgid "м. Чернівці вул. Університетська 28"
@@ -809,11 +824,11 @@ msgstr "м. Чернівці вул. Університетська 28"
 
 #: .\templates\service\contacts.html:26
 msgid "ресторан"
-msgstr "Ресторан"
+msgstr "ресторан"
 
 #: .\templates\service\contacts.html:27
 msgid "доставка"
-msgstr "Доставка"
+msgstr "доставка"
 
 #: .\templates\service\menu.html:7
 msgid "Menu Title"
